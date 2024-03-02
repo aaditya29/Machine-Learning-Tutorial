@@ -72,3 +72,59 @@ The detective uses the pattern to make its best guess!<br>
 - `m` = number of training examples
 - `(x,y)` = single training example
 - (x<sup>(i)</sup>, y<sup>(i)</sup>) = i<sup>th</sup> training example
+
+### Single Variable Linear Regression Model
+
+Univariate linear regression seeks to find the best straight line that describes the relationship between a single independent variable (X, the predictor) and a single dependent variable (Y, what you're trying to predict).<br>
+
+#### How It Works
+
+1. Data Collection: You gather data containing paired observations of your independent and dependent variables.
+2. Model Fitting: The model uses an algorithm (often "least squares") to find the best values that minimize the overall error (the difference between the predicted values and the actual values in your data).
+3. Making Predictions: Once you have your equation, you can plug in a new value of X and the model will predict the corresponding value of Y.
+
+#### Key Concepts
+
+1. Linearity: The model assumes a linear relationship between the variables. A scatter plot can help you visualize if this assumption is reasonable.
+2. Least Squares: The most common method for fitting the model. It aims to minimize the sum of the squared errors.
+3. Assumptions: For reliable results, your data should generally meet certain assumptions such as normally distributed errors.
+
+**Imagine a Graph**<br>
+Think of a graph with dots scattered across it. Univariate linear regression is all about drawing the best line through those dots.
+
+- **Univariate:** This means we have one special "thing" we want to predict (like the price of a house) and one clue to help us (like the house's square footage).
+- **Linear:** This means we're trying to find a straight line fit for the data.
+- **Regression:** This is the fancy word for finding that best-fit line to make predictions.
+
+**The Detective's Line**<br>
+Imagine those dots on the graph represent houses:
+
+- Each dot is a house.
+- The position on the x-axis (horizontal) shows how big the house is (square footage).
+- The position on the y-axis (vertical) shows how much the house sold for.
+
+Our detective line (the regression model) tries to go through the middle of the dots as best it can.
+
+**Why a Line?**<br>
+
+The line helps us predict! Let's say you find a new house on the market, and you know its size.
+
+1. Find the size on the x-axis of our graph.
+2. Go straight up until you hit the detective line.
+3. Move across to the y-axis – that's roughly how much the house might cost based on its size!
+
+**The Math Part (Simplified):**
+
+The detective line is actually an equation:<br>
+`Price = (Slope * Square Footage) + Intercept`
+
+- Slope: How steep the line is. A steeper line means the price changes more for each extra bit of square footage.
+- Intercept: Where the line crosses the y-axis (like the starting price, even for a tiny house).
+
+**Real-World Examples:**<br>
+
+Univariate linear regression isn't just about houses but we can use it to:
+
+- Predict someone's height based on their age (when they're young)
+- Estimate a student's test score based on the hours they studied.
+- Predict how long a journey takes based on the distance traveled.
