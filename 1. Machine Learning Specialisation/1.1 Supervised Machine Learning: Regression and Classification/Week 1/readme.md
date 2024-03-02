@@ -35,3 +35,31 @@ Imagine you have a bunch of different fruits, but this time, you don't have labe
 In a nutshell, unsupervised learning is like letting the computer explore and find its own patterns in data without being told what to look for. It's great for discovering hidden structures or relationships in information, even when you don't have predefined categories.
 
 ## Regression Model
+
+**What is Regression?**<br>
+
+- **Core Idea:** Regression in machine learning involves finding the relationship between a dependent variable (the thing you want to predict) and one or more independent variables (the factors influencing the prediction).<br>
+
+Imagine regression in machine learning is like playing detective with numbers:<br>
+
+**The Mystery**<br>
+You want to figure out something, like how much ice cream you might sell on a hot day. That's the mystery you're trying to solve!
+You have clues:
+
+- The temperature outside
+- If it's a weekend or a weekday
+- Maybe even how many flavors you have that day
+
+**The Detective (Regression Model)**<br>
+A regression model is like a super-smart number detective. It looks at all the clues from past days (when you sold ice cream, how hot it was, etc.) It tries to find a secret pattern that connects the clues to how much ice cream you sold.
+
+**The Secret Pattern**<br>
+Maybe our detective sees that the hotter it is, the more ice cream you sell. That's a pattern!<br>
+Sometimes the pattern is a simple line, like on a graph. Other times, it might be a bit curvier. The detective figures that out.
+
+**Solving New Mysteries**<br>
+Once the detective knows the pattern, it's prediction time!
+You can ask, "If tomorrow is 90 degrees, how many ice creams might I sell?"
+The detective uses the pattern to make its best guess!<br>
+
+> **Goal:** The goal is to build a mathematical model that can predict the dependent variable as accurately as possible, given new values of the independent variables.<br> > **Example:** Predicting house prices (dependent variable) based on factors like square footage, number of bedrooms, location, etc. (independent variables).<br>
