@@ -34,13 +34,4 @@ Imagine you have a bunch of different fruits, but this time, you don't have labe
 
 In a nutshell, unsupervised learning is like letting the computer explore and find its own patterns in data without being told what to look for. It's great for discovering hidden structures or relationships in information, even when you don't have predefined categories.
 
-### Quiz 1
-
-**Which are two common types of unsupervised learning?**
-
-- Classification
-- Regression
-
-**Which of these is a type of unsupervised learning?**
-
-- Clustering
+## Regression Model
