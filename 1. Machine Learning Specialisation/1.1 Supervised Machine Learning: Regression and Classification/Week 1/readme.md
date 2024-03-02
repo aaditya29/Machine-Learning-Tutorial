@@ -62,4 +62,5 @@ Once the detective knows the pattern, it's prediction time!
 You can ask, "If tomorrow is 90 degrees, how many ice creams might I sell?"
 The detective uses the pattern to make its best guess!<br>
 
-> **Goal:** The goal is to build a mathematical model that can predict the dependent variable as accurately as possible, given new values of the independent variables.<br> > **Example:** Predicting house prices (dependent variable) based on factors like square footage, number of bedrooms, location, etc. (independent variables).<br>
+> **Goal:** The goal is to build a mathematical model that can predict the dependent variable as accurately as possible, given new values of the independent variables.<br>
+> **Example:** Predicting house prices (dependent variable) based on factors like square footage, number of bedrooms, location, etc. (independent variables).<br>
