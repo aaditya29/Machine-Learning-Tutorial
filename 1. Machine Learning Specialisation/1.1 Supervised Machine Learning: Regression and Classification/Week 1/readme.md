@@ -167,3 +167,9 @@ The lower this squared error cost function is, the closer our guesses are to the
 
 A lower MSE indicates a better fit for your model. It means the average squared difference between the actual values and predicted values is smaller, signifying the predictions are closer to the real values.<br>
 A higher MSE suggests a poorer fit. The model's predictions are deviating more from the actual values.
+
+#### Minimizing MSE
+
+The goal of training a linear regression model is to find the model parameters (slope and intercept of the fitting line) that minimize the MSE. Algorithms like gradient descent use the MSE to iteratively adjust these parameters, guiding the model towards better predictions.
+
+In essence, the squared error cost function helps us quantify the overall discrepancy between a model's predictions and the actual data points.
