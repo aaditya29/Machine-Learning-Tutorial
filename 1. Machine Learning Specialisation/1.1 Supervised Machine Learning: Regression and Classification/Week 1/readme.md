@@ -140,3 +140,30 @@ MSE = \frac{1}{2m}\sum_{i=1}^{m} (\hat{y}_i - y_i)^2
 $$
 
 <br>
+
+Here's a breakdown of the symbols:
+
+- **MSE:** Mean Squared Error (the cost function we're calculating).
+- **m:** Total number of data points in our dataset.
+- **Σ:** Summation symbol (tells us to sum the following terms for all data points).
+- **y_cap:** The actual value for a data point
+- **y:** The value predicted by our model for that data point.
+- **^2:** Represents squaring the term inside the parenthesis.
+
+#### Understanding The Formula
+
+Imagine you're playing a guessing game where you try to predict how many candies are in a jar. You guess different numbers, and someone tells you how far off you are from the real number.
+
+The squared error cost function is like a tool to help you win this guessing game. It measures how wrong your guesses are on average. Here's how it works:
+
+1. **Guess vs. Reality:** For each guess you make (let's call it your "prediction"), you find the difference between your guess and the actual number of candies (the "real" number).
+2. **Squaring the Mistake:** Since some guesses might be a little under and some a little over, we don't want to consider negative mistakes. So, we square the difference. Squaring a number makes it positive, even if it was negative before. The bigger the difference, the bigger the square will be.
+3. **Adding it Up:** We don't just care about one guess; we want to see how well we're doing overall. So, we add up the squared mistakes for all your guesses.
+4. **Finding the Average:** To make things fair, especially if you made a lot of guesses, we take the total of squared mistakes and divide it by the number of guesses you made. This gives us the average amount you were wrong by squaring.<br>
+
+The lower this squared error cost function is, the closer our guesses are to the real number of candies on average! This helps us adjust our guesses and get better at predicting how many candies are there.<br>
+
+#### What Does MSE Tell Us?
+
+A lower MSE indicates a better fit for your model. It means the average squared difference between the actual values and predicted values is smaller, signifying the predictions are closer to the real values.<br>
+A higher MSE suggests a poorer fit. The model's predictions are deviating more from the actual values.
