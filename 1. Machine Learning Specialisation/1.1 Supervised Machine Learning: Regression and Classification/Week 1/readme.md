@@ -128,3 +128,15 @@ Univariate linear regression isn't just about houses but we can use it to:
 - Predict someone's height based on their age (when they're young)
 - Estimate a student's test score based on the hours they studied.
 - Predict how long a journey takes based on the distance traveled.
+
+### Cost Function(Squared Error Cost Function And Its Formula)
+
+The squared error cost function, also known as the Mean Squared Error (MSE), is a workhorse in linear regression. This function squares the errors which gives higher weight to larger errors.<br>
+
+> The MSE formula is:
+
+$$
+MSE = \frac{1}{2m}\sum_{i=1}^{m} (\hat{y}_i - y_i)^2
+$$
+
+<br>
