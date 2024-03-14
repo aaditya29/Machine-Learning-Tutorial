@@ -174,4 +174,4 @@ The goal of training a linear regression model is to find the model parameters (
 
 In essence, the squared error cost function helps us quantify the overall discrepancy between a model's predictions and the actual data points.
 
-## Gradient Descent
+## Training The Model with Gradient Descent
