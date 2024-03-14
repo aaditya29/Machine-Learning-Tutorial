@@ -173,3 +173,5 @@ A higher MSE suggests a poorer fit. The model's predictions are deviating more f
 The goal of training a linear regression model is to find the model parameters (slope and intercept of the fitting line) that minimize the MSE. Algorithms like gradient descent use the MSE to iteratively adjust these parameters, guiding the model towards better predictions.
 
 In essence, the squared error cost function helps us quantify the overall discrepancy between a model's predictions and the actual data points.
+
+## Gradient Descent
