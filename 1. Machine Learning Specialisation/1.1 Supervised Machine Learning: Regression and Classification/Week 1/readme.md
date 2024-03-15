@@ -192,3 +192,39 @@ In essence, the squared error cost function helps us quantify the overall discre
 4. **The Learning Rate:** The learning rate is a crucial hyperparameter (a setting you decide) that controls the size of the steps you take during updates. A large learning rate could lead to overshooting the minimum, while a too-small learning rate might cause very slow convergence.
 
 5. **Repeat:** Steps 2-4 are iterated until you reach a point where the gradient is close to zero, indicating you've found a minimum (at least a local one).
+
+### Layman Term Explanation
+
+Let's imagine gradient descent is a treasure hunt game:<br>
+
+#### The Treasure (the solution)
+
+You want to find a buried treasure at the bottom of a big, bumpy hill. This treasure is like the best answer or solution to a problem.
+
+#### The Blindfold (starting with guesses)
+
+You start the game wearing a blindfold. You don't know where the treasure is, so you just pick a random spot on the hill to start. This is like starting with random guesses for your solution.
+
+#### Feeling Around (the gradient)
+
+You can feel the slope of the ground around you. If it's going uphill, you know the treasure isn't in that direction. If it's going downhill, that's a good sign! The slope is like the gradient, it tells you which direction gets you closer to the goal.
+
+#### Tiny Steps Downhill (updating your guess)
+
+You carefully take small steps in the downhill direction. You keep checking the slope after each step to make sure you're still heading the right way. These small steps are like changing your guess to make it better and closer to the real solution.
+
+#### The Learning Rate (how big are your steps?)
+
+How big your steps are is called the learning rate. Big steps get you downhill faster, but you might jump right over the treasure! Small steps take more time, but you're less likely to miss the spot.
+
+#### Finding the X (the minimum)
+
+Eventually, you'll reach a flatter part of the hill. The slope won't change much in any direction. You've found the 'X' on the treasure map - you're close to your goal!
+
+### Gradient Descent in Computers
+
+Computers use something similar to find the best solution to problems:<br>
+
+- The hill is a way to picture how 'wrong' a solution is. Lower means better.
+- Instead of feeling the ground, computers calculate the gradient using math.
+- They keep taking small steps guided by the gradient until they find the lowest spot.
