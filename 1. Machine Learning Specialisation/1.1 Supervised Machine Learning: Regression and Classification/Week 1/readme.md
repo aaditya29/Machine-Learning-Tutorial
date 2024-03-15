@@ -236,3 +236,9 @@ Gradient descent is the backbone of training various machine learning models:
 - **Linear Regression:** Finding the best-fit line by minimizing the mean squared error.
 - **Logistic Regression:** Finding the optimal decision boundary for classification tasks.
 - **Neural Networks:** The heart of the backpropagation algorithm used to train complex neural networks.
+
+### Important Considerations
+
+- **Local Minima:** Gradient descent is prone to finding local minima, not necessarily the global minimum. Techniques like random restarts, momentum, or adaptive learning rates can help mitigate this issue.
+- **Choosing a Learning Rate:** The learning rate is highly influential and requires careful tuning.
+- **Feature Scaling:** Standardizing or normalizing your data can improve the convergence speed of gradient descent.
