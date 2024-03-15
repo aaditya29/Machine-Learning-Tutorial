@@ -175,3 +175,8 @@ The goal of training a linear regression model is to find the model parameters (
 In essence, the squared error cost function helps us quantify the overall discrepancy between a model's predictions and the actual data points.
 
 ## Training The Model with Gradient Descent
+
+### What is Gradient Descent?
+
+- **Optimization Algorithm:** Gradient descent is a popular first-order iterative algorithm used to find the minimum of a function. It's a core concept behind training many machine learning models.
+- **Intuition:** Imagine you're lost in hilly terrain and want to find the lowest point. Gradient descent is like methodically feeling the slope around you with your feet and taking steps in the direction of the steepest descent. Eventually, you'll end up in a valley (hopefully the lowest one!).
