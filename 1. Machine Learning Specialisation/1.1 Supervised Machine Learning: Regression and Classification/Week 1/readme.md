@@ -221,10 +221,18 @@ How big your steps are is called the learning rate. Big steps get you downhill f
 
 Eventually, you'll reach a flatter part of the hill. The slope won't change much in any direction. You've found the 'X' on the treasure map - you're close to your goal!
 
-### Gradient Descent in Computers
+#### Gradient Descent in Computers
 
 Computers use something similar to find the best solution to problems:<br>
 
 - The hill is a way to picture how 'wrong' a solution is. Lower means better.
 - Instead of feeling the ground, computers calculate the gradient using math.
 - They keep taking small steps guided by the gradient until they find the lowest spot.
+
+### Machine Learning Application
+
+Gradient descent is the backbone of training various machine learning models:
+
+- **Linear Regression:** Finding the best-fit line by minimizing the mean squared error.
+- **Logistic Regression:** Finding the optimal decision boundary for classification tasks.
+- **Neural Networks:** The heart of the backpropagation algorithm used to train complex neural networks.
