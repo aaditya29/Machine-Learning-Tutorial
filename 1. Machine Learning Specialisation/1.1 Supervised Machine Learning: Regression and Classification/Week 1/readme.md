@@ -242,3 +242,22 @@ Gradient descent is the backbone of training various machine learning models:
 - **Local Minima:** Gradient descent is prone to finding local minima, not necessarily the global minimum. Techniques like random restarts, momentum, or adaptive learning rates can help mitigate this issue.
 - **Choosing a Learning Rate:** The learning rate is highly influential and requires careful tuning.
 - **Feature Scaling:** Standardizing or normalizing your data can improve the convergence speed of gradient descent.
+
+#### General Gradient Descent Formula
+
+$$
+GradientDescent = \theta_{t+1} = \theta_t - \eta \nabla_{\theta} J(\theta_t)
+$$
+
+**Explanation:**<br>
+
+- $\theta_{t+1}$ : UpdatedParameters (weights or biases at the next time step.
+
+- $\theta_t$ : Current parameters.
+- $\eta$ : Learning rate (symbol eta). This controls the size of the steps taken.
+- $\nabla_{\theta} J(\theta_t):$ Gradient of the cost function (J) with respect to the parameters $(\theta)$ evaluated at the current parameters.
+
+#### Important Notes
+
+- This formula represents the core idea of gradient descent. There are variations like Stochastic Gradient Descent (SGD) and Mini-batch Gradient Descent that change how the gradient is calculated.
+- The cost function (J) will be different depending on the type of machine learning model you're training.
