@@ -180,3 +180,15 @@ In essence, the squared error cost function helps us quantify the overall discre
 
 - **Optimization Algorithm:** Gradient descent is a popular first-order iterative algorithm used to find the minimum of a function. It's a core concept behind training many machine learning models.
 - **Intuition:** Imagine you're lost in hilly terrain and want to find the lowest point. Gradient descent is like methodically feeling the slope around you with your feet and taking steps in the direction of the steepest descent. Eventually, you'll end up in a valley (hopefully the lowest one!).
+
+### How It Works
+
+1. **Start with Random Values:** You begin by initializing the parameters (weights and biases in machine learning) of your model to some random values.
+
+2. **Calculate the Gradient:** The gradient is a vector that points in the direction of the steepest increase of a function and has a magnitude representing how steep the change is. In gradient descent, you calculate the gradient of your cost function (a measure of how 'wrong' your model currently is) with respect to the parameters.
+
+3. **Update Parameters:** You adjust the parameters in the opposite direction of the gradient, proportional to the gradient's magnitude. The idea is that moving against the direction of the steepest increase will lead you toward a minimum.
+
+4. **The Learning Rate:** The learning rate is a crucial hyperparameter (a setting you decide) that controls the size of the steps you take during updates. A large learning rate could lead to overshooting the minimum, while a too-small learning rate might cause very slow convergence.
+
+5. **Repeat:** Steps 2-4 are iterated until you reach a point where the gradient is close to zero, indicating you've found a minimum (at least a local one).
