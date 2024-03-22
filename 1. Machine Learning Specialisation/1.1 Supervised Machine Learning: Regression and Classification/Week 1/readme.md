@@ -261,3 +261,25 @@ $$
 
 - This formula represents the core idea of gradient descent. There are variations like Stochastic Gradient Descent (SGD) and Mini-batch Gradient Descent that change how the gradient is calculated.
 - The cost function (J) will be different depending on the type of machine learning model you're training.
+
+### The Role of the Learning Rate
+
+The learning rate is a crucial hyperparameter (a value we set before training). It determines how large the steps are that the algorithm takes during its descent. Here's how it impacts things:
+
+- **Too Small:** If the learning rate is too small, the algorithm will take tiny steps. Convergence towards the minimum will be slow, and the model risks getting stuck in shallow local minima (small dips, but not the true lowest point).
+
+- **Too Large:** If the learning rate is too large, the algorithm may take giant leaps and recklessly overshoot the minimum. It might even diverge, becoming unstable and failing to find any solution at all.
+
+- **Just Right:** A good learning rate helps find a balance. Steps are big enough to make progress, but controlled enough.
+
+#### Impact on Gradient Descent:
+
+1. **Convergence:**
+
+   - Too high a learning rate can make the updates too large, leading to oscillations around the minimum instead of finding it. The algorithm might even diverge, getting worse with each update!
+   - Too small a learning rate makes your "walk" painfully slow, drastically increasing the time to find a good solution.
+
+2. **Finding True Minimum:**
+
+   - A very high learning rate might cause you to jump right past little dips and valleys that contain the actual best solution (global minimum).
+   - Smaller learning rates let you explore the space more thoroughly, increasing the chance of finding the true best solution.
