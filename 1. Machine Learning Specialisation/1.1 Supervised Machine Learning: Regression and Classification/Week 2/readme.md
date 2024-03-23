@@ -79,3 +79,30 @@ Vectorization works in the main components of multiple linear regression in foll
   def predict(X, theta):
     return np.dot(X, theta)
   ```
+
+- **Gradient Descent (for optimizing parameters):**
+
+  - **Non-vectorized:** Computation of gradients and updates using loops.
+
+  - **Vectorized:** The entire gradient vector and parameter updates are calculated in a single matrix operation.
+
+  #### Example with NumPy
+
+```Python
+import numpy as np
+
+# Sample dataset
+X = np.array([[1, 2, 5], [1, 3, 4], [1, 5, 2]])  # Each row is a data point with features
+y = np.array([10, 15, 12])  # Corresponding target values
+theta = np.array([0, 0, 0])  # Initial parameters
+
+# Vectorized calculation of predictions
+predictions = np.dot(X, theta)
+
+# Vectorized gradient computation
+gradient = np.dot(X.T, (predictions - y)) / X.shape[0]
+
+# Vectorized parameter update (example with simple gradient descent)
+learning_rate = 0.1
+theta -= learning_rate * gradient
+```
