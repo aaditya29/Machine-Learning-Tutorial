@@ -53,3 +53,29 @@ Vectorization significantly improves the performance and readability of these co
 - **Speed:** Vectorized operations are much faster than loops, especially when dealing with larger datasets. This matters a lot when you're training your model iteratively.
 - **Conciseness:** Vectorization lets you express complex calculations in a few lines of code, making your implementation cleaner.
 - **Parallelism:** The underlying linear algebra libraries can effectively utilize GPUs and multi-core CPUs for even greater speedups with large datasets.
+
+### Vectorisation Implementation
+
+Vectorization works in the main components of multiple linear regression in following way:<br>
+
+- **Hypothesis Calculation:**
+
+  - Non-vectorized (with loops):
+
+  ```Python
+  def predict(X, theta):
+    predictions = []
+    for sample in X:
+        prediction = theta[0]
+        for j in range(1, len(sample)):
+            prediction += theta[j] * sample[j]
+        predictions.append(prediction)
+    return predictions
+  ```
+
+  - **Vectorized (using matrix operations):**
+
+  ```Python
+  def predict(X, theta):
+    return np.dot(X, theta)
+  ```
