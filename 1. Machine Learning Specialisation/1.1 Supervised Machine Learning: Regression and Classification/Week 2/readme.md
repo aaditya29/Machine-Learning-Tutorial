@@ -36,3 +36,20 @@ Imagine you're a big fan of superheroes and always wonder what makes someone sup
 `Height = (Secret Number) + (Parent Power * Parent Height) + (Food Power * Healthy Meals) + (Sleep Power * Hours of Sleep)`
 
 - **The Recipe Machine:** You'd need data on lots of people – their height, their parents' heights, how many healthy meals they eat, and how much sleep they get. The 'recipe machine' (MLR) would find the best 'secret numbers' to predict someone's height.
+
+## Vectorisation
+
+Vectorization is a programming technique where you perform mathematical operations on entire arrays or matrices at once, rather than processing individual elements using loops. It leverages highly optimized linear algebra libraries (like NumPy in Python) that are designed for efficiency and can take advantage of parallel processing capabilities in modern hardware.<br>
+
+**Why Vectorization in Multiple Linear Regression?**<br>
+Multiple linear regression involves several key computations:
+
+- **Hypothesis calculation:** Predicting the outcome based on features and model parameters (weights).
+- **Cost function calculation:** Measuring the error between predictions and true values.
+- **Gradient descent:** Updating model parameters to minimize the error.<br>
+
+Vectorization significantly improves the performance and readability of these computations:
+
+- **Speed:** Vectorized operations are much faster than loops, especially when dealing with larger datasets. This matters a lot when you're training your model iteratively.
+- **Conciseness:** Vectorization lets you express complex calculations in a few lines of code, making your implementation cleaner.
+- **Parallelism:** The underlying linear algebra libraries can effectively utilize GPUs and multi-core CPUs for even greater speedups with large datasets.
