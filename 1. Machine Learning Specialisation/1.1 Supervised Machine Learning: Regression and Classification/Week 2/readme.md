@@ -133,3 +133,58 @@ bi = bi - α * (∂MSE / ∂bi)
 - _α (alpha):_ The learning rate, a hyperparameter that controls our step size.
 
 5. **Repeat and Converge:** We continue iterating steps 3 and 4 until we converge to a point where the cost function is minimized (or close enough). The coefficients at this point represent our best estimate for the multiple linear regression model.
+
+**Python example demonstrating how to implement gradient descent for multiple linear regression:**
+
+```Python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample Data (Feel free to replace this with your own dataset)
+x = np.array([[1, 2104, 5], [1, 1416, 3], [1, 1534, 3], [1, 852, 2]])  # Features
+y = np.array([460, 232, 315, 178])  # Target variable
+
+# Hyperparameters
+learning_rate = 0.01
+iterations = 1000
+
+# Add a column of ones for the intercept term
+x = np.hstack((np.ones((x.shape[0], 1)), x))
+
+# Initialize parameters (weights/coefficients)
+theta = np.zeros(x.shape[1])
+
+# Gradient Descent Function
+def gradient_descent(x, y, theta, learning_rate, iterations):
+    m = len(y)
+    cost_history = np.zeros(iterations)
+
+    for it in range(iterations):
+        prediction = np.dot(x, theta)
+        error = prediction - y
+        gradient = np.dot(x.T, error) / m
+        theta = theta - learning_rate * gradient
+        cost_history[it]  = compute_cost(x, y, theta)
+
+    return theta, cost_history
+
+# Cost Function (Mean Squared Error)
+def compute_cost(x, y, theta):
+    m = len(y)
+    predictions = x.dot(theta)
+    sq_error = (predictions - y) ** 2
+    return (1 / (2 * m)) * np.sum(sq_error)
+
+# Run gradient descent
+final_theta, cost_history = gradient_descent(x, y, theta, learning_rate, iterations)
+
+print("Final values of theta (coefficients):", final_theta)
+
+# Visualize cost function convergence
+plt.plot(cost_history)
+plt.xlabel("Iterations")
+plt.ylabel("Cost (MSE)")
+plt.title("Convergence of Gradient Descent")
+plt.show()
+
+```
