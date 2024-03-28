@@ -106,3 +106,30 @@ gradient = np.dot(X.T, (predictions - y)) / X.shape[0]
 learning_rate = 0.1
 theta -= learning_rate * gradient
 ```
+
+## Gradient Descent for Multiple Linear Regression
+
+Gradient descent is an iterative optimization algorithm that helps us find those optimal coefficients.<br>
+**Working:**
+
+1. **Start with Random Coefficients:** We begin with an initial (random) guess for the coefficients.
+
+2. **Cost Function:** We need a way to measure how bad our current guess is. This is where a cost function comes in. A common cost function for linear regression is the Mean Squared Error (MSE):
+
+```
+MSE = (1/N) \* Σ(yi - ŷi)^2
+```
+
+(N = number of data points, yi = actual values, ŷi = predicted values)
+
+3. **Calculate Gradients:** The gradient is like a compass within our cost function landscape. It tells us the direction of steepest increase in the cost function. We calculate the gradients (partial derivatives) of the cost function with respect to each coefficient (b0, b1, b2, ...).
+
+4. **Update Coefficients:** We update our coefficients in the opposite direction of the gradient, effectively moving downhill towards a lower cost value. The update looks like this:
+
+```
+bi = bi - α * (∂MSE / ∂bi)
+```
+
+- _α (alpha):_ The learning rate, a hyperparameter that controls our step size.
+
+5. **Repeat and Converge:** We continue iterating steps 3 and 4 until we converge to a point where the cost function is minimized (or close enough). The coefficients at this point represent our best estimate for the multiple linear regression model.
