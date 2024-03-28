@@ -188,3 +188,14 @@ plt.title("Convergence of Gradient Descent")
 plt.show()
 
 ```
+
+### Explanation:
+
+1. **Data:** We create a simple dataset with features (e.g., size of the house, number of bedrooms) and target values (e.g., house prices).
+2. **Hyperparameters:** Set the learning rate and the number of iterations.
+3. **Intercept:** Add a column of ones to the feature matrix to account for the intercept term.
+4. **Initialization:** Initialize the weights (theta) to zeros.
+5. `gradient_descent` **Function:** This function performs the core of gradient descent calculation. It iterates, updating the weights and storing the cost in each iteration.
+6. `compute_cost` **Function:** Calculates the Mean Squared Error (MSE).
+7. **Running Gradient Descent:** Call the gradient_descent function to obtain the optimized coefficients (final_theta).
+8. **Visualization:** Plot the cost history to see how the cost function decreased over iterations.
