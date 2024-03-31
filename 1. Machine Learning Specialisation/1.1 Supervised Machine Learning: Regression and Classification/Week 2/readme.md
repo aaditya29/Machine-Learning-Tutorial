@@ -199,3 +199,5 @@ plt.show()
 6. `compute_cost` **Function:** Calculates the Mean Squared Error (MSE).
 7. **Running Gradient Descent:** Call the gradient_descent function to obtain the optimized coefficients (final_theta).
 8. **Visualization:** Plot the cost history to see how the cost function decreased over iterations.
+
+## Feature Scaling
