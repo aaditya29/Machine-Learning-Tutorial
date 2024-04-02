@@ -250,3 +250,44 @@ for learning_rate in [0.001, 0.01, 0.1]:
     # ... evaluate the model's performance
 
 ```
+
+### Checking Gradient Descent for Convergence in Feature Scaling for Linear Regression
+
+Convergence is reached when successive updates to the model parameters result in minimal changes in the cost function. This indicates that the gradient descent algorithm has found a point that's close to a local or global minimum.<br>
+
+#### Methods to Check Convergence
+
+1.  **Monitoring the Cost Function:**
+
+    - Plot the value of the cost function (e.g., Mean Squared Error) against the number of gradient descent iterations.
+
+    - **Convergence sign:** The cost function should decrease and eventually plateau. Large changes in the cost function indicate that convergence has not been reached.
+
+2.  **Monitoring Parameter Updates:**
+
+    - Calculate the change in parameters between successive gradient descent iterations.
+
+    - **Convergence sign:** When the changes in parameters become very small (below a defined threshold), it's a sign that convergence might have been reached.
+
+3.  **Tolerance and Early Stopping:**
+
+    - Set a tolerance value (epsilon) that defines an acceptable change in the cost function or parameters.
+
+    - Stop gradient descent iterations when the change falls below this tolerance value.
+
+4.  **Maximum Iterations:**
+
+    - Define a maximum number of iterations. Gradient descent will be stopped after this limit is reached, regardless of convergence. This acts as a safeguard against very slow convergence.
+
+#### Example (Conceptual)
+
+Let's say we're performing linear regression with feature scaling. Here's how you could check for gradient descent convergence:
+
+1. **Choose a feature scaling method:** (e.g., Standardization)
+2. **Define convergence criteria:** (e.g., tolerance of 0.001 for cost function change)
+3. **Initialize model parameters:** (randomly or strategically)
+4. **Iterate through gradient descent:**
+   - Calculate the gradient of the cost function.
+   - Update model parameters based on the gradient and learning rate.
+   - Calculate the new cost function.
+   - Check if the change in cost function is below your tolerance. If yes, consider convergence reached.
