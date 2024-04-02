@@ -291,3 +291,26 @@ Let's say we're performing linear regression with feature scaling. Here's how yo
    - Update model parameters based on the gradient and learning rate.
    - Calculate the new cost function.
    - Check if the change in cost function is below your tolerance. If yes, consider convergence reached.
+
+### Choosing a Learning Rate for Linear Regression
+
+1. **Trial and Error:**
+
+   - Start with a small value (e.g., 0.01).
+   - Train your model and observe the loss over training iterations (epochs).
+   - If the loss decreases and converges, your learning rate is likely suitable.
+   - If the loss diverges (increases or explodes), reduce the learning rate.
+   - If the loss decreases very slowly, you might try a slightly larger learning rate.
+
+2. **Grid Search:**
+
+   - Set a range of potential learning rates (e.g., 0.001, 0.01, 0.1, 1).
+   - Train models with each learning rate and evaluate their performance on a validation set.
+   - Choose the learning rate that leads to the best validation performance.
+
+3. **Learning Rate Schedulers:**
+
+   - Utilize a scheduler that adjusts the learning rate throughout training.
+   - **Common strategies include:**
+     - **Step Decay:** Reducing the learning rate by a factor after a certain number of epochs.
+     - **Exponential Decay:** Gradually decreasing the learning rate over time.
