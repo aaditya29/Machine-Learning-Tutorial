@@ -327,3 +327,12 @@ Let's say we're performing linear regression with feature scaling. Here's how yo
   - Degree 2: Quadratic (parabola shape)
   - Degree 3: Cubic
   - Higher degrees: More flexible curves
+
+### How Polynomial Regression Works
+
+1. **Data Preprocessing:** Ensure your data is suitable for regression by handling missing values, outliers, and possibly scaling features.
+2. **Feature Transformation:** Here's the core idea! We create new features by raising existing features to various powers.<br>
+   **For example**, if we have a feature 'x', we might create new features like, x^2 and x^3.
+
+3. **Model Fitting:** After creating these polynomial terms, polynomial regression actually becomes a form of linear regression. Just like in linear regression, we now find the coefficients (b0, b1, b2...) which will create a line (or curve) that best fits the relationship between our transformed features and the target variable.
+4. **Prediction:** To make predictions on new data, we apply the same feature transformation (creating those powers of existing features) and then use the fitted model to find the predicted value.
