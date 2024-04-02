@@ -229,4 +229,24 @@ In machine learning, feature scaling is the process of adjusting the ranges of d
 **When is Feature Scaling Especially Important?**<br>
 
 - **Algorithms Sensitive to Scale:** Algorithms like linear regression and logistic regression are affected by the scale of features. Tree-based models are generally less sensitive to feature scaling.
-  Distance-Based Algorithms: Algorithms that calculate distances between data points (e.g., k-Nearest Neighbors, Support Vector Machines) highly benefit from feature scaling to prevent inappropriate weighting of features based on their scale.
+- **Distance-Based Algorithms:** Algorithms that calculate distances between data points (e.g., k-Nearest Neighbors, Support Vector Machines) highly benefit from feature scaling to prevent inappropriate weighting of features based on their scale.
+
+**Example:**<br>
+
+```Python
+from sklearn.linear_model import LinearRegression
+from sklearn.datasets import load_boston
+
+# Load dataset
+boston = load_boston()
+X = boston.data
+y = boston.target
+
+# Experiment with different learning rates
+for learning_rate in [0.001, 0.01, 0.1]:
+    model = LinearRegression(learning_rate=learning_rate)
+    model.fit(X, y)
+
+    # ... evaluate the model's performance
+
+```
