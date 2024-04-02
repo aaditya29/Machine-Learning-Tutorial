@@ -205,3 +205,28 @@ plt.show()
 **What is Feature Scaling?**<br>
 
 In machine learning, feature scaling is the process of adjusting the ranges of different features (variables) in a dataset to a common scale. This is often done to equalize the influence of features that might have vastly different numeric ranges.<br>
+
+**Why Feature Scaling Matters for Linear Regression?**
+
+1. **Gradient Descent Convergence:** Linear regression often uses algorithms like gradient descent to find the optimal model parameters. When features have vastly different scales, the gradient descent algorithm may take longer to converge or oscillate, potentially leading to a less optimal solution. Feature scaling helps create a smoother optimization landscape.
+
+2. **Feature Dominance:** In linear regression, the weights (coefficients) assigned to each feature indicate their relative importance to the prediction. Without feature scaling, a feature with a large numeric range might artificially dominate the model, even if it has less predictive power than features on a smaller scale.
+
+### Common Feature Scaling Techniques
+
+1. **Normalization (Min-Max Scaling):**<br>
+
+- Transform features to a specific range, usually between 0 and 1.
+- Calculation: `X' = (X - X_min) / (X_max - X_min)`
+- Good when you know the distribution is not Gaussian and doesn't have many outliers.
+
+2. **Standardization (Z-score Scaling):**
+
+- Rescales features to have a mean of zero and a standard deviation of one.
+- Calculation: X' = (X - mean) / standard deviation
+- Preferred when the data follows a Gaussian (bell curve) distribution or in cases where there might be outliers.
+
+**When is Feature Scaling Especially Important?**<br>
+
+- **Algorithms Sensitive to Scale:** Algorithms like linear regression and logistic regression are affected by the scale of features. Tree-based models are generally less sensitive to feature scaling.
+  Distance-Based Algorithms: Algorithms that calculate distances between data points (e.g., k-Nearest Neighbors, Support Vector Machines) highly benefit from feature scaling to prevent inappropriate weighting of features based on their scale.
