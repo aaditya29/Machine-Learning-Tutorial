@@ -336,3 +336,18 @@ Let's say we're performing linear regression with feature scaling. Here's how yo
 
 3. **Model Fitting:** After creating these polynomial terms, polynomial regression actually becomes a form of linear regression. Just like in linear regression, we now find the coefficients (b0, b1, b2...) which will create a line (or curve) that best fits the relationship between our transformed features and the target variable.
 4. **Prediction:** To make predictions on new data, we apply the same feature transformation (creating those powers of existing features) and then use the fitted model to find the predicted value.
+
+### Key Considerations
+
+- **Overfitting:** Polynomial models, especially with higher degrees, risk overfitting—fitting the training data too closely and failing to generalize well. It's essential to use techniques like regularization or cross-validation to prevent this.
+- **Degree Selection:** Picking the right polynomial degree is crucial. Too low of a degree might underfit; too high could overfit. Experimentation and model evaluation are key.
+
+#### Advantages
+
+- **Captures non-linearity:** Can model complex relationships that simple linear regression can't.
+- **Relatively simple:** Easy to understand and implement.
+
+#### Disadvantages
+
+- **Sensitive to outliers:** Outliers can significantly affect the fitted curve.
+- **Prone to overfitting:** Choosing the right polynomial degree is critical.
