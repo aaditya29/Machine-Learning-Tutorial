@@ -200,4 +200,8 @@ plt.show()
 7. **Running Gradient Descent:** Call the gradient_descent function to obtain the optimized coefficients (final_theta).
 8. **Visualization:** Plot the cost history to see how the cost function decreased over iterations.
 
-## Feature Scaling
+## Feature Scaling In Linear Regression
+
+**What is Feature Scaling?**<br>
+
+In machine learning, feature scaling is the process of adjusting the ranges of different features (variables) in a dataset to a common scale. This is often done to equalize the influence of features that might have vastly different numeric ranges.<br>
