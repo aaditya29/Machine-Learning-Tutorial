@@ -314,3 +314,16 @@ Let's say we're performing linear regression with feature scaling. Here's how yo
    - **Common strategies include:**
      - **Step Decay:** Reducing the learning rate by a factor after a certain number of epochs.
      - **Exponential Decay:** Gradually decreasing the learning rate over time.
+
+## Understanding Polynomial Regression
+
+- **Beyond Straight Lines:** Linear regression is excellent for modeling relationships where the data roughly follows a straight line. But what if the relationship is curved? That's where polynomial regression comes into play. It allows us to model non-linear relationships by fitting a curved line to our data instead of a straight one.
+
+- **The Power of Polynomials:** The essence of polynomial regression is the use of polynomial terms. A polynomial is an expression consisting of variables and coefficients, with terms combined using addition, subtraction, and multiplication.<br>
+  **For example:**<br>
+  `y = b0 + b1*x + b2*x^2 + b3*x^3 (Here, x^2 and x^3 are polynomial terms)`<br>
+
+- **Degree Matters:** The degree of the polynomial determines how complex a curve we can fit.
+  - Degree 2: Quadratic (parabola shape)
+  - Degree 3: Cubic
+  - Higher degrees: More flexible curves
