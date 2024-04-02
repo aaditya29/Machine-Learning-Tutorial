@@ -351,3 +351,21 @@ Let's say we're performing linear regression with feature scaling. Here's how yo
 
 - **Sensitive to outliers:** Outliers can significantly affect the fitted curve.
 - **Prone to overfitting:** Choosing the right polynomial degree is critical.
+
+### Python Implementation
+
+```Python
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import Pipeline
+
+# Create Polynomial Features
+polynomial_features = PolynomialFeatures(degree=2)
+
+# Create a pipeline
+model = Pipeline([('polynomial_features', polynomial_features),
+                  ('linear_regression', LinearRegression())])
+
+# Fit the model
+model.fit(X, y)
+```
