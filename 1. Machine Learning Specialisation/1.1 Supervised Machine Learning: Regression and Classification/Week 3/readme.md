@@ -32,3 +32,11 @@
 
 - **The Model:** Logistic regression establishes a relationship between our features (independent variables) and the target category we're interested in (dependent variable).
 - **Threshold:** We set a threshold value (often 0.5). If the predicted probability from the sigmoid function is above this threshold, the sample is classified as belonging to one class; below the threshold, it goes into the other class.
+
+### Illustrating with an Example
+
+Imagine we want to predict whether a student will pass an exam based on their hours of study.
+
+1. **Data:** We gather data on past students including their study hours and whether they passed or failed.
+2. **Model Training:** Logistic regression finds the best relationship between study hours and the probability of passing.
+3. **New Prediction:** For a new student who studied for 5 hours, the model calculates a probability. If it's above 0.5, we predict "Pass"; otherwise, predict "Fail."
