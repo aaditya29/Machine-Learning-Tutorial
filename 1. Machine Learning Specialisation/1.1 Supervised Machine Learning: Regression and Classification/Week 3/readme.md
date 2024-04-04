@@ -27,3 +27,8 @@
 
    - **Categories with Order:** Used when there are three or more categories with a natural order to them.
    - **Example:** Classifying survey responses as "Poor", "Average", or "Excellent".
+
+### How Logistic Regression Makes Decisions
+
+- **The Model:** Logistic regression establishes a relationship between our features (independent variables) and the target category we're interested in (dependent variable).
+- **Threshold:** We set a threshold value (often 0.5). If the predicted probability from the sigmoid function is above this threshold, the sample is classified as belonging to one class; below the threshold, it goes into the other class.
