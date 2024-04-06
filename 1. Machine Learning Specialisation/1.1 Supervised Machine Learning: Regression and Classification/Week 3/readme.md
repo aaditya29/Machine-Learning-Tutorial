@@ -40,3 +40,38 @@ Imagine we want to predict whether a student will pass an exam based on their ho
 1. **Data:** We gather data on past students including their study hours and whether they passed or failed.
 2. **Model Training:** Logistic regression finds the best relationship between study hours and the probability of passing.
 3. **New Prediction:** For a new student who studied for 5 hours, the model calculates a probability. If it's above 0.5, we predict "Pass"; otherwise, predict "Fail."
+
+## Logistic Regression And Sigmoid Function
+
+### What is the Sigmoid Function?
+
+- **Mathematical Definition:** The sigmoid function is a mathematical function with a characteristic "S"-shaped curve. It's defined as<br>$\sigma(x) = \frac{1}{1 + e^{-x}}$ where 'x' is the input value and 'e' is the mathematical constant (approximately 2.718).
+
+- **Key Properties:**
+
+  - Output Range: The sigmoid function takes any real-numbered input and "squashes" it into a value between 0 and 1.
+  - Probabilistic Interpretation: This output between 0 and 1 can be interpreted as a probability.
+
+### How is the Sigmoid Function Used in Classification?
+
+Classification problems in machine learning involve assigning a label or class to a data point. The sigmoid function is particularly useful in binary classification, where we're trying to distinguish between two classes.
+
+1. **Generating Probability Scores:**
+
+   - A machine learning model (often a logistic regression model) calculates a linear combination of the input features.
+     This calculated value is passed through the sigmoid function.
+   - The sigmoid function transforms this value into a probability representing the likelihood of that data point belonging to a particular class.
+
+2. **Decision Threshold:**
+
+   - A threshold (usually 0.5) is chosen as a decision boundary.
+   - If the sigmoid output (probability) is greater than the threshold, the data point is classified into one class. If it's below the threshold, it's assigned to the other class.
+
+#### Example
+
+Imagine we have a model that predicts whether an email is spam or not spam.
+
+- The model takes various features of the email as input (e.g., words in the subject line, sender address, etc.).
+- It calculates a score based on these features.
+- The sigmoid function transforms this score into a probability between 0 and 1 (how likely it is that the email is spam).
+- If the probability is greater than 0.5, the email is classified as 'spam'; otherwise, it's classified as 'not spam'.
