@@ -84,3 +84,24 @@ $$ f\_{\mathbf{w},b}(\mathbf{x}^{(i)}) = g(\mathbf{w} \cdot \mathbf{x}^{(i)} + b
 where
 
 $g(z) = \frac{1}{1 + e^{-x}}$
+
+### Decision Boundary
+
+#### What is a Decision Boundary?
+
+- **The Dividing Line:** In classification problems, the decision boundary is the line (or hyperplane in higher dimensions) that separates the different classes our model is trying to predict. Think of it as the fence that our model builds to distinguish between "yes" and "no", "buy" and "don't buy", or any other class labels.
+- **Decision Time:** When we have a new data point, its position relative to the decision boundary determines which class the logistic regression model will predict it belongs to.
+
+### Decision Boundary in Logistic Regression
+
+- **Sigmoid's Role:** Sigmoid function plays a crucial role in defining the decision boundary in logistic regression. Since logistic regression outputs a probability between 0 and 1, the standard decision threshold is 0.5:
+  - Probability >= 0.5: Predicted as one class
+  - Probability < 0.5: Predicted as the other class
+- **Linear at Heart:** In the simplest case (two features), the decision boundary in a logistic regression model will be a straight line. This is because the underlying linear combination of features is ultimately transformed by the sigmoid function.
+- **Hyperplanes:** With more features, the decision boundary becomes a hyperplane in higher dimensions. This is harder to visualize, but the concept remains the same – a dividing "surface" between our classes.
+
+#### Things to Note
+
+- **Not Always Linear:** While the core concept in logistic regression often leads to linear decision boundaries, more complex models or datasets can create curvy and nonlinear boundaries.
+- **Training Process:** The logistic regression model learns the ideal placement of this decision boundary during the training process by adjusting its coefficients.
+- **Visualization:** Plotting decision boundaries is a useful way to understand the behavior of your classification model (especially in 2D cases).
