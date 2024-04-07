@@ -75,3 +75,12 @@ Imagine we have a model that predicts whether an email is spam or not spam.
 - It calculates a score based on these features.
 - The sigmoid function transforms this score into a probability between 0 and 1 (how likely it is that the email is spam).
 - If the probability is greater than 0.5, the email is classified as 'spam'; otherwise, it's classified as 'not spam'.
+
+### Interpretation of Logistic Regression w.r.t Sigmoid Function
+
+A logistic regression model applies the sigmoid to the familiar linear regression model as shown below:
+$$ f\_{\mathbf{w},b}(\mathbf{x}^{(i)}) = g(\mathbf{w} \cdot \mathbf{x}^{(i)} + b ) $$
+
+where
+
+$g(z) = \frac{1}{1 + e^{-x}}$
