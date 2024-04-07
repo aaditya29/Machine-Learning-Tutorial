@@ -13,10 +13,10 @@ The Machine Learning Specialization covers the following core topics:
   - Regularization
   - Neural Networks
 
-  - **Unsupervised Learning:**
+- **Unsupervised Learning:**
 
-    - Clustering
-    - Dimensionality Reduction
+  - Clustering
+  - Dimensionality Reduction
 
 - **Special Applications:**
 
@@ -45,3 +45,27 @@ The repository is organized as follows:
 2. **Specialisation Two:** [Deep Learning Specialization By DeepLearning.AI](https://github.com/aaditya29/Machine-Learning-Tutorial/tree/main/2.%20Deep%20Learning%20Specialisation)
 
 3. **Specialisation Three:** [Machine Learning Engineering for Production (MLOps) Specialization](https://github.com/aaditya29/Machine-Learning-Tutorial/tree/main/3.%20MLOps%20Specialisation)
+
+### Notes Format
+
+The `notes.md` files in each week summarize key concepts, formulas, and may include code snippets or examples.
+
+### Lab Code
+
+Lab assignments are provided either in `Python scripts (.py)` or `Jupyter Notebooks (.ipynb)`. These files include comments and explanations to guide you through the implementations.
+
+## Prerequisites
+
+- **Basic Python programming**
+- **Foundational knowledge of math (linear algebra, calculus)**
+
+## How to Use This Repository
+
+- Clone the repository.
+- Use the notes for review and theoretical understanding.
+- Complete the lab assignments to solidify practical implementation skills.
+- Consider contributing your own solutions or improvements!
+
+## Disclaimer
+
+Please respect the course's honor code and policies regarding distribution of course materials. This repository is intended for personal study and reference.
