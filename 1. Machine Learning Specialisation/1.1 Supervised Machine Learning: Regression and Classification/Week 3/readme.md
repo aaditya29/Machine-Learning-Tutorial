@@ -105,3 +105,5 @@ $g(z) = \frac{1}{1 + e^{-x}}$
 - **Not Always Linear:** While the core concept in logistic regression often leads to linear decision boundaries, more complex models or datasets can create curvy and nonlinear boundaries.
 - **Training Process:** The logistic regression model learns the ideal placement of this decision boundary during the training process by adjusting its coefficients.
 - **Visualization:** Plotting decision boundaries is a useful way to understand the behavior of your classification model (especially in 2D cases).
+
+## Cost Function for Logistic Regression
