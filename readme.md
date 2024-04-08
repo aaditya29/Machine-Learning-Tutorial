@@ -30,7 +30,16 @@ The Machine Learning Specialization covers the following core topics:
 
 - **Deep Learning Specialisation And Concepts**
 
+  - Tensorflow
+  - Natural Language Processing
+  - Convolutional Neural Networks
+  - Sequence Models
+
 - **MLOps Specialisation And Concepts**
+
+  - ML In Production
+  - Modelling Pipelines
+  - Deploying ML Models
 
 ## Repository Structure
 
