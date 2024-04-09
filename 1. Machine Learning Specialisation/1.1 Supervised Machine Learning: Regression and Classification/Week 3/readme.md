@@ -219,3 +219,65 @@ Imagine a student who memorizes every word of their textbook for an exam. They m
 ### Recognizing Overfitting
 
 - **Huge Gap:** A vast difference between the performance on training data and validation/test data is a strong indicator of overfitting. The model is great at 'remembering' the training set, but bad at applying its knowledge to new scenarios.
+
+### How to Combat Overfitting
+
+1. **Regularization Techniques:**
+
+   - **L1 and L2 Regularization:** Add penalty terms to the cost function that discourage overly complex models.
+   - **Dropout:** Randomly drop neurons during training in neural networks, forcing them to generalize better.
+
+2. **Cross-Validation:** Divide your data into multiple folds. Train on some folds, validate on others, and rotate. This gives a better picture of how the model might perform on unseen data.
+
+3. **Early Stopping:** Monitor performance on a validation set while training. Stop training when validation error starts to increase, preventing overly long training sessions.
+
+4. **Data Augmentation:** Artificially create more training data variations (e.g., rotating images) to help the model learn more robust features.
+
+4; **Simpler Models:** If possible, sometimes using a less complex model (e.g., linear regression instead of a huge neural network) can prevent overfitting from the start.
+
+## Regularisation
+
+The core purpose of regularization is to prevent overfitting. Remember, overfitting is when a model becomes overly complex and super-tuned to the specifics of the training data. This leads to amazing performance on training data, but dismal performance on new, unseen data.
+
+### How Regularization Works
+
+The central idea is to introduce a penalty term to the cost function (the function a model tries to minimize during training). This penalty discourages the model from having overly large or complex coefficients (weights).
+
+### Key Techniques
+
+1. **L1 Regularization (Lasso Regression):**
+
+   - **How it Works:** Adds the absolute value of the coefficients (magnitude) to the cost function.
+   - **Effect:** Encourages many coefficients to become zero, essentially performing feature selection (picking only the most important features).
+
+2. **L2 Regularization (Ridge Regression):**
+
+   - **How it Works:** Adds the square of the coefficients (magnitude) to the cost function.
+   - **Effect:** Shrinks coefficients towards zero, but they won't become exactly zero. It tends to distribute importance across features.
+
+3. **Elastic Net Regularization:**
+   - **How it Works:** Combines the penalties of both L1 and L2.
+   - **Effect:** Balances feature selection with coefficient shrinkage.
+
+### Visual Analogy
+
+Imagine our model's parameters like dials on a control panel. Without regularization, the model can turn them all the way up to fit the training data perfectly. Regularization adds friction, making it harder to turn those dials to extreme settings.
+
+#### Hyperparameter: Regularization Strength
+
+Regularization is often controlled by a hyperparameter, usually called lambda (λ) or alpha (α).
+
+- **Large lambda:** Strong regularization, forcing the model to be simpler.
+- **Small lambda:** Weak regularization, allowing more complex models.
+
+### Benefits of Regularization
+
+- **Improved Generalization:** Regularized models are usually better at making predictions on new data.
+- **Feature Selection (L1):** Can help identify the most important features in your dataset.
+- **Handles Multicollinearity:** Can improve model performance when there are highly correlated features.
+
+### Choosing the Right Type
+
+- **L1:** If you suspect only a few features are truly important (sparse models).
+- **L2:** If all features might contribute slightly, but you want to prevent any single feature from being too dominant.
+- **Elastic Net:** Good when you want the benefits of feature selection with more evenly distributed weights.
