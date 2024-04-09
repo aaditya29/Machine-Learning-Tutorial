@@ -281,3 +281,40 @@ Regularization is often controlled by a hyperparameter, usually called lambda (Î
 - **L1:** If you suspect only a few features are truly important (sparse models).
 - **L2:** If all features might contribute slightly, but you want to prevent any single feature from being too dominant.
 - **Elastic Net:** Good when you want the benefits of feature selection with more evenly distributed weights.
+
+### Example
+
+#### Scenario: Building a House Price Prediction Model
+
+Imagine we have a dataset with:
+
+- **Features:** Square footage, number of bedrooms, zip code, age of the house, etc.
+- **Target: House price**
+
+#### Problem: Overfitting
+
+Without regularization, a complex model might learn that a house in zip code '12345' should always be worth $5000 more than average, simply because that pattern happened in the training data. This won't generalize well.
+
+#### Regularization in Action
+
+Let's apply L2 regularization (Ridge regression) to this problem:
+
+1. **Cost Function with Regularization:** Our original cost function (like mean squared error) is augmented with a penalty based on the squares of the model's coefficients (weights).
+
+2. **Effect:** During training, the optimization algorithm not only tries to minimize the prediction errors, but also tries to keep the weights small.
+
+#### Example Outcomes
+
+- **Without Regularization:** You might end up with huge, complex coefficients for some features. The model performs great on your training data but likely does poorly on new houses.
+
+- **With Regularization:** The coefficients for various features are shrunken. Features that have less true predictive power get smaller coefficients, reducing their dominance and preventing over-reliance on minor patterns in the training data.
+
+#### Practical Steps
+
+1. **Split Data:** Divide your data into training, validation, and testing sets.
+
+2. **Train with Different Regularization Strengths:** Train the same model (e.g., linear regression) with varying lambda values (the strength of regularization).
+
+3. **Evaluate on Validation Set:** Compare the performance of each model on the validation set. The model with the best validation performance likely has the optimal amount of regularization.
+
+4. **Final Assessment:** Once you've chosen the best regularization strength, evaluate your final model on the hold-out testing set to get an unbiased estimate of its real-world performance.
