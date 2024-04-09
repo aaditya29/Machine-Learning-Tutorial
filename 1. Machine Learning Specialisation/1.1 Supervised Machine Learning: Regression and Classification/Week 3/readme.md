@@ -197,3 +197,25 @@ New Bias = Old Bias - (Learning Rate _ Gradient)
 ```
 
 - **Learning Rate:** This is a hyperparameter that controls the size of our steps. Too large, and we might overshoot valleys; too small, and it takes ages to converge.
+
+## The Problem of Overfitting
+
+### What is Overfitting?
+
+- **Too Good to Be True:** An overfit model performs exceptionally well on the training data it's learned from, but fails to generalize well to new, unseen data.
+- **Memorization, Not Learning:** The model becomes overly complex and focuses too closely on the specific details and noise present in the training data instead of learning the underlying general patterns.
+
+### Analogy: The Perfectionist Student
+
+Imagine a student who memorizes every word of their textbook for an exam. They might ace the test questions from the book, but if the exam contains new, slightly different questions, their answers will likely be off the mark. The student has overfit to the textbook.
+
+### Causes of Overfitting
+
+- **Complex Models:** Models with many parameters (like deep neural networks) have the flexibility to learn super intricate patterns, making them prone to overfitting.
+- **Small Datasets:** Limited training data can prevent the model from getting a representative view of the real-world problem.
+- **Noise:** If the training data is messy with errors or outliers, the model may try to account for these anomalies instead of the broader trend.
+- **Prolonged Training:** Training a model for too long can lead to it getting hyper-focused on the training data's specifics.
+
+### Recognizing Overfitting
+
+- **Huge Gap:** A vast difference between the performance on training data and validation/test data is a strong indicator of overfitting. The model is great at 'remembering' the training set, but bad at applying its knowledge to new scenarios.
