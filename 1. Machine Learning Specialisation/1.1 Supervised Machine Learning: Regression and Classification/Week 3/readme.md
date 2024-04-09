@@ -179,3 +179,21 @@ $$
   &=  -\log\left(f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right)
 \end{align}
 $$
+
+## Gradient Descent for Logistic Regression
+
+1. **Cost Function:** We use the simplified cost function (log loss) explained earlier, as it works perfectly with gradient descent.
+
+2. **Calculating the Gradient:** The gradient involves taking partial derivatives of the cost function with respect to each weight and the bias in our model:
+
+`Gradient = [∂J/∂w1, ∂J/∂w2, ..., ∂J/∂b]`<br>
+Where J is the cost function, 'w's are the weights, and 'b' is the bias. The math behind this is a bit involved, but it essentially represents the direction of steepest increase of the cost.
+
+3. **Updating Parameters:** We adjust the weights and bias opposite the gradient:
+
+```
+New Weight = Old Weight - (Learning Rate _ Gradient)
+New Bias = Old Bias - (Learning Rate _ Gradient)
+```
+
+- **Learning Rate:** This is a hyperparameter that controls the size of our steps. Too large, and we might overshoot valleys; too small, and it takes ages to converge.
