@@ -17,3 +17,15 @@ Inspired by the structure of the brain, artificial neural networks (ANNs) are co
 - **Neurons (Nodes):** These are the processing units. They take inputs, multiply them by weights (which simulate the strength of a connection, similar to synapses), and apply an activation function to determine the neuron's output.
 - **Outputs:** These are the final results produced by the network (e.g., the classification of an image).
 - **Layers:** ANNs are often organized into layers. Information flows from input, through potentially many "hidden" layers, finally reaching the output layer.
+
+**Key Similarities**
+
+- **Interconnection:** Both systems are massively interconnected. Biological neurons form networks through synapses; artificial neurons connect in layers.
+- **Decision-Making:** Biological neurons "fire" or don't based on the signals they receive. Artificial neurons have activation functions (like sigmoid or ReLU) that decide whether to strongly pass on a signal or not.
+- **Learning:** Both systems adapt. Biological neural networks change through synaptic plasticity (strengthening or weakening connections); artificial neural networks change through adjusting weights during training.
+
+**Key Differences**
+
+- **Complexity:** The human brain is vastly more complex than any ANN, with billions of neurons and trillions of connections. ANNs are highly simplified in comparison.
+- **Signal Type:** Biological neurons use electrical impulses and chemical neurotransmitters; ANNs primarily use numerical calculations.
+- **Hardware:** The brain is organic and biological; ANNs are (currently) simulations run on digital computers.
