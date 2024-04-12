@@ -39,3 +39,9 @@ Think of a neural network like a giant decision-making system with many layers. 
 3. **Excited Workers Shout:** Each worker does a little calculation and, if excited enough, yells their opinion to the workers in the next layer.
 4. **Final Decision:** The last layer's workers combine their input, like a final vote, to create the neural network's output.
 5. **Learning:** If the output is wrong, all the workers are told to adjust their opinion weights slightly (backpropagation), so hopefully, they make a better decision next time.
+
+**Key Points of the Analogy**
+
+- **Simplified Model:** Artificial neurons are vastly simplified versions of biological neurons. They capture the basic idea of input, processing, and output but ignore many biological complexities.
+- **Connectivity:** The power of both biological and artificial neural networks comes from their interconnectedness. A single neuron means little, but a network creates complex decision-making abilities.
+- **Learning Mechanism:** The brain changes through synaptic plasticity; artificial neural networks learn by adjusting the weights between artificial neurons.
