@@ -94,3 +94,28 @@ Let's introduce standard notations to describe the elements within layers:
    - **Calculations:**
      - `z^(2)_1 = w^(2)_{11} _ a^(1)*1 + w^(2)*{12} _ a^(1)_2 + ... + b^(2)_1`
      - `a^(2)_1 = g(z^(2)_1)` (This might be the final output)
+
+### Forward Propagation Example w.r.t. Notations(Basic)
+
+#### What is Forward Propagation?
+
+In a neural network, forward propagation is the process of calculating the output of the network, given an input. It involves data flowing in one direction: from the input layer, through the hidden layers, and finally to the output layer.
+
+**Steps Involved**<br>
+
+Here's a step-by-step explanation:
+
+1.  **Input Data:** The process starts by feeding an input data point (e.g., an image, a sentence, etc.) into the input layer.
+
+2.  **Weighted Sum (Pre-activation):** For each neuron in the first hidden layer:
+
+    - Multiply each input feature by its corresponding weight.
+    - Sum up all the weighted inputs.
+    - Add a bias term.
+    - This result is called the pre-activation value (`z`).
+
+3.  **Activation Function:** The pre-activation value (`z`) is passed through a non-linear activation function (e.g., sigmoid, ReLU, tanh). This function introduces non-linearity and allows the network to learn complex patterns. The output of the activation function is the neuron's final output (`a`).
+
+4.  **Subsequent Hidden Layers:** The outputs of neurons in the previous layer become the inputs to the next hidden layer. Steps 2 and 3 are repeated within each hidden layer.
+
+5.  **Output Layer:** The final hidden layer feeds into the output layer. The calculations are similar, but the output layer may use a different activation function depending on the task (e.g., softmax for classification, linear for regression).
