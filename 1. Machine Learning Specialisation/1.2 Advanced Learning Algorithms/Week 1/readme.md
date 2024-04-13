@@ -45,3 +45,37 @@ Think of a neural network like a giant decision-making system with many layers. 
 - **Simplified Model:** Artificial neurons are vastly simplified versions of biological neurons. They capture the basic idea of input, processing, and output but ignore many biological complexities.
 - **Connectivity:** The power of both biological and artificial neural networks comes from their interconnectedness. A single neuron means little, but a network creates complex decision-making abilities.
 - **Learning Mechanism:** The brain changes through synaptic plasticity; artificial neural networks learn by adjusting the weights between artificial neurons.
+
+## Neural Network Model
+
+### Neural Networks: The Basics
+
+- **Artificial Neurons:** Neural networks are inspired by the biological brain. The fundamental building block is an artificial neuron, a mathematical unit that processes inputs and produces an output.
+- **Layers:** Artificial neurons are organized into layers:
+  - **Input Layer:** Receives the raw data (features) for the problem.
+  - **Hidden Layers:** The heart of the network, performing calculations and transformations on the data, learning complex patterns. There can be one or many hidden layers.
+  - **Output Layer:** Produces the final prediction or classification.
+
+### Notations
+
+Let's introduce standard notations to describe the elements within layers:
+
+- **Inputs:**
+
+  - `x_i`: The ith input feature of a single data sample.
+  - `X`: Often a vector or matrix representing multiple input features
+
+- **Weights:**
+
+  - `w^(l)_{ij}`: The weight connecting the jth neuron in layer l-1 to the ith neuron in layer l.
+  - `W^(l)`: The matrix of all weights connecting layer l-1 to layer l.
+
+- **Biases:**
+
+  - `b^(l)_i`: The bias associated with the ith neuron in layer l.
+  - `b^(l)`: The vector of biases for layer l.
+
+- **Activations:**
+
+  - `z^(l)_i`: The weighted sum of inputs and bias for the ith neuron in layer l, before applying the activation function.
+  - `a^(l)_i`: The output of the ith neuron in layer l after applying the activation function.
