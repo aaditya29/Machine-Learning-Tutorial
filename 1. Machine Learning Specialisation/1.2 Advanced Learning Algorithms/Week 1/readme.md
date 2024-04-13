@@ -79,3 +79,18 @@ Let's introduce standard notations to describe the elements within layers:
 
   - `z^(l)_i`: The weighted sum of inputs and bias for the ith neuron in layer l, before applying the activation function.
   - `a^(l)_i`: The output of the ith neuron in layer l after applying the activation function.
+
+### A Simple Example: Two-Layer Network
+
+1. **Layer 1: (Hidden Layer)**
+
+   - **Calculations:**
+     - `z^(1)_1 = w^(1)_{11} _ x*1 + w^(1)*{12} _ x_2 + ... + b^(1)_1`
+     - `a^(1)\_1 = g(z^(1)_1)` (where `g` is an activation function like ReLU or sigmoid)
+       ... (Similar for other neurons in the hidden layer)
+
+2. **Layer 2: (Output Layer)**
+
+   - **Calculations:**
+     - `z^(2)_1 = w^(2)_{11} _ a^(1)*1 + w^(2)*{12} _ a^(1)_2 + ... + b^(2)_1`
+     - `a^(2)_1 = g(z^(2)_1)` (This might be the final output)
