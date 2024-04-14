@@ -18,5 +18,6 @@ model = ([
 
 ```Python
 from tensorflow.keras.losses import BinaryCrossentropy
-
+model.compile(loss = BinaryCrossentropy)
+model.fit(X,Y, epochs=100)
 ```
