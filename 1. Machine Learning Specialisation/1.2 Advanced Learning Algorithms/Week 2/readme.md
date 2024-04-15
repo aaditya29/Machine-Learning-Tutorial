@@ -53,3 +53,33 @@ The Rectified Linear Unit is one of the most popular activation functions. It's 
 - If the input (x) is negative, ReLU outputs 0.
 - If the input (x) is positive, ReLU outputs the input directly (x).
 - **Mathematical Expression:** `ReLU(x) = max(0, x)`
+
+### Why is ReLU so Popular?
+
+- **Computationally Efficient:** ReLU is very simple to calculate, making training of neural networks faster.
+- **Helps with Vanishing Gradients:** Traditional activation functions like sigmoid and tanh can suffer from "vanishing gradients" during training, especially in deep networks. This means updates to the network's weights become very small, hindering learning. ReLU's gradient is either 0 or 1, mitigating this problem.
+- **Sparsity:** ReLU can output true zeros, leading to a sparse network representation. This can sometimes provide a degree of computational efficiency.
+
+### Choosing Activation Functions
+
+1. **Problem Type:**
+
+   - **Regression:** Linear activation functions are often suitable for the output layer in regression problems.
+   - **Classification:**
+     - Binary Classification: Sigmoid (output layer).
+     - Multi-class Classification: Softmax (output layer).
+     - Complex Patterns: ReLU and its variants are popular for hidden layers for learning deeper and more intricate representations.
+
+### Common Practices
+
+- **Hidden Layers:**
+
+  - **Start with ReLU:** It's generally an excellent first choice due to its mitigation of vanishing gradients.
+  - **For Sparsity:** If sparse representations are desired, ReLU can aid in this.
+  - **Addressing Dying ReLU:** Experiment with leaky ReLU or PReLU if you encounter the dying ReLU problem.
+
+- **Output Layers:**
+
+  - **Regression:** Often linear (no activation) for unconstrained output.
+  - **Binary Classification:** Sigmoid (values between 0 and 1, like probabilities).
+  - **Multi-Class Classification:** Softmax (produces probabilities for each class).
