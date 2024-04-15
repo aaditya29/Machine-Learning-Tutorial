@@ -83,3 +83,17 @@ The Rectified Linear Unit is one of the most popular activation functions. It's 
   - **Regression:** Often linear (no activation) for unconstrained output.
   - **Binary Classification:** Sigmoid (values between 0 and 1, like probabilities).
   - **Multi-Class Classification:** Softmax (produces probabilities for each class).
+
+**For Example:**<br>
+
+```Python
+from tensorflow.keras.layers import Dense
+
+model = ([
+    #creates the first Dense layer with 25, 15 and 1 neurons
+    #with relu and sigmoid activations
+    Dense(units = 25, activation = 'relu'),
+    Dense(units = 15, activation = 'relu'),
+    Dense(units = 1, activation = 'sigmoid'),
+    ])
+```
