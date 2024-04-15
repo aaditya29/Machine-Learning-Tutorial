@@ -39,3 +39,17 @@ epochs=100: The model will train for 100 epochs.
 """
 model.fit(X,Y, epochs=100)
 ```
+
+## Activation Functions
+
+### What is an Activation Function?
+
+In artificial neural networks, an activation function determines the output of a neuron. It introduces non-linearity, allowing the network to learn complex patterns in data.
+
+### What is ReLU?
+
+The Rectified Linear Unit is one of the most popular activation functions. It's incredibly simple:
+
+- If the input (x) is negative, ReLU outputs 0.
+- If the input (x) is positive, ReLU outputs the input directly (x).
+- **Mathematical Expression:** `ReLU(x) = max(0, x)`
