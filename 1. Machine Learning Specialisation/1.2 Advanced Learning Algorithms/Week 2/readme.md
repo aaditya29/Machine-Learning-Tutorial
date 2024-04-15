@@ -4,6 +4,8 @@
 
 ### Training a Network in TensorFlow
 
+1. **Create The Model**
+
 ```Python
 import tensorflow as tf
 #importing the Sequential model type from the Keras library
@@ -21,6 +23,8 @@ model = ([
     Dense(units = 1, activation = 'sigmoid'),
     ])
 ```
+
+2. Loss And Cost Functions
 
 ```Python
 #This line specifically imports the BinaryCrossentropy loss function from the tensorflow.keras.losses module.
