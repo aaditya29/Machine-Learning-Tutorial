@@ -24,7 +24,7 @@ model = ([
     ])
 ```
 
-2. Loss And Cost Functions
+2. **Loss And Cost Functions**
 
 ```Python
 #This line specifically imports the BinaryCrossentropy loss function from the tensorflow.keras.losses module.
