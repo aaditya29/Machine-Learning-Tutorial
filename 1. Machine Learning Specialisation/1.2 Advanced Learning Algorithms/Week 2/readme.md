@@ -97,3 +97,13 @@ model = ([
     Dense(units = 1, activation = 'sigmoid'),
     ])
 ```
+
+### Need Of Activation Functions
+
+Activation functions are a critical component in neural networks because they introduce non-linearity. This is essential for a few reasons:
+
+- **Complex learning:** Without activation functions, a neural network would simply be a stack of linear regression models. This limits the network's ability to learn complex relationships between inputs and outputs, which is what makes neural networks so powerful for tasks like image recognition and speech translation.
+
+- **Real-world data:** Real-world data often has non-linear relationships. For example, as the temperature increases, the number of ice creams sold might not increase at a constant rate, but rather accelerate at a certain point. Activation functions allow neural networks to capture these non-linear patterns.
+
+- **Learning from errors:** During training, neural networks adjust their internal weights based on the difference between their predictions and the actual outputs. Activation functions help ensure these adjustments can propagate backward through the network (backpropagation) efficiently, allowing the network to learn from its mistakes.
