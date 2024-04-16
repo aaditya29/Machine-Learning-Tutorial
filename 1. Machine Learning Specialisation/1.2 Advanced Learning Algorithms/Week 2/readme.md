@@ -133,7 +133,7 @@ In this formula:
 
 ### Benefits of Softmax in Multiclass Classification:
 
-- **Interpretability:**Softmax converts raw scores into probabilities, making the model's predictions more interpretable.
+- **Interpretability:** Softmax converts raw scores into probabilities, making the model's predictions more interpretable.
 
 - **Training Objective:** Softmax is often used in conjunction with the cross-entropy loss function, which is suitable for training models in multiclass classification tasks.
 
