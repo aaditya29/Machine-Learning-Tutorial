@@ -111,3 +111,22 @@ Activation functions are a critical component in neural networks because they in
 ## Softmax Regression
 
 Softmax is a mathematical function often used in multiclass classification tasks to convert a vector of raw scores (also called logits) into a probability distribution. It is particularly useful when you want to model the probabilities of each class as an output of a neural network or a machine learning model.
+
+### Understanding Softmax Function:
+
+1. **Input to Softmax:**
+   Suppose you have a vector of raw scores or logits $z = (z_1, z_2, z_3,..,z_n)$ where $z_i$ is the score/logit corresponding to class $i.$ These logits can be the output of the last layer of a neural network before applying the softmax.
+
+2. **Softmax Calculation:**
+   Softmax function computes the probability $p_i$ for each class $i$ as follows: $\text{Probability of class } i = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}$
+
+In this formula:
+
+- $z_i$ represents the score or output for class $i$
+- $e$ is the base of the natural logarithm (Euler's number),
+- **K** is the total number of classes.
+
+3. **Interpretations:**
+
+- The softmax function ensures that each output $p_i$ (probability of class $i$) is between 0 and 1.
+- The denominator of $\frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}$ normalizes the scores, turning them into probabilities that sum up to 1.
