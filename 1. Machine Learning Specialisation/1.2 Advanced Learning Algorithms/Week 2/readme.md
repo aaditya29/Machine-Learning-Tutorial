@@ -107,3 +107,7 @@ Activation functions are a critical component in neural networks because they in
 - **Real-world data:** Real-world data often has non-linear relationships. For example, as the temperature increases, the number of ice creams sold might not increase at a constant rate, but rather accelerate at a certain point. Activation functions allow neural networks to capture these non-linear patterns.
 
 - **Learning from errors:** During training, neural networks adjust their internal weights based on the difference between their predictions and the actual outputs. Activation functions help ensure these adjustments can propagate backward through the network (backpropagation) efficiently, allowing the network to learn from its mistakes.
+
+## Softmax Regression
+
+Softmax is a mathematical function often used in multiclass classification tasks to convert a vector of raw scores (also called logits) into a probability distribution. It is particularly useful when you want to model the probabilities of each class as an output of a neural network or a machine learning model.
