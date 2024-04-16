@@ -130,3 +130,9 @@ In this formula:
 
 - The softmax function ensures that each output $p_i$ (probability of class $i$) is between 0 and 1.
 - The denominator of $\frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}$ normalizes the scores, turning them into probabilities that sum up to 1.
+
+### Benefits of Softmax in Multiclass Classification:
+
+- **Interpretability:**Softmax converts raw scores into probabilities, making the model's predictions more interpretable.
+
+- **Training Objective:** Softmax is often used in conjunction with the cross-entropy loss function, which is suitable for training models in multiclass classification tasks.
