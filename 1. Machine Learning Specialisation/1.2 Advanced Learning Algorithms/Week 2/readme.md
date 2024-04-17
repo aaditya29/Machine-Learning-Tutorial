@@ -169,8 +169,9 @@ In a neural network for multi-class classification using softmax:
 2. **Loss Calculation:**
 
 Typically, the loss function used with softmax output is the categorical cross-entropy loss. This loss measures the difference between the predicted probability distribution and the actual distribution (one-hot encoded vector representing the true class).<br>
-The loss function is defined as:
-$-{\sum_{i=1}^{K}y_i \log(\hat{y}_i)}$
+The loss function is defined as:<br>
+
+$\text{Loss} = -\sum_{i=1}^K y_i \log(\hat{y}_i)$
 
 $Where$
 
