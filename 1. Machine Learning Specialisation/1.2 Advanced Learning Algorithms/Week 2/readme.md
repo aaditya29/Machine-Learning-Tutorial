@@ -176,3 +176,8 @@ $Where$
 
 - y is the true distribution (one-hot encoded vector of the actual class).
 - $\hat{y}$ the predicted distribution (output of the softmax layer).
+
+3. **Backpropagation and Optimization:**
+
+- After computing the loss, the network adjusts its weights and biases using backpropagation and an optimization algorithm (like stochastic gradient descent) to minimize the loss function.
+- Backpropagation involves calculating the gradients of the loss function with respect to each parameter in the network and updating the parameters in the direction that reduces the loss.
