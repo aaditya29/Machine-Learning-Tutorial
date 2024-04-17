@@ -118,7 +118,7 @@ Softmax is a mathematical function often used in multiclass classification tasks
    Suppose you have a vector of raw scores or logits $z = (z_1, z_2, z_3,..,z_n)$ where $z_i$ is the score/logit corresponding to class $i.$ These logits can be the output of the last layer of a neural network before applying the softmax.
 
 2. **Softmax Calculation:**
-   Softmax function computes the probability $p_i$ for each class $i$ as follows: $\text{Probability of class } i = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}$
+   Softmax function computes the probability $p_i$ for each class $i$ as follows:<br> $$\text{Probability of class } i = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}$$
 
 In this formula:
 
@@ -211,3 +211,11 @@ model.compile(loss = SparseCategoricalCrossentropy())
 ```Python
 model.fit(X,Y, epochs=100)
 ```
+
+### Improved Implementation of Softmax
+
+The improved softmax implementation involves a couple of numerical stability tricks to handle large or very small numbers during computation. The key idea is to shift the values within the softmax function to prevent overflow or underflow.
+
+#### Numerical Stability Tricks:
+
+1. **Log-sum-exp Trick:** This technique helps prevent overflow issues when computing exponentials of large numbers. Instead of directly computing softmax as described above, we can use the following formula:
