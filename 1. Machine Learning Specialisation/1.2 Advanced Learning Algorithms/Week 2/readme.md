@@ -181,3 +181,32 @@ $Where$
 
 - After computing the loss, the network adjusts its weights and biases using backpropagation and an optimization algorithm (like stochastic gradient descent) to minimize the loss function.
 - Backpropagation involves calculating the gradients of the loss function with respect to each parameter in the network and updating the parameters in the direction that reduces the loss.
+
+#### MNIST With Softmax
+
+1. **Specify the Model**
+
+```Python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+
+model = ([
+    Dense(units = 25, activation = 'relu'),
+    Dense(units = 15, activation = 'relu'),
+    Dense(units = 10, activation = 'softmax'),
+    ])
+```
+
+2. **Specify Loss and Cost**
+
+```Python
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+model.compile(loss = SparseCategoricalCrossentropy())
+```
+
+3. **Train on Data**
+
+```Python
+model.fit(X,Y, epochs=100)
+```
