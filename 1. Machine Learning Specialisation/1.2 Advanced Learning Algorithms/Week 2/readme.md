@@ -219,3 +219,5 @@ The improved softmax implementation involves a couple of numerical stability tri
 #### Numerical Stability Tricks:
 
 1. **Log-sum-exp Trick:** This technique helps prevent overflow issues when computing exponentials of large numbers. Instead of directly computing softmax as described above, we can use the following formula:
+
+$\text{Softmax(z)}_i = \frac{e^{z_i-max(z)}}{\sum_{j=1}^{K} e^{z_j-max(z)}}$
