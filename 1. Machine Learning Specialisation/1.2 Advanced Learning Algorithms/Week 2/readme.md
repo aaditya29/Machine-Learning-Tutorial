@@ -155,3 +155,24 @@ $$\text{Probability of Red } = \frac{e^{NumberOfRedMarbles}}{e^{NumberOfRedMarbl
 4. **Getting the Results:** After we use softmax, we get the probabilities for each color. This tells us which color (or type of thing) is the most likely for each item.
 
 Hence, softmax is like a magical way to turn counts of marbles (or things) into nice, understandable probabilities.
+
+### Neural Network with Softmax Output:
+
+In a neural network for multi-class classification using softmax:
+
+1. **Forward Propagation:**
+
+- The input data is propagated through the network from the input layer, through the hidden layers, to the output layer.
+- Each node in the network applies a linear transformation (weighted sum of inputs) followed by a non-linear activation function (like ReLU, sigmoid, etc., in hidden layers).
+- The output layer uses the softmax activation function to produce a probability distribution across all classes. The output of the softmax layer represents the predicted probabilities for each class.
+
+2. **Loss Calculation:**
+
+Typically, the loss function used with softmax output is the categorical cross-entropy loss. This loss measures the difference between the predicted probability distribution and the actual distribution (one-hot encoded vector representing the true class).<br>
+The loss function is defined as:
+$-{\sum_{i=1}^{K}y_i \log(\hat{y}_i)}$
+
+$Where$
+
+- y is the true distribution (one-hot encoded vector of the actual class).
+- $\hat{y}$ the predicted distribution (output of the softmax layer).
