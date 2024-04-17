@@ -221,3 +221,45 @@ The improved softmax implementation involves a couple of numerical stability tri
 1. **Log-sum-exp Trick:** This technique helps prevent overflow issues when computing exponentials of large numbers. Instead of directly computing softmax as described above, we can use the following formula:
 
 $\text{Softmax(z)}_i = \frac{e^{z_i-max(z)}}{\sum_{j=1}^{K} e^{z_j-max(z)}}$
+
+Here, $max(z)$ is the maximum value in the vector $z$. Subtracting #max(z)$ fromm each element of $z$ ensures that the largest exponentiated value is 0 or negative, which helps prevent overflow.
+
+2. **Numerical Stability:**
+
+By subtracting the maximum value from each element of $z$ before computing the softmax, the range of values is normalized and scaled down. This prevents very large exponential values, which can cause numerical instability.
+
+#### Implementation
+
+- **Model:**
+
+```Python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+
+model = ([
+    Dense(units = 25, activation = 'relu'),
+    Dense(units = 15, activation = 'relu'),
+    Dense(units = 10, activation = 'linear'),
+    ])
+```
+
+- **Loss:**
+
+```Python
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+model.compile(..., loss = SparseCategoricalCrossentropy(from_logits = True))
+```
+
+- **Fit:**
+
+```Python
+model.fit(X,y, epochs=100)
+```
+
+- **Predicts:**
+
+```Python
+logits = model(X)
+f_x = tf.nn.softmax(logits)
+```
