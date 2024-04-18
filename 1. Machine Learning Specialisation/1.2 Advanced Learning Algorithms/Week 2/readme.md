@@ -263,3 +263,5 @@ model.fit(X,y, epochs=100)
 logits = model(X)
 f_x = tf.nn.softmax(logits)
 ```
+
+## Additional Neural Network Concepts
