@@ -265,3 +265,5 @@ f_x = tf.nn.softmax(logits)
 ```
 
 ## Additional Neural Network Concepts
+
+The Adam (Adaptive Moment Estimation) algorithm is a popular optimization algorithm used for training deep learning models. It combines ideas from two other optimization techniques: AdaGrad and RMSprop. Adam is well-suited for training deep neural networks and has become widely adopted due to its efficiency and effectiveness in a wide range of applications.<br>
