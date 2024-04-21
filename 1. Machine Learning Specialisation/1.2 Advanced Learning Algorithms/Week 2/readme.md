@@ -339,3 +339,15 @@ The Adam (Adaptive Moment Estimation) algorithm is a popular optimization algori
 - **Efficient:** Adam dynamically adapts the learning rates for each parameter based on the first and second moments of the gradients.
 - **Effective in Practice:** Adam performs well on a wide range of deep learning tasks and is relatively easy to use with default parameters.
 - **Combines Momentum and RMSprop:** Adam combines the benefits of momentum (smooths the optimization trajectory) and RMSprop (handles sparse gradients and varying scales of parameters).
+
+## Basics of Convolutional Neural Networks (CNNs)
+
+Convolutional neural networks (CNNs) are a class of deep neural networks that are particularly effective for tasks like image recognition, object detection, and other tasks involving grid-like data. They are inspired by the organization of the animal visual cortex, with neurons arranged in receptive fields, responding to stimuli in overlapping regions of visual fields.<br>
+
+**Here are the key concepts behind CNNs:**
+
+1. **Convolutional Layers:**
+
+- The fundamental building block of a CNN is the convolutional layer. This layer applies convolution operations to the input, typically an image or a feature map from a previous layer.
+- Convolution involves sliding a small matrix (kernel or filter) over the input data, multiplying the overlapping input values with the values in the kernel, and summing them up to produce an output feature map.
+- Convolutional layers learn to detect various features like edges, textures, or more complex patterns through these convolution operations.
