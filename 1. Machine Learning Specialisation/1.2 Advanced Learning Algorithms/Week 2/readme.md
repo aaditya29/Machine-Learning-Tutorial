@@ -307,3 +307,19 @@ The Adam (Adaptive Moment Estimation) algorithm is a popular optimization algori
 
   $Where$<br>
   $\hat m_t$ is the bias-corrected first moment.
+
+- **Update the second moment:**
+
+  $\mathbf{v}_t = \beta_2 \mathbf{v}_{t-1} + (1 - \beta_2) (\mathbf{g}_t \odot \mathbf{g}_t)$
+
+  $Where$<br>
+  $β_2$ is the second moment decay rate (typically set between 0.9 and 0.999) and<br>
+  $⊙$ denotes element-wise multiplication.
+
+- **Correct bias in the second moment:**
+
+  $\hat{\mathbf{v}}_t = \frac{\mathbf{v}_t}{1 - \beta_2^t} + \epsilon$
+
+  $Where$<br>
+  $\hat v_t$ is the bias-corrected second moment and<br>
+  $ϵ$ is a small constant to prevent division by zero (typically set to 1e-8).
