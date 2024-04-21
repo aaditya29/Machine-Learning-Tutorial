@@ -267,3 +267,29 @@ f_x = tf.nn.softmax(logits)
 ## Additional Neural Network Concepts
 
 The Adam (Adaptive Moment Estimation) algorithm is a popular optimization algorithm used for training deep learning models. It combines ideas from two other optimization techniques: AdaGrad and RMSprop. Adam is well-suited for training deep neural networks and has become widely adopted due to its efficiency and effectiveness in a wide range of applications.<br>
+
+### Key Components of the Adam Algorithm
+
+1.  **Adaptive Learning Rates:**
+    Adam maintains a separate adaptive learning rate (step size) for each parameter. It computes individual adaptive learning rates for each parameter based on estimates of the first (mean) and second (uncentered variance) moments of the gradients.
+
+2.  **Exponential Moving Averages of Gradients:**
+    Adam keeps track of two moving averages of the gradients:
+
+- **First moment estimate (mean):** $m_t$ - Exponential moving average of gradients.
+- **Second moment estimate (uncentered variance):** $v_t$- Exponential moving average of squared gradients.
+
+3. **Initialization:**
+
+- Initialize the first moment vector $m_0$ and second moment vector $v_0$ to zero.
+- Both $m_t$ and $v_t$ are biased towards zero, especially during the initial time steps. To correct this bias, Adam uses bias-corrected estimates $\hat m_t$ and $\hat v_t$.
+
+4. **Algorithm Steps:**
+   For each iteration $t$:
+
+- **Calculate the gradient:**
+
+  $\mathbf{g}_t = \nabla f(\mathbf{\theta}_t)$
+
+  $Where$
+  $g_t$ is the gradient of the loss function $f$ with respect to the parameter vector $θ_t$ at the iteration $t$.
