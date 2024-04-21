@@ -291,5 +291,19 @@ The Adam (Adaptive Moment Estimation) algorithm is a popular optimization algori
 
   $\mathbf{g}_t = \nabla f(\mathbf{\theta}_t)$
 
-  $Where$
+  $Where$<br>
   $g_t$ is the gradient of the loss function $f$ with respect to the parameter vector $θ_t$ at the iteration $t$.
+
+- **Update the first moment:**
+
+  $\mathbf{m}_t = \beta_1 \mathbf{m}_{t-1} + (1 - \beta_1) \mathbf{g}_t$
+
+  $Where$<br>
+  $β_1$ is the first moment decay rate (typically set between 0.9 and 0.999).
+
+- **Correct bias in the first moment:**
+
+  $\hat{\mathbf{m}}_t = \frac{\mathbf{m}_t}{1 - \beta_1^t}$
+
+  $Where$<br>
+  $\hat m_t$ is the bias-corrected first moment.
