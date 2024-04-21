@@ -323,3 +323,13 @@ The Adam (Adaptive Moment Estimation) algorithm is a popular optimization algori
   $Where$<br>
   $\hat v_t$ is the bias-corrected second moment and<br>
   $ϵ$ is a small constant to prevent division by zero (typically set to 1e-8).
+
+- **Calculate the learning rate update:**
+
+- **Update the parameters:**
+
+  $\mathbf{\theta}_{t+1} = \mathbf{\theta}_t - \mathbf{\eta}_t \odot \hat{\mathbf{m}}_t$
+
+- **Increment iteration counter:**
+
+  $t \leftarrow t + 1$
