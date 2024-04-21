@@ -351,3 +351,26 @@ Convolutional neural networks (CNNs) are a class of deep neural networks that ar
 - The fundamental building block of a CNN is the convolutional layer. This layer applies convolution operations to the input, typically an image or a feature map from a previous layer.
 - Convolution involves sliding a small matrix (kernel or filter) over the input data, multiplying the overlapping input values with the values in the kernel, and summing them up to produce an output feature map.
 - Convolutional layers learn to detect various features like edges, textures, or more complex patterns through these convolution operations.
+
+2. **Filters and Feature Maps:**
+
+- Filters or kernels are the small matrices that perform the convolution operation. Each filter detects specific features like edges, curves, or textures.
+- The output of applying a filter across the entire input image is called a feature map. Multiple filters applied in parallel produce multiple feature maps.
+
+3. **Activation Functions:**
+   Typically, convolutional layers include an activation function like ReLU (Rectified Linear Unit) after the convolution operation. This introduces non-linearity into the network.
+
+4. **Pooling Layers:**
+
+- Pooling layers downsample the feature maps by summarizing a neighborhood of pixels into a single value. Max pooling is a common technique where the maximum value from a region of the feature map is selected.
+- Pooling helps in reducing the spatial dimensions of the feature maps, making the network more computationally efficient and reducing overfitting.
+
+5. **Fully Connected Layers:**
+
+- After several convolutional and pooling layers, the final feature maps are flattened into a vector and passed through one or more fully connected (dense) layers.
+- These layers perform the high-level reasoning on the features extracted by the convolutional layers to make predictions (e.g., image classification).
+
+6. **Training and Backpropagation:**
+
+- CNNs are trained using backpropagation with gradient descent optimization. The goal is to minimize a loss function (like cross-entropy for classification tasks) by adjusting the weights of the filters and fully connected layers.
+- During training, the network learns to automatically extract the most relevant features from the input data to perform the desired task.
