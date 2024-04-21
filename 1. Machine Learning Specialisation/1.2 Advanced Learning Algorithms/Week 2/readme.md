@@ -333,3 +333,9 @@ The Adam (Adaptive Moment Estimation) algorithm is a popular optimization algori
 - **Increment iteration counter:**
 
   $t \leftarrow t + 1$
+
+### Advantages of Adam Algorithm
+
+- **Efficient:** Adam dynamically adapts the learning rates for each parameter based on the first and second moments of the gradients.
+- **Effective in Practice:** Adam performs well on a wide range of deep learning tasks and is relatively easy to use with default parameters.
+- **Combines Momentum and RMSprop:** Adam combines the benefits of momentum (smooths the optimization trajectory) and RMSprop (handles sparse gradients and varying scales of parameters).
