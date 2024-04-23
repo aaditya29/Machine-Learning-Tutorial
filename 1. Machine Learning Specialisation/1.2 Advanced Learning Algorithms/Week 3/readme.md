@@ -78,3 +78,18 @@ The test set is a separate portion of your dataset that is not used during model
 
 - Keep the test set completely independent until the final evaluation.
 - Use the test set sparingly; it should only be used once to avoid bias in model assessment.
+
+## Diagnosing Bias and Variance
+
+Diagnosing bias and variance in machine learning is a fundamental concept that helps in understanding the performance of a learning algorithm and guides improvements to achieve better predictive models.
+
+Let's break down these concepts step by step:
+
+### 1. Understanding Bias and Variance:
+
+- **Bias (Underfitting):** Bias refers to the error introduced by approximating a real-world problem with a simplified model. A high bias model is overly simplistic and fails to capture the underlying patterns of the data. It often leads to underfitting, where the model is unable to learn the complexities of the data and performs poorly on both training and unseen data.
+- **Variance (Overfitting):** Variance refers to the model's sensitivity to small fluctuations in the training data. A high variance model fits the training data very well but fails to generalize to new, unseen data. This is known as overfitting, where the model learns noise from the training data rather than the actual signal, resulting in poor performance on new data.
+
+### 2. Bias-Variance Tradeoff:
+
+There's often a tradeoff between bias and variance. Increasing model complexity typically reduces bias but increases variance, and vice versa. The goal is to find the right balance where the model generalizes well to unseen data.
