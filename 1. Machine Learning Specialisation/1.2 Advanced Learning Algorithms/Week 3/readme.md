@@ -121,3 +121,39 @@ There's often a tradeoff between bias and variance. Increasing model complexity 
 ### 5. Cross-Validation:
 
 Cross-validation techniques like k-fold cross-validation can help in diagnosing bias and variance by providing estimates of both training and validation errors across multiple subsets of the data.
+
+## Regularization and Bias/Variance
+
+Regularization techniques add a penalty term to the model's loss function. The purpose of this penalty is to discourage the model from fitting the training data too closely, thus reducing variance. The type and strength of regularization also impact the model's bias.
+
+### Common Regularization Techniques:
+
+1. **L2 Regularization (Ridge Regression):**
+
+- **Effect on Bias:** L2 regularization adds a penalty proportional to the square of the magnitude of the coefficients (weights) to the loss function. This encourages smaller weights, which can reduce the complexity of the model.
+- **Effect on Variance:** By penalizing large weights, L2 regularization helps in reducing variance. It prevents the model from learning intricate details from the noise in the training data.
+
+2. **L1 Regularization (Lasso Regression):**
+
+- **Effect on Bias:** L1 regularization adds a penalty proportional to the absolute value of the coefficients to the loss function. This encourages sparsity in the model (i.e., some weights become exactly zero), which can lead to increased bias.
+- **Effect on Variance:** L1 regularization can also reduce variance by preventing the model from overfitting to noisy features. However, it tends to be more aggressive in feature selection compared to L2 regularization.
+
+### Impact on Bias-Variance Tradeoff:
+
+- **Increasing Regularization Strength:**
+
+  - As the regularization strength increases (e.g., by increasing the regularization parameter λ), the model's complexity decreases.
+  - **Effect on Bias:** Higher regularization typically leads to higher bias because the model becomes more simplified.
+  - **Effect on Variance:** Higher regularization reduces variance by discouraging complex models that fit the training data too closely.
+
+  ### Choosing the Right Regularization Strength:
+
+  The optimal regularization strength (λ) depends on the specific dataset and the complexity of the problem:
+
+  - **Too Low λ:** May lead to overfitting (high variance), especially with complex models.
+  - **Too High λ:** May lead to underfitting (high bias) as the model becomes too simplistic.
+
+  ### Practical Implementation:
+
+  - Cross-validation techniques are often used to tune the regularization parameter (λ) and find the optimal balance between bias and variance.
+  - Regularization is a crucial tool in model development to create models that generalize well to unseen data and are robust against overfitting.
