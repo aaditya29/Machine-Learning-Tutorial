@@ -103,3 +103,11 @@ Information gain measures the reduction in entropy (or increase in purity) achie
 - Higher information gain indicates that splitting the dataset based on the selected attribute $A$ results in more homogeneous (pure) child nodes compared to before the split.
 
 - The attribute $A$ with the highest information gain is chosen as the splitting criterion at a node in the decision tree because it maximally reduces the uncertainty (entropy) in the dataset.
+
+## Random Forest Algorithm
+
+The random forest algorithm is a powerful ensemble learning method used for both classification and regression tasks. It belongs to the family of tree-based ensemble methods and is particularly effective in improving the accuracy and robustness of predictive models.
+
+### What is Random Forest?
+
+Random Forest is an ensemble learning technique that combines multiple decision trees to create a more robust and accurate model. Instead of relying on a single decision tree, random forest leverages the wisdom of crowds by aggregating predictions from multiple individual trees.
