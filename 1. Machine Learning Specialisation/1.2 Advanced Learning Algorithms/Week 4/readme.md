@@ -49,3 +49,25 @@ In decision tree learning, purity refers to the homogeneity of the target variab
 ### Entropy
 
 Entropy is a concept used in decision tree algorithms as a measure of impurity or uncertainty within a dataset. In the context of decision trees for classification tasks, entropy is a way to quantify the randomness or disorder of the classes in a dataset. The goal of using entropy is to find splits in the data that result in subsets with the least amount of disorder, which leads to more homogeneous (pure) subsets.
+
+### Understanding Entropy:
+
+Entropy in the context of decision trees is based on information theory. It measures the average amount of information (or uncertainty) contained in each instance of the dataset.
+
+For a given dataset $S$ with $n$ instances belonging to different classes ${C_1, C_2, C_3, C_4, .., C_n}$, the $Entropy(S)$ is calculated as:
+
+$$
+\text{Entropy}(t) = -\sum_{i=1}^c p(i \mid t) \log_2(p(i \mid t))
+\$
+$$
+
+Where:
+
+- $c$ is the number of distinct classes.
+- $p_i$ is the proportion of instances belonging to class $C_i$ in dataset $S$.
+
+### Interpreting Entropy:
+
+- If a dataset $S$ is perfectly homogeneous (i.e., all instances belong to the same class), then entropy is $0$ because $p_i = 1$
+  ​for one class and $p_j=0$ for all other classes.
+- Higher entropy indicates higher disorder or uncertainty, meaning the classes are more mixed or evenly distributed among the instances.
