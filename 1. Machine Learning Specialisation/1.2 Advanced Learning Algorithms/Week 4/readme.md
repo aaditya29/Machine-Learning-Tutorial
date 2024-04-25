@@ -46,7 +46,7 @@ Once the tree is constructed, it can be used for prediction. To predict the targ
 
 In decision tree learning, purity refers to the homogeneity of the target variable within a subset of data. The goal is to create splits (or nodes) in the decision tree that maximize this homogeneity, leading to more accurate and reliable predictions. There are several common measures used to quantify the purity of a node in decision trees. The choice of purity measure depends on whether the task is classification or regression.
 
-### Entropy
+## Entropy
 
 Entropy is a concept used in decision tree algorithms as a measure of impurity or uncertainty within a dataset. In the context of decision trees for classification tasks, entropy is a way to quantify the randomness or disorder of the classes in a dataset. The goal of using entropy is to find splits in the data that result in subsets with the least amount of disorder, which leads to more homogeneous (pure) subsets.
 
@@ -71,3 +71,35 @@ Where:
 - If a dataset $S$ is perfectly homogeneous (i.e., all instances belong to the same class), then entropy is $0$ because $p_i = 1$
   ​for one class and $p_j=0$ for all other classes.
 - Higher entropy indicates higher disorder or uncertainty, meaning the classes are more mixed or evenly distributed among the instances.
+
+## Choosing a Split: Information Gain
+
+Information gain is a fundamental concept used in decision tree learning to quantify the effectiveness of a split in reducing uncertainty (or entropy) within a dataset. It helps in selecting the best attribute to split the data at each node of the decision tree, aiming to create more homogeneous (pure) child nodes.
+
+### Understanding Information Gain:
+
+Information gain measures the reduction in entropy (or increase in purity) achieved by splitting a dataset based on a particular attribute. The attribute that results in the highest information gain is chosen as the splitting criterion.
+
+### Steps to Calculate Information Gain:
+
+1. **Calculate Entropy before Splitting (Entropy(S)):**
+
+   Compute the entropy of the dataset $S$ before any split. Entropy measures the impurity or randomness in the dataset.
+
+2. **Split the Dataset based on an Attribute:**
+
+   Split the dataset $S$ into subsets based on the values of a selected attribute $A$. Let ${v_1, v_2,..,v_n}$ be the possible values of attribute $A$, and $Sv_j$ be the subset of $S$ where attribute $A$ takes the value $v_j$.
+
+3. **Calculate Entropy after Splitting $(Entropy Split(S, A))$.**
+
+4. **Calculate Information Gain:**
+
+   Finally, calculate the information gain $IG(S,A)$ for attribute $A$ as the difference between the entropy before splitting and the entropy after splitting:
+
+   $IG(S,A) = Entropy(S) - Entropy_{split}(S,A)$
+
+### Interpretation of Information Gain:
+
+- Higher information gain indicates that splitting the dataset based on the selected attribute $A$ results in more homogeneous (pure) child nodes compared to before the split.
+
+- The attribute $A$ with the highest information gain is chosen as the splitting criterion at a node in the decision tree because it maximally reduces the uncertainty (entropy) in the dataset.
