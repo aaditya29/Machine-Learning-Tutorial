@@ -41,3 +41,11 @@ After the tree is fully grown, it may be pruned to reduce overfitting. Pruning i
 7. **Prediction:**
 
 Once the tree is constructed, it can be used for prediction. To predict the target value for a new instance, you traverse the decision tree from the root node down to a leaf node based on the attribute values of the instance. The predicted target value is typically the majority class (for classification) or the mean value (for regression) of the training instances in the leaf node.
+
+## Measuring Purity in Decision Tree Learning
+
+In decision tree learning, purity refers to the homogeneity of the target variable within a subset of data. The goal is to create splits (or nodes) in the decision tree that maximize this homogeneity, leading to more accurate and reliable predictions. There are several common measures used to quantify the purity of a node in decision trees. The choice of purity measure depends on whether the task is classification or regression.
+
+### Entropy
+
+Entropy is a concept used in decision tree algorithms as a measure of impurity or uncertainty within a dataset. In the context of decision trees for classification tasks, entropy is a way to quantify the randomness or disorder of the classes in a dataset. The goal of using entropy is to find splits in the data that result in subsets with the least amount of disorder, which leads to more homogeneous (pure) subsets.
