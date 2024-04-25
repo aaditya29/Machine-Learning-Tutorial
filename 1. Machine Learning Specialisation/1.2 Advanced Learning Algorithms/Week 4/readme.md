@@ -111,3 +111,21 @@ The random forest algorithm is a powerful ensemble learning method used for both
 ### What is Random Forest?
 
 Random Forest is an ensemble learning technique that combines multiple decision trees to create a more robust and accurate model. Instead of relying on a single decision tree, random forest leverages the wisdom of crowds by aggregating predictions from multiple individual trees.
+
+### Key Concepts and Features of Random Forest:
+
+1. **Decision Trees as Base Learners:**
+
+   Random forest uses decision trees as its base learners. Each tree is trained independently on a random subset of the training data and a random subset of the features.
+
+2. **Bagging (Bootstrap Aggregating):**
+
+   Random forest employs a technique called bagging, where multiple trees are trained on different random samples (with replacement) drawn from the training dataset. This helps in reducing overfitting and improving the generalization of the model.
+
+3. **Random Feature Selection:**
+   In addition to training each tree on a random subset of the data, random forest also randomly selects a subset of features at each node of the tree. This introduces further randomness and diversity among the trees, which leads to more robust predictions.
+
+4. **Voting or Averaging for Predictions:**
+
+   For classification tasks, random forest aggregates the predictions of individual trees by using either a majority voting (for discrete classes) or averaging (for continuous predictions).<br>
+   For regression tasks, the predictions of individual trees are averaged to obtain the final prediction.
