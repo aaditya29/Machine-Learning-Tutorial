@@ -26,3 +26,42 @@
     - Randomly select a subset of features.
     - Build a decision tree using the selected samples and features. Repeat this process to grow multiple trees.
     - For prediction, aggregate the predictions of all trees (e.g., for classification, use majority voting; for regression, use averaging).
+
+## Implementing a Simple Cersion of The Random Forest algorithm in Python
+
+```Python
+# Import necessary libraries
+import numpy as np
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+# Step 1: Load the dataset
+iris = load_iris()
+X = iris.data #Contains the feature data (sepal length, sepal width, petal length, petal width)
+y = iris.target # Contains the target labels (0 for setosa, 1 for versicolor, 2 for virginica).
+
+# Step 2: Split the dataset into training and testing sets
+# Splits the dataset into 80% training data (X_train, y_train) and 20% testing data (X_test, y_test)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Step 3: Initialize the Random Forest classifier
+#creates a Random Forest classifier with 100 decision trees (n_estimators)
+#and sets the random seed for reproducibility (random_state=42).
+rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+
+# Step 4: Train the Random Forest classifier
+#Trains the Random Forest classifier on the training data (X_train, y_train)
+rf_classifier.fit(X_train, y_train)
+
+# Step 5: Make predictions on the test set
+# Uses the trained classifier to make predictions on the test data (X_test)
+y_pred = rf_classifier.predict(X_test)
+
+# Step 6: Evaluate the accuracy of the model
+#Compares the predicted labels (y_pred) with the actual labels (y_test) and calculates the accuracy
+accuracy = accuracy_score(y_test, y_pred)
+#Displays the accuracy of the Random Forest classifier on the test data, rounded to two decimal places
+print(f"Accuracy: {accuracy:.2f}")
+```
