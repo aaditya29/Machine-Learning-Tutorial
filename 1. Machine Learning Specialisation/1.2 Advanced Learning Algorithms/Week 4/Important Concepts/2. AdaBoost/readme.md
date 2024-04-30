@@ -12,3 +12,15 @@ Here are the key characteristics of decision stumps (or stumps) in Adaboost:
 2. **Binary Split:** The decision stump performs a binary split on a single feature of the dataset. It chooses a threshold value for this feature and classifies instances based on whether they fall above or below this threshold.
 3. **Simple Decision Rule:** Because of its shallow nature, a decision stump is a simple classifier that implements a basic decision rule. For example, it might classify instances based on whether a specific feature value is greater than or less than a certain threshold.
 4. **Efficiency:** Decision stumps are computationally efficient to train and use. They are quick to build and can be applied to large datasets without requiring extensive computational resources.
+
+### Advantages of Using Stumps in Adaboost:
+
+- **Efficiency:** Decision stumps are computationally efficient to train and use, making them suitable for boosting algorithms that require multiple iterations.
+- **Interpretability:** Decision stumps are easy to interpret because they make decisions based on a single feature, making it clear which feature is most informative for classification.
+- **Less Prone to Overfitting:** Decision stumps are simple models with low variance, which reduces the risk of overfitting especially when combined with boosting.
+
+## Three Main Ideas Behind AdaBoost
+
+1. **AdaBoost** combines a lot of _weak learners_ to make classifications. The weak learners are always aways stumps.
+2. Some stumps get more say in the classification than others.
+3. Each **stump** is made by taking the previous stump's mistake into account.
