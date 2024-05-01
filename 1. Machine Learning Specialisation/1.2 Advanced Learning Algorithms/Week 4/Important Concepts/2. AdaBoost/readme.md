@@ -50,3 +50,46 @@ Where $C$ is the number of classes.
 
 - **Splitting Criteria:** When building a decision tree, the Gini index is used to evaluate candidate splits. The goal is to find the split that minimizes the Gini impurity in the resulting child nodes.
 - **Node Impurity:** Decision trees recursively split nodes to maximize the reduction in Gini impurity at each step, aiming to partition the data into subsets that are increasingly homogeneous with respect to the target variable.
+
+### Building a Stump with GINI Index
+
+To build a decision stump (also known as a weak learner) using the Gini index as the criterion within the Adaboost algorithm, we can use the `DecisionTreeClassifier` from scikit-learn and specify the `criterion` parameter as `gini`. The decision stump will then be trained to minimize the Gini impurity when making splits on the data.
+
+#### 1. Import Required Libraries
+
+```Python
+from sklearn.tree import DecisionTreeClassifier
+```
+
+#### 2. Prepare Data
+
+We'll need to have our training data `X_train` (features) and `y_train` (labels) ready.
+
+#### 3. Initialize and Train the Decision Stump
+
+We use `DecisionTreeClassifier` to initialize a decision stump with the Gini index criterion. Setting `max_depth=1` to ensure that the stump only makes a single split.
+
+```Python
+# Initialize decision stump (weak learner) with Gini index
+stump = DecisionTreeClassifier(criterion='gini', max_depth=1, random_state=42)
+
+# Train the decision stump on the training data
+stump.fit(X_train, y_train)
+
+```
+
+#### 4. Interpret the Decision Stump
+
+After training, we can interpret the decision stump by examining its structure and the feature that it used for splitting.
+
+```Python
+# Print the feature importance of the decision stump
+feature_importance = stump.feature_importances_
+print("Feature Importance:", feature_importance)
+
+# Print the selected feature for splitting
+selected_feature_index = stump.tree_.feature[0]  # Assuming only one feature is used for splitting
+selected_feature_name = feature_names[selected_feature_index]  # Replace `feature_names` with your feature names
+print("Selected Feature for Splitting:", selected_feature_name)
+
+```
