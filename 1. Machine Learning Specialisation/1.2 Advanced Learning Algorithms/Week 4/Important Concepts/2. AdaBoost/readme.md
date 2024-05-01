@@ -164,3 +164,24 @@ $$\epsilon_t = \sum_{i=1}^{N} w_i^{(t)}.1$$
 
 $where$<br>
 $y_i$ is the true label of sample $i$, $h_t(x_i)$ is the prediction of $h_t$ for sample $i$, and $1$ is the indicator function.
+
+### 4. Compute Classifier Weight:
+
+Calculate the classifier weight $\alpha_t$ using the formula:<br>
+$\alpha_t = \frac{1}{2}\log\frac{1 - \epsilon_t}{\epsilon_t}$
+
+### 5. Update Sample Weights:
+
+Update the sample weights $w_i^{(t)}$ for the next iteration $t+1$ based on whether each sample was correctly or incorrectly classified by $h_t$:<br>
+$w_i^{(t+1)} = w_i^{(t)} . \exp((-\alpha_t. y_i.h_t(x_i))$
+
+$Where$<br>
+
+- $y$ is the true label of sample $i$ (either -1 or +1).
+- $h_t(x_i)$ is the prediction of $h_t$ for sample $i$ (either -1 or +1).
+- If $h_t(x_i) = y_i$ (correct prediction) , $\exp(\alpha_t)$ will decrease $w_i^{(t)}$ otherwisse $\exp(\alpha_t)$ will increase $w_i^{(t)}.$
+
+### 6. Normalize Sample Weights:
+
+Normalize the updated sample weights so that they sum up to 1:
+$w_i^{(t+1)} = \frac{w_i^{(t+1)}}{\sum_{j=1}^{N} w_j^{(t+1)}}$
