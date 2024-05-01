@@ -24,3 +24,19 @@ Here are the key characteristics of decision stumps (or stumps) in Adaboost:
 1. **AdaBoost** combines a lot of _weak learners_ to make classifications. The weak learners are always aways stumps.
 2. Some stumps get more say in the classification than others.
 3. Each **stump** is made by taking the previous stump's mistake into account.
+
+## Gini Index and AdaBoost
+
+The Gini index, or Gini impurity, is a measure of node impurity used in decision tree algorithms, including those used as weak learners within the Adaboost algorithm. It quantifies the likelihood of incorrectly classifying a randomly chosen element in a dataset if it were randomly labeled according to the distribution of labels in the node.
+
+### Gini Index Definition:
+
+For a node $t$ in a decision tree that contains samples $S$, let:
+
+- $p(i|t)$ be the proportion of samples in node $t4 that belong to class $i4 (where $i$ ranges over all classes).
+
+The Gini index $G(t)$ for node $t$ is calculated as:<br>
+
+$G(t) = 1- \sum_{i=1}^{C}[p(i|t)]^2$<br>
+
+Where $C$ is the number of classes.
