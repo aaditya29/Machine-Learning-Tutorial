@@ -93,3 +93,37 @@ selected_feature_name = feature_names[selected_feature_index]  # Replace `featur
 print("Selected Feature for Splitting:", selected_feature_name)
 
 ```
+
+#### Full Example
+
+```Python
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+
+# Generate synthetic data
+X, y = make_classification(n_samples=100, n_features=20, random_state=42)
+
+# Split data into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize decision stump (weak learner) with Gini index
+stump = DecisionTreeClassifier(criterion='gini', max_depth=1, random_state=42)
+
+# Train the decision stump on the training data
+stump.fit(X_train, y_train)
+
+# Evaluate the decision stump
+accuracy = stump.score(X_test, y_test)
+print("Decision Stump Accuracy:", accuracy)
+
+# Print the feature importance of the decision stump
+feature_importance = stump.feature_importances_
+print("Feature Importance:", feature_importance)
+
+# Print the selected feature for splitting
+selected_feature_index = stump.tree_.feature[0]
+selected_feature_name = f"Feature {selected_feature_index + 1}"
+print("Selected Feature for Splitting:", selected_feature_name)
+
+```
