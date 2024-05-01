@@ -155,3 +155,12 @@ Start by assigning equal weights to all training samples. The initial weight for
 For each iteration $t = 1, 2, ..., T$ where $T$ is the number of iterations or base learners):
 
 - Train a weak classifier $h_t{(x)}$ on the training data using the current sample weights $w^{(t)} = (w_1^{(t)}, w_2^{(t)}, ..., w_N^{(t)}).$
+
+### 3. Compute Weighted Error:
+
+Compute the weighted error $\epsilon_t$ of the weak classifier $h_t$ on the training set:
+
+$$\epsilon_t = \sum_{i=1}^{N} w_i^{(t)}.1$$
+
+$where$<br>
+$y_i$ is the true label of sample $i$, $h_t(x_i)$ is the prediction of $h_t$ for sample $i$, and $1$ is the indicator function.
