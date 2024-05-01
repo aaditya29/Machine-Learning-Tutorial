@@ -185,3 +185,46 @@ $Where$<br>
 
 Normalize the updated sample weights so that they sum up to 1:
 $w_i^{(t+1)} = \frac{w_i^{(t+1)}}{\sum_{j=1}^{N} w_j^{(t+1)}}$
+
+### Python Implementation
+
+```Python
+import numpy as np
+
+# Example update step
+def update_sample_weights(w_prev, alpha, y_true, y_pred):
+    """
+    Update sample weights based on AdaBoost algorithm.
+
+    Parameters:
+    - w_prev: Array of previous sample weights
+    - alpha: Weight of the weak classifier
+    - y_true: True labels of training samples
+    - y_pred: Predicted labels of training samples by the weak classifier
+
+    Returns:
+    - w_next: Updated sample weights for the next iteration
+    """
+    incorrect_mask = (y_true != y_pred)  # Mask of incorrectly classified samples
+    exponent = alpha * incorrect_mask  # Exponent for weight update
+
+    w_next = w_prev * np.exp(exponent)  # Update weights
+    w_next /= np.sum(w_next)  # Normalize weights
+
+    return w_next
+
+# Example usage:
+# Assuming alpha_t, y_true, y_pred, and w_prev are given
+w_next = update_sample_weights(w_prev, alpha_t, y_true, y_pred)
+
+```
+
+$Where$
+
+- `w_prev` is an array containing the sample weights from the previous iteration.
+- `alpha_t` is the weight of the current weak classifier $h_t$
+  ​
+- `y_true` is the true labels of the training samples.
+- `y_pred` is the predicted labels of the training samples by the weak classifier $h_t$.
+
+The `update_sample_weights` function updates the sample weights based on the AdaBoost algorithm's weight update formula, and then normalizes the weights to ensure they sum up to 1 for the next iteration.
