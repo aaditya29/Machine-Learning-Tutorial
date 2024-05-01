@@ -40,3 +40,13 @@ The Gini index $G(t)$ for node $t$ is calculated as:<br>
 $G(t) = 1- \sum_{i=1}^{C}[p(i|t)]^2$<br>
 
 Where $C$ is the number of classes.
+
+### Interpretation
+
+- $G(t) = 0$ when all samples in node $t$ belong to the same class, indicating perfect purity.
+- $G(t) = 1$ when the samples in node $t$ are evenly distributed across all classes, indicating maximum impurity.
+
+### How Gini Index is Used in Decision Trees (and Adaboost):
+
+- **Splitting Criteria:** When building a decision tree, the Gini index is used to evaluate candidate splits. The goal is to find the split that minimizes the Gini impurity in the resulting child nodes.
+- **Node Impurity:** Decision trees recursively split nodes to maximize the reduction in Gini impurity at each step, aiming to partition the data into subsets that are increasingly homogeneous with respect to the target variable.
