@@ -141,3 +141,17 @@ During the training of Adaboost:
 
 - **Simple and Efficient:** Gini index provides a straightforward measure of node impurity, making it computationally efficient for evaluating potential splits during decision tree training.
 - **Robustness**: Minimizing Gini impurity helps in creating decision stumps that focus on the most discriminative features, leading to effective weak learners in the boosting process.
+
+## Steps in AdaBoost
+
+Here's how the sample weights are updated in the AdaBoost algorithm step-by-step:
+
+### 1. Initialize Sample Weights:
+
+Start by assigning equal weights to all training samples. The initial weight for each sample $i$ is $w_i^{(1)} = \frac {1}{N}, $ where $N$ is the total number of training samples.
+
+### 2. Train Weak Learner:
+
+For each iteration $t = 1, 2, ..., T$ where $T$ is the number of iterations or base learners):
+
+- Train a weak classifier $h_t{(x)}$ on the training data using the current sample weights $w^{(t)} = (w_1^{(t)}, w_2^{(t)}, ..., w_N^{(t)}).$
