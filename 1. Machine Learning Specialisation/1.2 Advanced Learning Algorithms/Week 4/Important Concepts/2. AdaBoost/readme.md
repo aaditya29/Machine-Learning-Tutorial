@@ -127,3 +127,17 @@ selected_feature_name = f"Feature {selected_feature_index + 1}"
 print("Selected Feature for Splitting:", selected_feature_name)
 
 ```
+
+### Role of Gini Index in Adaboost with Decision Stumps:
+
+In Adaboost, decision stumps (shallow decision trees with a single split) are commonly used as weak learners. Each decision stump is trained to minimize the Gini impurity when making a split on a selected feature, with the objective of capturing the most informative split to improve classification performance.
+
+During the training of Adaboost:
+
+- Each iteration focuses on training a new decision stump that minimizes the weighted error (misclassification rate) based on the current distribution of sample weights.
+- The decision stump's ability to make effective splits (minimizing Gini impurity) on the training data contributes to the overall performance improvement of the Adaboost ensemble.
+
+### Advantages of Gini Index in Adaboost:
+
+- **Simple and Efficient:** Gini index provides a straightforward measure of node impurity, making it computationally efficient for evaluating potential splits during decision tree training.
+- **Robustness**: Minimizing Gini impurity helps in creating decision stumps that focus on the most discriminative features, leading to effective weak learners in the boosting process.
