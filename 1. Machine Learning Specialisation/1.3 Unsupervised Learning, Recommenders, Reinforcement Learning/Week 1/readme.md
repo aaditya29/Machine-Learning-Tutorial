@@ -61,3 +61,72 @@ Here's a step-by-step breakdown of the intuition behind K-means clustering:
 #### 6. Convergence:
 
 - K-means typically converges to a local minimum of the objective function. However, the final clustering result can be sensitive to the initial choice of centroids.
+
+### Basic Omplementation of The K-Means Clustering Algorithm in Python:
+
+```Python
+import numpy as np
+
+def euclidean_distance(x1, x2):
+    """
+    Calculates the Euclidean distance between two data points.
+    """
+    return np.sqrt(np.sum((x1 - x2) ** 2))
+
+class KMeans:
+    def __init__(self, n_clusters=8, max_iter=300, random_state=None):
+        self.n_clusters = n_clusters
+        self.max_iter = max_iter
+        self.random_state = random_state
+
+    def initialize_centroids(self, X):
+        """
+        Initializes the centroids randomly from the data points.
+        """
+        np.random.seed(self.random_state)
+        centroids = X[np.random.choice(X.shape[0], self.n_clusters, replace=False)]
+        return centroids
+
+    def compute_centroids(self, X, labels):
+        """
+        Computes the new centroids based on the mean of the data points in each cluster.
+        """
+        centroids = np.zeros((self.n_clusters, X.shape[1]))
+        for k in range(self.n_clusters):
+            centroids[k] = np.mean(X[labels == k], axis=0)
+        return centroids
+
+    def fit(self, X):
+        """
+        Fits the K-Means algorithm to the data.
+        """
+        centroids = self.initialize_centroids(X)
+        prev_centroids = None
+        labels = np.zeros(X.shape[0])
+        iter_count = 0
+
+        while np.not_equal(centroids, prev_centroids).any() and iter_count < self.max_iter:
+            iter_count += 1
+            prev_centroids = centroids.copy()
+
+            # Assign data points to the closest centroid
+            for i, x in enumerate(X):
+                distances = [euclidean_distance(x, centroid) for centroid in centroids]
+                labels[i] = np.argmin(distances)
+
+            # Update centroids
+            centroids = self.compute_centroids(X, labels)
+
+        self.centroids = centroids
+        self.labels = labels
+
+    def predict(self, X):
+        """
+        Predicts the cluster labels for new data points.
+        """
+        labels = np.zeros(X.shape[0])
+        for i, x in enumerate(X):
+            distances = [euclidean_distance(x, centroid) for centroid in self.centroids]
+            labels[i] = np.argmin(distances)
+        return labels
+```
