@@ -62,7 +62,7 @@ Here's a step-by-step breakdown of the intuition behind K-means clustering:
 
 - K-means typically converges to a local minimum of the objective function. However, the final clustering result can be sensitive to the initial choice of centroids.
 
-### Basic Omplementation of The K-Means Clustering Algorithm in Python:
+### Basic Implementation of The K-Means Clustering Algorithm in Python:
 
 ```Python
 import numpy as np
@@ -130,3 +130,12 @@ class KMeans:
             labels[i] = np.argmin(distances)
         return labels
 ```
+
+#### Here's how the code works:
+
+1. The `euclidean_distance` function calculates the Euclidean distance between two data points.
+2. The `KMeans` class has methods for initializing centroids, computing new centroids, fitting the model to data, and predicting cluster labels for new data.
+3. The `initialize_centroids` method randomly selects `n_clusters` data points as the initial centroids.
+4. The `compute_centroids` method calculates the new centroids by taking the mean of the data points in each cluster.
+5. The `fit` method runs the K-Means algorithm by iteratively assigning data points to the closest centroid and updating the centroids until convergence or the maximum number of iterations is reached.
+6. The `predict` method assigns new data points to the closest centroid based on the learned centroids.
