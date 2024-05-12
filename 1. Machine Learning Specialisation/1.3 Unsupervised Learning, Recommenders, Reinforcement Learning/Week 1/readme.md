@@ -13,3 +13,9 @@ Some of the commonly used clustering algorithms include:
 2. **Hierarchical Clustering:** This algorithm builds a hierarchy of clusters, either by merging smaller clusters into larger ones (agglomerative) or by dividing larger clusters into smaller ones (divisive). The result is typically visualized as a dendrogram.
 3. **DBSCAN (Density-Based Spatial Clustering of Applications with Noise):** This algorithm groups together data points that are close to each other based on density reachability. It can identify clusters of arbitrary shape and is robust to noise and outliers.
 4. **Mean-Shift Clustering:** This algorithm shifts data points towards the mean of their neighboring points, and clusters are formed around the densest regions in the data.
+
+### Intuition Behind K-Means Clustering
+
+The intuition behind K-means clustering revolves around the concept of partitioning data into K distinct clusters based on similarity. The goal is to minimize the variance (or distance) within each cluster while maximizing the variance (or distance) between different clusters.
+
+Here's a step-by-step breakdown of the intuition behind K-means clustering:
