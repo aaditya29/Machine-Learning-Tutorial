@@ -39,3 +39,14 @@ Here's a step-by-step breakdown of the intuition behind K-means clustering:
 - Repeat the assignment of data points to clusters based on the updated centroids.
 - Recalculate the centroids based on the new cluster assignments.
 - Continue this process iteratively until convergence. Convergence is typically achieved when the centroids no longer change significantly between iterations, or when a specified number of iterations is reached.
+
+#### 5. Objective Function:
+
+- The main objective of K-means clustering is to minimize the within-cluster sum of squares (WCSS), which is the sum of squared distances between each data point and its assigned centroid. Mathematically, this can be expressed as:
+  $$\text{Minimize WCSS} = \sum_{i=1}^{K} \sum_{x \in C_i} \left\lVert x - \mu_i \right\rVert^2$$
+  **$Where:$**<br>
+  - $K$ is the number of clusters
+  - $C_i$ is the set of data points belonging to the $i^{th}$ cluster
+  - $x$ is a data point
+  - $\mu_i$ is the centroid (mean) of the $i^{th}$ cluster
+  - $\left\lVert x - \mu_i \right\rVert^2$ is the squared Euclidean distance between the data point $x$ and the centroid $\mu_i$ of the cluster it belongs to
