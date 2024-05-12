@@ -57,3 +57,7 @@ Here's a step-by-step breakdown of the intuition behind K-means clustering:
   - The inner summation $\sum_{x \in C_i}$ iterates over all data points $x$ belonging to the $i^{th}$ cluster $C_i$.
   - $\left\lVert x - \mu_i \right\rVert^2$ calculates the squared Euclidean distance between the data point $x$ and the centroid $\mu_i$ of the cluster it belongs to.
   - The squared distances are summed over all data points in all clusters, resulting in the total within-cluster sum of squares (WCSS).
+
+#### 6. Convergence:
+
+- K-means typically converges to a local minimum of the objective function. However, the final clustering result can be sensitive to the initial choice of centroids.
