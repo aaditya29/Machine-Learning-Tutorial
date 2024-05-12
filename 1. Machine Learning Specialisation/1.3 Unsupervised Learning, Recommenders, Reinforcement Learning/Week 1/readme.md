@@ -19,3 +19,23 @@ Some of the commonly used clustering algorithms include:
 The intuition behind K-means clustering revolves around the concept of partitioning data into K distinct clusters based on similarity. The goal is to minimize the variance (or distance) within each cluster while maximizing the variance (or distance) between different clusters.
 
 Here's a step-by-step breakdown of the intuition behind K-means clustering:
+
+#### 1. Initialization:
+
+- Start by randomly selecting K points in the feature space as initial cluster centers. These points are often referred to as centroids.
+
+#### 2. Assignment of Data Points:
+
+- For each data point, calculate its distance (commonly using Euclidean distance) to each centroid.
+- Assign the data point to the nearest centroid, thereby forming K clusters.
+
+#### 3. Update Centroids:
+
+- After assigning all data points to clusters, calculate the new centroid (mean) of each cluster. This centroid represents the "center" of the cluster.
+- Move each centroid to the calculated mean of its respective cluster.
+
+#### 4. Iterative Process:
+
+- Repeat the assignment of data points to clusters based on the updated centroids.
+- Recalculate the centroids based on the new cluster assignments.
+- Continue this process iteratively until convergence. Convergence is typically achieved when the centroids no longer change significantly between iterations, or when a specified number of iterations is reached.
