@@ -139,3 +139,26 @@ class KMeans:
 4. The `compute_centroids` method calculates the new centroids by taking the mean of the data points in each cluster.
 5. The `fit` method runs the K-Means algorithm by iteratively assigning data points to the closest centroid and updating the centroids until convergence or the maximum number of iterations is reached.
 6. The `predict` method assigns new data points to the closest centroid based on the learned centroids.
+
+To use this implementation, we can create an instance of the `KMeans` class and call the `fit` method with our data:
+
+```Python
+# Load or generate your data
+X = ...  # shape (n_samples, n_features)
+
+# Initialize the K-Means model
+kmeans = KMeans(n_clusters=3, max_iter=300, random_state=42)
+
+# Fit the model to the data
+kmeans.fit(X)
+
+# Get the cluster labels for the input data
+labels = kmeans.labels
+
+# Get the learned centroids
+centroids = kmeans.centroids
+
+# Predict cluster labels for new data
+new_data = ...  # shape (n_new_samples, n_features)
+new_labels = kmeans.predict(new_data)
+```
