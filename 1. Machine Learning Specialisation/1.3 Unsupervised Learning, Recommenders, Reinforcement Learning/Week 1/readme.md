@@ -45,8 +45,15 @@ Here's a step-by-step breakdown of the intuition behind K-means clustering:
 - The main objective of K-means clustering is to minimize the within-cluster sum of squares (WCSS), which is the sum of squared distances between each data point and its assigned centroid. Mathematically, this can be expressed as:
   $$\text{Minimize WCSS} = \sum_{i=1}^{K} \sum_{x \in C_i} \left\lVert x - \mu_i \right\rVert^2$$
   **$Where:$**<br>
+
   - $K$ is the number of clusters
   - $C_i$ is the set of data points belonging to the $i^{th}$ cluster
   - $x$ is a data point
   - $\mu_i$ is the centroid (mean) of the $i^{th}$ cluster
   - $\left\lVert x - \mu_i \right\rVert^2$ is the squared Euclidean distance between the data point $x$ and the centroid $\mu_i$ of the cluster it belongs to
+
+- Here's a breakdown of the LaTeX expression:
+  - The outer summation $\sum_{i=1}^{K}$ iterates over all $K$ clusters.
+  - The inner summation $\sum_{x \in C_i}$ iterates over all data points $x$ belonging to the $i^{th}$ cluster $C_i$.
+  - $\left\lVert x - \mu_i \right\rVert^2$ calculates the squared Euclidean distance between the data point $x$ and the centroid $\mu_i$ of the cluster it belongs to.
+  - The squared distances are summed over all data points in all clusters, resulting in the total within-cluster sum of squares (WCSS).
