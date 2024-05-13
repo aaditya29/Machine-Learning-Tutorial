@@ -162,3 +162,10 @@ centroids = kmeans.centroids
 new_data = ...  # shape (n_new_samples, n_features)
 new_labels = kmeans.predict(new_data)
 ```
+
+### Cost Function in K-Means Algorithm
+
+In the K-Means clustering algorithm, the cost function, also known as the objective function or the distortion measure, is used to evaluate the quality of the clustering solution. The goal of the algorithm is to minimize this cost function, which quantifies the compactness or cohesion of the clusters.
+
+The cost function for K-Means clustering is typically defined as the sum of squared distances between each data point and the centroid (mean) of the cluster it is assigned to.<br>
+Mathematically, it can be expressed as:
