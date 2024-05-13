@@ -226,3 +226,28 @@ plt.ylabel('WCSS')
 plt.show()
 
 ```
+
+2. **Silhouette Analysis:**
+
+- The silhouette score is a measure of how well a data point matches its assigned cluster compared to other clusters.
+- The silhouette score ranges from -1 to 1, where a higher value indicates that the data point is well-matched to its cluster and poorly matched to neighboring clusters.
+- The K-Means algorithm is run for different values of K, and the silhouette score is calculated for each value of K.
+- The value of K with the highest average silhouette score is chosen as the optimal number of clusters.
+
+```Python
+from sklearn.metrics import silhouette_score
+
+silhouette_scores = []
+for i in range(2, 11):
+    kmeans = KMeans(n_clusters=i, init='k-means++', max_iter=300, n_init=10, random_state=0)
+    kmeans.fit(X)
+    silhouette_scores.append(silhouette_score(X, kmeans.labels_))
+
+# Plotting silhouette scores
+plt.plot(range(2, 11), silhouette_scores)
+plt.title('Silhouette Score')
+plt.xlabel('Number of clusters')
+plt.ylabel('Silhouette Score')
+plt.show()
+
+```
