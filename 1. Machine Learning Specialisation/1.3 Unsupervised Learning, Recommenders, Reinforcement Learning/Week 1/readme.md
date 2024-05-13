@@ -178,3 +178,16 @@ $Where:$
 - $x$ is a data point
 - $\mu_i$ is the centroid (mean) of the $i^{th}$ cluster
 - $\left\lVert x - \mu_i \right\rVert^2$ is the squared Euclidean distance between the data point $x$ and the centroid $\mu_i$ of the cluster it belongs to
+
+The term $\sum_{x \in C_i} \left\lVert x - \mu_i \right\rVert^2$ represents the sum of squared distances between all data points in the $i^{th}$ cluster and its centroid. By summing over all clusters, we get the total cost or distortion measure for the entire clustering solution.
+
+The intuition behind this cost function is that we want to minimize the sum of squared distances between each data point and its assigned cluster centroid. This encourages the formation of compact and well-separated clusters, where data points within the same cluster are close to each other (minimizing within-cluster distances), and data points in different clusters are far apart (maximizing between-cluster distances).
+
+During the K-Means algorithm, the cost function is minimized iteratively by:
+
+1. Assigning each data point to the cluster with the nearest centroid.
+2. Updating the centroids by taking the mean of the data points in each cluster.
+
+These two steps are repeated until the cost function converges or a maximum number of iterations is reached.
+
+The cost function serves as a quantitative measure to evaluate the quality of the clustering solution. A lower value of the cost function indicates a better clustering, where the data points are more tightly clustered around their respective centroids.
