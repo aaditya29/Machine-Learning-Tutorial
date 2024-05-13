@@ -203,3 +203,26 @@ Here are some common approaches:
 - The cost function is then plotted against the number of clusters (K).
 - The optimal value of K is chosen at the "elbow" point, where the cost function starts to flatten out, indicating that adding more clusters does not significantly improve the clustering quality.
 - This method helps strike a balance between minimizing the cost function and avoiding overfitting (too many clusters).
+
+```Python
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_blobs
+
+# Generate synthetic data
+X, _ = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
+
+wcss = []
+for i in range(1, 11):
+    kmeans = KMeans(n_clusters=i, init='k-means++', max_iter=300, n_init=10, random_state=0)
+    kmeans.fit(X)
+    wcss.append(kmeans.inertia_)  # inertia_ gives the WCSS
+
+# Plotting the elbow method graph
+plt.plot(range(1, 11), wcss)
+plt.title('Elbow Method')
+plt.xlabel('Number of clusters')
+plt.ylabel('WCSS')
+plt.show()
+
+```
