@@ -169,3 +169,12 @@ In the K-Means clustering algorithm, the cost function, also known as the object
 
 The cost function for K-Means clustering is typically defined as the sum of squared distances between each data point and the centroid (mean) of the cluster it is assigned to.<br>
 Mathematically, it can be expressed as:
+$$J = \frac {1}{m}\sum_{i=1}^{K} \sum_{x \in C_i} \left\lVert x - \mu_i \right\rVert^2$$
+
+$Where:$
+
+- $K$ is the number of clusters
+- $C_i$ is the set of data points belonging to the $i^{th}$ cluster
+- $x$ is a data point
+- $\mu_i$ is the centroid (mean) of the $i^{th}$ cluster
+- $\left\lVert x - \mu_i \right\rVert^2$ is the squared Euclidean distance between the data point $x$ and the centroid $\mu_i$ of the cluster it belongs to
