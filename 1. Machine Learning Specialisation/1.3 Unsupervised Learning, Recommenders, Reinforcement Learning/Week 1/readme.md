@@ -191,3 +191,15 @@ During the K-Means algorithm, the cost function is minimized iteratively by:
 These two steps are repeated until the cost function converges or a maximum number of iterations is reached.
 
 The cost function serves as a quantitative measure to evaluate the quality of the clustering solution. A lower value of the cost function indicates a better clustering, where the data points are more tightly clustered around their respective centroids.
+
+### Initialise K-means to Choose Number of Clusters
+
+Initializing the number of clusters (K) in the K-Means algorithm is a crucial step, as it can significantly impact the clustering results. There are several techniques and heuristics that can be used to determine a suitable value for K.<br>
+Here are some common approaches:
+
+1. **Elbow Method:**
+
+- This method involves running the K-Means algorithm for different values of K and calculating the cost function (sum of squared distances) for each value of K.
+- The cost function is then plotted against the number of clusters (K).
+- The optimal value of K is chosen at the "elbow" point, where the cost function starts to flatten out, indicating that adding more clusters does not significantly improve the clustering quality.
+- This method helps strike a balance between minimizing the cost function and avoiding overfitting (too many clusters).
