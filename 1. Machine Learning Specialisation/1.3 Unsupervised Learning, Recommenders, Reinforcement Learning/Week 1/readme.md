@@ -251,3 +251,20 @@ plt.ylabel('Silhouette Score')
 plt.show()
 
 ```
+
+3. **Gap Statistic:**
+
+- The gap statistic compares the clustering results with a null reference distribution (e.g., a uniform distribution).
+- The K-Means algorithm is run for different values of K, and the gap statistic is calculated for each value of K.
+- The optimal value of K is chosen as the smallest value where the gap statistic is within a standard error of the first maximum gap value.
+- This method helps determine the appropriate number of clusters by comparing the clustering results to a null reference.
+
+4. **Domain Knowledge or Prior Information:**
+
+- In some cases, domain knowledge or prior information about the data may provide insights into the expected number of clusters.
+- For example, if the data represents customer segments, experts may have an idea of the potential number of segments based on market research or historical data.
+
+5. **Visual Inspection:**
+
+- If the data is low-dimensional (2D or 3D), visualizing the data using scatter plots or other visualization techniques can sometimes reveal natural clusters or patterns.
+- While not a quantitative method, visual inspection can provide a qualitative assessment of the appropriate number of clusters.
