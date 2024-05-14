@@ -278,3 +278,17 @@ Anomaly detection in machine learning is the process of identifying data points,
 - **Point Anomalies:** Individual instances in the data that are considered anomalous.
 - **Contextual Anomalies:** Instances that are anomalous only in a specific context or condition.
 - **Collective Anomalies:** A collection of related instances that are anomalous when analyzed together.
+
+### Techniques for Anomaly Detection
+
+1. **Kernel Density Estimation (KDE):**
+
+KDE is a non-parametric method for estimating the PDF of a random variable. It assumes that the data points are sampled from an unknown distribution and uses a kernel function (e.g., Gaussian kernel) to estimate the density at each point. The density estimation is based on the distance of a given point from its neighboring data points. Anomalies are identified as instances that have a low density value compared to the majority of the data points.
+
+2. **Gaussian Mixture Models (GMM):** GMM is a parametric method that assumes the data is generated from a mixture of multiple Gaussian distributions. The model estimates the parameters (means, covariances, and weights) of these Gaussian components, and the density of a point is calculated as the weighted sum of the densities from each component. Anomalies are identified as instances that have a low probability density under the fitted GMM.
+
+3. **Histogram-based Estimation:** This is a simple non-parametric method that involves dividing the data space into bins or intervals and estimating the density as the frequency of data points in each bin. Anomalies are identified as instances that fall into low-density bins or regions.
+
+4. **Parzen Window Estimation:** Similar to KDE, Parzen Window estimation is a non-parametric method that estimates the density at a point as the sum of kernel functions centered on each data point. The kernel function and its bandwidth parameter determine the smoothness of the density estimate.
+
+5. **One-Class Support Vector Machines (OC-SVM):** OC-SVM is a semi-supervised method that aims to learn a decision boundary that separates the majority of the data points (normal instances) from the origin in a high-dimensional feature space. Anomalies are identified as instances that fall outside the learned decision boundary.
