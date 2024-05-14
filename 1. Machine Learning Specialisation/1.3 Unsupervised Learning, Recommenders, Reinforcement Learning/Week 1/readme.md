@@ -279,7 +279,7 @@ Anomaly detection in machine learning is the process of identifying data points,
 - **Contextual Anomalies:** Instances that are anomalous only in a specific context or condition.
 - **Collective Anomalies:** A collection of related instances that are anomalous when analyzed together.
 
-### Techniques for Anomaly Detection
+### Density Estimation for Anomaly Detection
 
 1. **Kernel Density Estimation (KDE):**
 
