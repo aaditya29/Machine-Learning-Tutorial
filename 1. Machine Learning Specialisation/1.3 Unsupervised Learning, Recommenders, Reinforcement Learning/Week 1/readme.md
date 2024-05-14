@@ -268,3 +268,7 @@ plt.show()
 
 - If the data is low-dimensional (2D or 3D), visualizing the data using scatter plots or other visualization techniques can sometimes reveal natural clusters or patterns.
 - While not a quantitative method, visual inspection can provide a qualitative assessment of the appropriate number of clusters.
+
+## Anomaly Detection in Machine Learning
+
+Anomaly detection in machine learning is the process of identifying data points, events, or observations that deviate significantly from the majority of the data. These deviations are often referred to as anomalies, outliers, novelties, or exceptions. Anomaly detection has applications across various domains including fraud detection, network security, manufacturing quality control, health monitoring, and more.
