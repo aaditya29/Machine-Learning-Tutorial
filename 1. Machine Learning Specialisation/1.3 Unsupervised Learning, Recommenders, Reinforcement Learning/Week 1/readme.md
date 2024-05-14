@@ -272,3 +272,9 @@ plt.show()
 ## Anomaly Detection in Machine Learning
 
 Anomaly detection in machine learning is the process of identifying data points, events, or observations that deviate significantly from the majority of the data. These deviations are often referred to as anomalies, outliers, novelties, or exceptions. Anomaly detection has applications across various domains including fraud detection, network security, manufacturing quality control, health monitoring, and more.
+
+### Types of Anomalies:
+
+- **Point Anomalies:** Individual instances in the data that are considered anomalous.
+- **Contextual Anomalies:** Instances that are anomalous only in a specific context or condition.
+- **Collective Anomalies:** A collection of related instances that are anomalous when analyzed together.
