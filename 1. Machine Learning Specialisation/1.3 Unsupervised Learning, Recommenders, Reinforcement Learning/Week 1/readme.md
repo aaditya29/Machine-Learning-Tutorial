@@ -292,3 +292,5 @@ KDE is a non-parametric method for estimating the PDF of a random variable. It a
 4. **Parzen Window Estimation:** Similar to KDE, Parzen Window estimation is a non-parametric method that estimates the density at a point as the sum of kernel functions centered on each data point. The kernel function and its bandwidth parameter determine the smoothness of the density estimate.
 
 5. **One-Class Support Vector Machines (OC-SVM):** OC-SVM is a semi-supervised method that aims to learn a decision boundary that separates the majority of the data points (normal instances) from the origin in a high-dimensional feature space. Anomalies are identified as instances that fall outside the learned decision boundary.
+
+### Gaussian(Normal) Distribution
