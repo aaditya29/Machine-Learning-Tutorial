@@ -294,3 +294,29 @@ KDE is a non-parametric method for estimating the PDF of a random variable. It a
 5. **One-Class Support Vector Machines (OC-SVM):** OC-SVM is a semi-supervised method that aims to learn a decision boundary that separates the majority of the data points (normal instances) from the origin in a high-dimensional feature space. Anomalies are identified as instances that fall outside the learned decision boundary.
 
 ### Gaussian(Normal) Distribution
+
+#### 1. **Definition**
+
+The Gaussian distribution, also known as the normal distribution, is a continuous probability distribution characterized by its bell-shaped curve. It is defined by two parameters:
+
+- **Mean (μ)**: The average or central value of the distribution.
+- **Standard Deviation (σ)**: A measure of the spread or dispersion of the distribution.
+
+The probability density function (PDF) of a normal distribution is given by:
+
+$f(x|\mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{ -\frac{(x - \mu)^2}{2\sigma^2} }$
+
+#### 2. **Properties**
+
+- **Symmetry**: The normal distribution is symmetric around the mean.
+- **Bell-shaped Curve**: The highest point is at the mean, and the curve approaches zero as it moves away from the mean.
+- **68-95-99.7 Rule**: Approximately 68% of the data lies within one standard deviation of the mean, 95% within two, and 99.7% within three.
+- **Mean = Median = Mode**: For a normal distribution, these three measures of central tendency are equal.
+
+#### 3. **Standard Normal Distribution**
+
+A special case of the normal distribution is the standard normal distribution, which has a mean of 0 and a standard deviation of 1. The PDF of the standard normal distribution is:
+
+$ \phi(z) = \frac{1}{\sqrt{2\pi}} e^{ -\frac{z^2}{2} } $
+
+where $z = \frac{x - \mu}{\sigma}$
