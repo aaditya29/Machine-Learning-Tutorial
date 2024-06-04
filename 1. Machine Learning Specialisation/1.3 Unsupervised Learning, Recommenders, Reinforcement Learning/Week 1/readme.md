@@ -320,3 +320,39 @@ A special case of the normal distribution is the standard normal distribution, w
 $ \phi(z) = \frac{1}{\sqrt{2\pi}} e^{ -\frac{z^2}{2} } $
 
 where $z = \frac{x - \mu}{\sigma}$
+
+#### 4. **Z-Score**
+
+The z-score is a measure of how many standard deviations an element is from the mean. It is calculated as:
+
+$z = \frac{x - \mu}{\sigma}$
+
+The z-score allows us to standardize different normal distributions, converting them to the standard normal distribution.
+
+#### 5. **Applications**
+
+The normal distribution is widely used in statistics and various fields due to the Central Limit Theorem, which states that the sum (or average) of a large number of independent and identically distributed random variables tends to be normally distributed, regardless of the original distribution.
+
+#### Common Applications:
+
+- **Quality Control**: Assessing variation in manufacturing processes.
+- **Finance**: Modeling asset returns.
+- **Psychometrics**: Designing standardized tests.
+- **Natural and Social Sciences**: Modeling phenomena like heights, test scores, etc.
+
+#### Key Points to Remember:
+
+1. **Mean $(\mu$)**: The center of the distribution.
+2. **Standard Deviation $\sigma$**: Controls the spread of the distribution. Larger $\sigma$ values result in a wider curve.
+3. **Symmetry**: The curve is symmetric around the mean.
+4. **Total Area**: The total area under the curve is 1, representing the total probability.
+
+### Practical Example:
+
+Consider the heights of adult men in a population that follow a normal distribution with a mean height of 175 cm and a standard deviation of 10 cm. We can use this information to find the probability of a randomly selected man being within a certain height range.
+
+For example, to find the probability that a man is between 165 cm and 185 cm, we can calculate the area under the normal distribution curve between these two points. This area represents the probability.
+
+### Conclusion
+
+The normal distribution is a fundamental concept in statistics, widely used in various fields for its mathematical properties and the central role it plays in the Central Limit Theorem. Understanding its properties and how to work with it is crucial for data analysis and interpretation.
