@@ -347,12 +347,12 @@ The normal distribution is widely used in statistics and various fields due to t
 3. **Symmetry**: The curve is symmetric around the mean.
 4. **Total Area**: The total area under the curve is 1, representing the total probability.
 
-### Practical Example:
+#### Practical Example:
 
 Consider the heights of adult men in a population that follow a normal distribution with a mean height of 175 cm and a standard deviation of 10 cm. We can use this information to find the probability of a randomly selected man being within a certain height range.
 
 For example, to find the probability that a man is between 165 cm and 185 cm, we can calculate the area under the normal distribution curve between these two points. This area represents the probability.
 
-### Conclusion
+#### Conclusion
 
 The normal distribution is a fundamental concept in statistics, widely used in various fields for its mathematical properties and the central role it plays in the Central Limit Theorem. Understanding its properties and how to work with it is crucial for data analysis and interpretation.
