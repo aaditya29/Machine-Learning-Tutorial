@@ -384,6 +384,21 @@ probability_density = gaussian_pdf(x, mean, std_dev)
 print(f"The probability density at x={x} for a Gaussian distribution with mean={mean} and standard deviation={std_dev} is: {probability_density}")
 ```
 
+- The function takes three arguments: `x` (the value at which to calculate the PDF), `mean` (the mean or center of the distribution), and `std_dev` (the standard deviation of the distribution).
+- Inside the function, we calculate the probability density value using the formula for the Gaussian (normal) PDF:
+
+```Python
+f(x) = (1 / (σ * sqrt(2π))) * e^(-(x - μ)^2 / (2σ^2))
+```
+
+where `μ` is the mean, `σ` is the standard deviation, and `e` is the base of the natural logarithm (approximately 2.71828).
+
+- The formula is broken down into three parts:
+  - `coefficient`: `1 / (std_dev * math.sqrt(2 * math.pi))` calculates the coefficient term `(1 / (σ * sqrt(2π)))`.
+  - `exponent`: `-((x - mean) ** 2) / (2 \* std_dev ** 2)` calculates the exponent term `-(x - μ)^2 / (2σ^2)`.
+  - pdf: `coefficient * math.exp(exponent)` calculates the final PDF value by multiplying the coefficient and the exponential term `e^(exponent)`.
+- The function returns the calculated `pdf` value.
+
 #### Conclusion
 
 The normal distribution is a fundamental concept in statistics, widely used in various fields for its mathematical properties and the central role it plays in the Central Limit Theorem. Understanding its properties and how to work with it is crucial for data analysis and interpretation.
