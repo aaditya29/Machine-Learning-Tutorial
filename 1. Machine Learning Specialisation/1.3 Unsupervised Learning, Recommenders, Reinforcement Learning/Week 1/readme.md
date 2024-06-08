@@ -402,3 +402,38 @@ where `μ` is the mean, `σ` is the standard deviation, and `e` is the base of t
 #### Conclusion
 
 The normal distribution is a fundamental concept in statistics, widely used in various fields for its mathematical properties and the central role it plays in the Central Limit Theorem. Understanding its properties and how to work with it is crucial for data analysis and interpretation.
+
+### Implementing Anomaly Detection Algorithms from Scratch
+
+Let's implement a simple anomaly detection algorithm using the Z-Score method.
+
+#### Z-Score Anomaly Detection
+
+1. **Calculate Mean and Standard Deviation**: Compute the mean and standard deviation of the data.
+2. **Compute Z-Scores**: For each data point, calculate the Z-score.
+3. **Set a Threshold**: Decide on a threshold for the Z-score. Data points with a Z-score above the threshold are considered anomalies.
+
+```python
+import numpy as np
+
+# Generate some data
+data = np.array([10, 12, 12, 13, 12, 11, 14, 100, 12, 11, 12, 13, 14, 10])
+
+# Step 1: Calculate mean and standard deviation
+mean = np.mean(data)
+std_dev = np.std(data)
+
+# Step 2: Compute Z-scores
+z_scores = (data - mean) / std_dev
+
+# Step 3: Set a threshold for Z-score
+threshold = 3
+
+# Identify anomalies
+anomalies = data[np.abs(z_scores) > threshold]
+
+print("Mean:", mean)
+print("Standard Deviation:", std_dev)
+print("Z-Scores:", z_scores)
+print("Anomalies:", anomalies)
+```
