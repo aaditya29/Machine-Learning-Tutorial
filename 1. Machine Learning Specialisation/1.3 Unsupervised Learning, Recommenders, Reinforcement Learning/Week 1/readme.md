@@ -353,6 +353,37 @@ Consider the heights of adult men in a population that follow a normal distribut
 
 For example, to find the probability that a man is between 165 cm and 185 cm, we can calculate the area under the normal distribution curve between these two points. This area represents the probability.
 
+#### Calculating Gaussian(Normal) Distribution
+
+```Python
+import math
+
+def gaussian_pdf(x, mean, std_dev):
+    """
+    Calculate the probability density function (PDF) of the Gaussian (normal) distribution.
+
+    Args:
+        x (float): The value at which to calculate the PDF.
+        mean (float): The mean (center) of the distribution.
+        std_dev (float): The standard deviation of the distribution.
+
+    Returns:
+        float: The probability density value at x.
+    """
+    coefficient = 1 / (std_dev * math.sqrt(2 * math.pi))
+    exponent = -((x - mean) ** 2) / (2 * std_dev ** 2)
+    pdf = coefficient * math.exp(exponent)
+    return pdf
+
+# Example usage
+x = 1.5
+mean = 0
+std_dev = 1
+
+probability_density = gaussian_pdf(x, mean, std_dev)
+print(f"The probability density at x={x} for a Gaussian distribution with mean={mean} and standard deviation={std_dev} is: {probability_density}")
+```
+
 #### Conclusion
 
 The normal distribution is a fundamental concept in statistics, widely used in various fields for its mathematical properties and the central role it plays in the Central Limit Theorem. Understanding its properties and how to work with it is crucial for data analysis and interpretation.
