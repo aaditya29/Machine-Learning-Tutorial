@@ -437,3 +437,105 @@ print("Standard Deviation:", std_dev)
 print("Z-Scores:", z_scores)
 print("Anomalies:", anomalies)
 ```
+
+### Anomaly Detection Using Gaussian Distribution
+
+#### Step 1: Understanding Gaussian Distribution
+
+A Gaussian distribution is defined by two parameters:
+
+- **Mean (μ)**: The average of the data.
+- **Variance (σ²)**: The spread of the data.
+
+The probability density function (PDF) for a Gaussian distribution is given by:<br>
+$P(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right)$
+
+#### Step 2: Fit a Gaussian Distribution to the Data
+
+To detect anomalies, we first need to fit a Gaussian distribution to our data. This involves calculating the mean and variance of the dataset.
+
+#### Step 3: Calculate Probability Density for Each Data Point
+
+Using the PDF, we calculate the probability of each data point under the Gaussian distribution. Data points with low probabilities are considered anomalies.
+
+#### Step 4: Set a Threshold
+
+Choose a threshold for the probability. Data points with probabilities below this threshold are labeled as anomalies.
+
+### Implementation
+
+Now we implement this step-by-step using Python:
+
+```python
+import numpy as np
+
+# Generate some example data
+data = np.array([10, 12, 12, 13, 12, 11, 14, 100, 12, 11, 12, 13, 14, 10])
+
+# Step 1: Fit Gaussian distribution to the data
+
+# Calculate mean (μ) and variance (σ²)
+mean = np.mean(data)
+variance = np.var(data)
+std_dev = np.sqrt(variance)
+
+print("Mean:", mean)
+print("Variance:", variance)
+print("Standard Deviation:", std_dev)
+
+# Step 2: Calculate probability density for each data point
+def gaussian_pdf(x, mean, std_dev):
+    return (1 / (np.sqrt(2 * np.pi) * std_dev)) * np.exp(-((x - mean) ** 2) / (2 * std_dev ** 2))
+
+probabilities = gaussian_pdf(data, mean, std_dev)
+
+print("Probabilities:", probabilities)
+
+# Step 3: Set a threshold for anomalies
+threshold = 0.01  # This can be tuned based on the dataset
+
+# Step 4: Identify anomalies
+anomalies = data[probabilities < threshold]
+
+print("Anomalies:", anomalies)
+```
+
+#### Detailed Explanation
+
+1. **Fit Gaussian Distribution**:
+
+   - **Mean (μ)**: Sum all data points and divide by the number of points.
+   - **Variance (σ²)**: Sum the squared differences from the mean and divide by the number of points.
+
+   ```python
+   mean = np.mean(data)
+   variance = np.var(data)
+   std_dev = np.sqrt(variance)
+   ```
+
+2. **Calculate Probability Density**:
+
+   - Use the Gaussian PDF formula to compute the probability for each data point.
+
+   ```python
+   def gaussian_pdf(x, mean, std_dev):
+       return (1 / (np.sqrt(2 * np.pi) * std_dev)) * np.exp(-((x - mean) ** 2) / (2 * std_dev ** 2))
+
+   probabilities = gaussian_pdf(data, mean, std_dev)
+   ```
+
+3. **Set Threshold**:
+
+   - Choose a threshold value for the probability. Data points with a probability less than this threshold are considered anomalies. The choice of threshold can be subjective and might require tuning based on the specific dataset.
+
+   ```python
+   threshold = 0.01  # Example threshold
+   ```
+
+4. **Identify Anomalies**:
+
+   - Compare the probability of each data point to the threshold. If the probability is less than the threshold, classify the point as an anomaly.
+
+   ```python
+   anomalies = data[probabilities < threshold]
+   ```
