@@ -552,7 +552,8 @@ A Gaussian distribution is defined by two parameters:
 - **Variance (σ²)**: The spread of the data.
 
 The probability density function (PDF) for a Gaussian distribution is given by:
-\[ P(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) \]
+
+$P(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right)$
 
 #### Step 2: Fit a Gaussian Distribution to the Data
 
