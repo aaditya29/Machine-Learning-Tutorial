@@ -138,3 +138,58 @@ To minimize the cost function, we can use gradient descent. The update rules for
   $\theta \leftarrow \theta + \gamma \left( (r_{ui} - \hat{r}_{ui}) x_i - \lambda \theta \right)$
 
 where $\gamma$ is the learning rate.
+
+### Binary Labels in Collaborative Filtering
+
+In collaborative filtering, binary labels represent the presence or absence of an interaction between a user and an item, rather than a scalar rating. For example, a binary label might indicate whether a user has viewed, clicked, or purchased an item (1 if they have, 0 if they haven't). This approach is often used in scenarios where explicit ratings are unavailable but implicit feedback is plentiful.
+
+#### Key Concepts of Binary Collaborative Filtering
+
+1. **Binary Interaction Matrix**:
+
+   - Instead of a rating matrix $R$, we have a binary interaction matrix $B$, where $b\_{ui}$ is 1 if user $u$ has interacted with item $i$, and 0 otherwise.
+   - For example, if user $u$ watched movie $i$, $b*{ui} = 1$; if they haven't, $b*{ui} = 0$.
+
+2. **Implicit Feedback**:
+   - Implicit feedback is inferred from user behavior, such as clicks, views, or purchases. It is binary in nature and indicates whether an interaction occurred.
+   - Implicit feedback can be more abundant but noisier compared to explicit ratings.
+
+### Collaborative Filtering Techniques with Binary Labels
+
+#### User-based Collaborative Filtering
+
+1. **Similarity Computation**:
+
+   - Calculate similarity between users based on binary interactions. Common measures include:
+     - **Jaccard Similarity**: Measures the similarity between two sets of binary interactions.
+       $\text{sim}(u, v) = \frac{|B_u \cap B_v|}{|B_u \cup B_v|}$
+       where $B_u$ and $B_v$ are the sets of items interacted by users $u$ and $v$.
+
+2. **Recommendation Generation**:
+   - For a target user $u$, identify similar users and recommend items that these similar users have interacted with but the target user has not.
+
+#### Matrix Factorization with Binary Labels
+
+Matrix factorization can also be applied to binary interaction data. The objective is to learn latent factors that explain the observed interactions.
+
+#### Logistic Matrix Factorization
+
+1. **Prediction**:
+
+   - Instead of predicting a rating, we predict the probability of an interaction using the logistic function.
+     $\hat{b}\_{ui} = \sigma(p_u \cdot q_i) = \frac{1}{1 + \exp(-p_u \cdot q_i)}$
+     where $p_u$ and $q_i$ are the latent factors for user $u$ and item $i$, and $\sigma$ is the logistic sigmoid function.
+
+2. **Cost Function**:
+
+   - The cost function is based on binary cross-entropy loss.
+     $J = -\sum*{(u,i) \in \mathcal{K}} \left[ b*{ui} \log(\hat{b}_{ui}) + (1 - b_{ui}) \log(1 - \hat{b}\_{ui}) \right] + \frac{\lambda}{2} \left( \sum_u \|p_u\|^2 + \sum_i \|q_i\|^2 \right)$
+
+     where $\mathcal{K}$ is the set of observed interactions, and $\lambda$ is the regularization parameter.
+
+3. **Optimization**:
+   - Use gradient descent to minimize the cost function. Update rules are derived from the gradients of the cost function with respect to the latent factors.
+
+### Summary
+
+Binary collaborative filtering is useful for recommendation systems where interactions are implicit rather than explicit. It leverages binary interaction data to find similarities between users or items and make recommendations. Matrix factorization techniques can be adapted for binary data using logistic functions and appropriate cost functions. Evaluation metrics like Precision@K, Recall@K, and MAP help assess the performance of the recommendation system.
