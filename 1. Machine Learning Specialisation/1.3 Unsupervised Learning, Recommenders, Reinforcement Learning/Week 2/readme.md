@@ -117,3 +117,24 @@ where:
 - $\lambda$ is the regularization parameter.
 - $\left\| p_u \right\|^2$ and $\left\| q_i \right\|^2$ are the squared norms of the user and item latent factor vectors, respectively.
 - $\left\| \theta \right\|^2$ is the squared norm of the feature weights vector.
+
+### Gradient Descent
+
+To minimize the cost function, we can use gradient descent. The update rules for the parameters are derived from the partial derivatives of $J$:
+
+- For user latent factors $p_u$:
+  $p_u \leftarrow p_u + \gamma \left( (r_{ui} - \hat{r}_{ui}) q_i - \lambda p_u \right)$
+
+- For item latent factors $q_i$:
+  $q_i \leftarrow q_i + \gamma \left( (r_{ui} - \hat{r}_{ui}) p_u - \lambda q_i \right)$
+
+- For user biases $b_u$:
+  $b_u \leftarrow b_u + \gamma \left( (r_{ui} - \hat{r}_{ui}) - \lambda b_u \right)$
+
+- For item biases $b_i$:
+  $b_i \leftarrow b_i + \gamma \left( (r_{ui} - \hat{r}_{ui}) - \lambda b_i \right)$
+
+- For feature weights $\theta$:
+  $\theta \leftarrow \theta + \gamma \left( (r_{ui} - \hat{r}_{ui}) x_i - \lambda \theta \right)$
+
+where $\gamma$ is the learning rate.
