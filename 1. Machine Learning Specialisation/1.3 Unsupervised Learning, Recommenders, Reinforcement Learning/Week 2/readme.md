@@ -189,7 +189,3 @@ Matrix factorization can also be applied to binary interaction data. The objecti
 
 3. **Optimization**:
    - Use gradient descent to minimize the cost function. Update rules are derived from the gradients of the cost function with respect to the latent factors.
-
-### Summary
-
-Binary collaborative filtering is useful for recommendation systems where interactions are implicit rather than explicit. It leverages binary interaction data to find similarities between users or items and make recommendations. Matrix factorization techniques can be adapted for binary data using logistic functions and appropriate cost functions. Evaluation metrics like Precision@K, Recall@K, and MAP help assess the performance of the recommendation system.
