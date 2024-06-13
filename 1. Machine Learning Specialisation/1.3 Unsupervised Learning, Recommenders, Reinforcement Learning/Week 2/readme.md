@@ -72,3 +72,48 @@ Collaborative filtering is widely used in various applications, including:
 - **E-commerce**: Product recommendations (e.g., Amazon).
 - **Streaming Services**: Movie, TV show, and music recommendations (e.g., Netflix, Spotify).
 - **Social Networks**: Friend recommendations (e.g., Facebook, LinkedIn).
+
+### Cost Function in Collaborative Filtering Using Per-Item Features
+
+In collaborative filtering, especially when using matrix factorization techniques like Singular Value Decomposition (SVD) or when incorporating per-item (and per-user) features, the cost function is crucial for learning the latent factors that predict user-item interactions.
+
+#### Matrix Factorization with Per-Item Features
+
+In matrix factorization, we aim to factorize the user-item interaction matrix $R$ into two lower-dimensional matrices: a user matrix $U$ and an item matrix $V$. Each user and item are represented by vectors (latent factors) in these matrices.
+
+When incorporating per-item features, we extend this idea by adding feature vectors that describe each item. This can be done in several ways, one of which is to modify the prediction formula and the cost function to include these features.
+
+#### Cost Function
+
+The typical prediction for a rating $r*{ui}$ (rating of user $u$ for item $i$ is given by:
+
+$\hat{r}*{ui} = \mu + b_u + b_i + q_i^T p_u$
+
+where:
+
+- $\mu$ is the global bias (average rating across all users and items).
+- $b_u$ is the bias term for user $u$.
+- $b_i$ is the bias term for item $i$.
+- $q_i$ is the latent factor vector for item $i$.
+- $p_u$ is the latent factor vector for user $u$.
+
+When incorporating per-item features, let $x*i$ be the feature vector for item $i$. The prediction formula can be extended to:
+
+$\hat{r}*{ui} = \mu + b_u + b_i + q_i^T p_u + f(x_i, \theta)$
+
+where $f(x_i, \theta)$ is a function of item features $x_i$ and some parameters $\theta$.
+
+### Cost Function with Regularization
+
+The cost function $J$ to be minimized, incorporating regularization to prevent overfitting, is given by:
+
+$J = \frac{1}{2} \sum*{(u,i) \in \mathcal{K}} \left( r*{ui} - \hat{r}\_{ui} \right)^2 + \frac{\lambda}{2} \left( \sum_u \left\| p_u \right\|^2 + \sum_i \left\| q_i \right\|^2 + \left\| \theta \right\|^2 \right)$
+
+where:
+
+- $\mathcal{K}$ is the set of user-item pairs for which we have ratings.
+- $r\_{ui}$ is the actual rating of user $u$ for item $i$.
+- $\hat{r}\_{ui}$ is the predicted rating.
+- $\lambda$ is the regularization parameter.
+- $\left\| p_u \right\|^2$ and $\left\| q_i \right\|^2$ are the squared norms of the user and item latent factor vectors, respectively.
+- $\left\| \theta \right\|^2$ is the squared norm of the feature weights vector.
