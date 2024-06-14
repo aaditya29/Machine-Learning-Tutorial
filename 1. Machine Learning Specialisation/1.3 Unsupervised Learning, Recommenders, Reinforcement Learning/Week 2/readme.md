@@ -222,3 +222,54 @@ Where:
 1. **Calculate the Mean**: Compute the mean $( \mu)$ of the feature values.
 2. **Determine the Range**: Find the maximum $(x_{max})$ and minimum $(x_{min})$ values of the feature.
 3. **Apply the Formula**: Use the mean normalization formula to transform each feature value.
+
+#### Example of Mean Normalisation
+
+Let's consider a dataset with a single feature:
+
+| Original Feature |
+| ---------------- |
+| 10               |
+| 20               |
+| 30               |
+| 40               |
+| 50               |
+
+1. **Calculate the Mean**:
+   $[ \mu = \frac{10 + 20 + 30 + 40 + 50}{5} = 30 ]$
+
+2. **Determine the Range**:
+   $[ x_{max} = 50]$
+   $[ x_{min} = 10]$
+
+3. **Apply the Formula**:
+
+   - For the first value (10):
+     $[ x' = \frac{10 - 30}{50 - 10} = \frac{-20}{40} = -0.5]$
+
+   - For the second value (20):
+     $[ x' = \frac{20 - 30}{50 - 10} = \frac{-10}{40} = -0.25]$
+
+   - For the third value (30):
+     $[ x' = \frac{30 - 30}{50 - 10} = \frac{0}{40} = 0]$
+   - For the fourth value (40):
+     $[ x' = \frac{40 - 30}{50 - 10} = \frac{10}{40} = 0.25]$
+
+   - For the fifth value (50):
+     $[ x' = \frac{50 - 30}{50 - 10} = \frac{20}{40} = 0.5]$
+
+The normalized feature values are:
+
+| Normalized Feature |
+| ------------------ |
+| -0.5               |
+| -0.25              |
+| 0                  |
+| 0.25               |
+| 0.5                |
+
+### Applications
+
+- **Linear Regression**: Mean normalization can make gradient descent converge more quickly.
+- **Neural Networks**: Input normalization is often used to improve the stability and performance of training.
+- **Principal Component Analysis (PCA)**: Helps in centering the data for better component extraction.
