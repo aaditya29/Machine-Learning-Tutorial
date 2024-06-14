@@ -281,19 +281,19 @@ Implementing collaborative filtering using TensorFlow and gradient descent is im
 ### Custom Training Loop
 
 ```Python
-w = tf.Variable(3.0)
+w = tf.Variable(3.0)#tf.variables we want to optimise
 x = 1.0
 y = 1.0#target value
-alpha = 0.01
+alpha = 0.01#learning rate
 
 iterations = 30
 
-for iter in range(iterations):
+for iter in range(iterations):#for 30 iterations
    #Using tensorflow's gradient tape to record steps
    # and using to compute the cost j, to enable the auto differentitation
    with tf.GradientTape() as tape:
       fwb = w*x
-      costJ = (fwb - y)**2
+      costJ = (fwb - y)**2#J = (wx-1)^2
 
    #Using the gradient tape to calculate the gradients of the cost
    # w.r.t the parameter w
@@ -301,5 +301,31 @@ for iter in range(iterations):
 
    #Run one step of gradient descent by updating
    #the value of w to reduce the cost
-   w.assign_add(-alpha*dJdw)
+   w.assign_add(-alpha*dJdw)#modifing special function
+```
+
+### Implemntation in Tensorflow Syntax
+
+```Python
+#Instantiating an optimizer
+optimizer = keras.optimizers.Adam(learning_rate=1e-1)
+
+iterations = 200
+
+for iter in range(iterations):
+   #Using tensorflow's GradientTape
+   #to record the operations used to compute the cost
+   with tf.GradientTape() as tape:
+
+      #computing the cost(forward pass is included in cost)
+      cost_value = cofiCostFuncV(X,W,b, Ynorm, R,
+      num_users, num_movies, lambda)#repeating till convergence
+
+   #Using the gradient tape to automatically retrieve
+   #the gradients of the trainable variables w.r.t the loss
+   grads = tape.gradient(cost_value, [X,W,b])
+
+   #Running one stept of gradient descent by updating the value
+   #of the variables to minimise the loss
+   optimizer.apply_gradients(zip(grads, [X,W,b]))
 ```
