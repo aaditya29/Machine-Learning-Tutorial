@@ -189,3 +189,5 @@ Matrix factorization can also be applied to binary interaction data. The objecti
 
 3. **Optimization**:
    - Use gradient descent to minimize the cost function. Update rules are derived from the gradients of the cost function with respect to the latent factors.
+
+## Recommender Systems Implementation Detail
