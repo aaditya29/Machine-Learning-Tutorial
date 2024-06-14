@@ -203,3 +203,22 @@ Mean normalization adjusts the values of a feature so that the new mean of the f
 1. **Centering Data**: By having features centered around zero, the optimization algorithms (e.g., gradient descent) can converge faster and more reliably.
 2. **Feature Scaling**: Normalized features can prevent some features from dominating others due to their different scales, improving the performance of algorithms like gradient descent.
 3. **Handling Different Units**: When features have different units (e.g., meters vs. kilograms), mean normalization helps to put them on a comparable scale.
+
+### Formula for Mean Normalization
+
+The formula for mean normalization of a feature $( x )$ is:
+
+$[ x' = \frac{x - \mu}{x_{max} - x_{min}})$
+
+Where:
+
+- $( x)$ is the original feature value.
+- $( \mu)$ is the mean of the feature values.
+- $(x_{max})$ and $( x_{min})$ are the maximum and minimum values of the feature, respectively.
+- $( x')$ is the normalized feature value.
+
+### Steps for Mean Normalization
+
+1. **Calculate the Mean**: Compute the mean $( \mu)$ of the feature values.
+2. **Determine the Range**: Find the maximum $(x_{max})$ and minimum $(x_{min})$ values of the feature.
+3. **Apply the Formula**: Use the mean normalization formula to transform each feature value.
