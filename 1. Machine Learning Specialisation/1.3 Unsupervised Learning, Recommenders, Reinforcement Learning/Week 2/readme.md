@@ -191,3 +191,15 @@ Matrix factorization can also be applied to binary interaction data. The objecti
    - Use gradient descent to minimize the cost function. Update rules are derived from the gradients of the cost function with respect to the latent factors.
 
 ## Recommender Systems Implementation Detail
+
+Mean normalization is a technique used in data preprocessing, especially for machine learning and statistical modeling, to make features of a dataset have a mean of zero. This helps in centering the data and can improve the performance of some machine learning algorithms. Here’s a step-by-step guide on what mean normalization is and how to apply it:
+
+### What is Mean Normalization?
+
+Mean normalization adjusts the values of a feature so that the new mean of the feature is zero. It typically also scales the feature values to lie within a certain range, often between -1 and 1.
+
+### Why Use Mean Normalization?
+
+1. **Centering Data**: By having features centered around zero, the optimization algorithms (e.g., gradient descent) can converge faster and more reliably.
+2. **Feature Scaling**: Normalized features can prevent some features from dominating others due to their different scales, improving the performance of algorithms like gradient descent.
+3. **Handling Different Units**: When features have different units (e.g., meters vs. kilograms), mean normalization helps to put them on a comparable scale.
