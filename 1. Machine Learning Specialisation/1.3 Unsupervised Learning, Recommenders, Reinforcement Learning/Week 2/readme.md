@@ -273,3 +273,33 @@ The normalized feature values are:
 - **Linear Regression**: Mean normalization can make gradient descent converge more quickly.
 - **Neural Networks**: Input normalization is often used to improve the stability and performance of training.
 - **Principal Component Analysis (PCA)**: Helps in centering the data for better component extraction.
+
+## TensorFlow Implementation of Collaborative Filtering
+
+Implementing collaborative filtering using TensorFlow and gradient descent is important due to TensorFlow's scalability, efficiency, flexibility, and the ability to handle large and sparse datasets. The automatic differentiation and extensive optimization capabilities, along with a supportive ecosystem, make TensorFlow a powerful tool for developing robust and efficient recommender systems.
+
+### Custom Training Loop
+
+```Python
+w = tf.Variable(3.0)
+x = 1.0
+y = 1.0#target value
+alpha = 0.01
+
+iterations = 30
+
+for iter in range(iterations):
+   #Using tensorflow's gradient tape to record steps
+   # and using to compute the cost j, to enable the auto differentitation
+   with tf.GradientTape() as tape:
+      fwb = w*x
+      costJ = (fwb - y)**2
+
+   #Using the gradient tape to calculate the gradients of the cost
+   # w.r.t the parameter w
+   [dJdw] = tape.gradient(costJ, [w])
+
+   #Run one step of gradient descent by updating
+   #the value of w to reduce the cost
+   w.assign_add(-alpha*dJdw)
+```
