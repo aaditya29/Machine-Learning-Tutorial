@@ -177,15 +177,18 @@ Matrix factorization can also be applied to binary interaction data. The objecti
 1. **Prediction**:
 
    - Instead of predicting a rating, we predict the probability of an interaction using the logistic function.
+
      $\hat{b}\_{ui} = \sigma(p_u \cdot q_i) = \frac{1}{1 + \exp(-p_u \cdot q_i)}$
+
      where $p_u$ and $q_i$ are the latent factors for user $u$ and item $i$, and $\sigma$ is the logistic sigmoid function.
 
 2. **Cost Function**:
 
    - The cost function is based on binary cross-entropy loss.
-     $J = -\sum*{(u,i) \in \mathcal{K}} \left[ b*{ui} \log(\hat{b}_{ui}) + (1 - b_{ui}) \log(1 - \hat{b}\_{ui}) \right] + \frac{\lambda}{2} \left( \sum_u \|p_u\|^2 + \sum_i \|q_i\|^2 \right)$
 
-     where $\mathcal{K}$ is the set of observed interactions, and $\lambda$ is the regularization parameter.
+   $J = -\sum*{(u,i) \in \mathcal{K}} \left[ b*{ui} \log(\hat{b}_{ui}) + (1 - b_{ui}) \log(1 - \hat{b}\_{ui}) \right] + \frac{\lambda}{2} \left( \sum_u \|p_u\|^2 + \sum_i \|q_i\|^2 \right)$
+
+   where $\mathcal{K}$ is the set of observed interactions, and $\lambda$ is the regularization parameter.
 
 3. **Optimization**:
    - Use gradient descent to minimize the cost function. Update rules are derived from the gradients of the cost function with respect to the latent factors.
