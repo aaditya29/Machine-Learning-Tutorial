@@ -543,3 +543,103 @@ For content-based filtering, the cost function can vary depending on the specifi
 5. **Backpropagation and Optimization**:
    - Compute gradients of the cost function with respect to the model parameters.
    - Update the model parameters to minimize the cost function.
+
+### Example with Mean Squared Error (MSE) Cost Function
+
+#### Step 1: Data Preparation
+
+Let's assume you have a dataset with user ratings for different movies. Each movie has features (e.g., plot summary embeddings) and each user has a profile built from their interactions.
+
+#### Step 2: Model Architecture
+
+A simple neural network might have the following structure:
+
+- Input Layer: Takes the item feature vector.
+- Hidden Layers: Processes the input to learn complex representations.
+- Output Layer: Outputs a predicted rating or relevance score.
+
+#### Step 3: Forward Pass
+
+For a single user and movie:
+
+- \( \mathbf{x} \) is the feature vector of the movie.
+- \( \mathbf{w}\_1, \mathbf{w}\_2, ..., \mathbf{w}\_n \) are the weights of the neural network layers.
+- \( \mathbf{b}\_1, \mathbf{b}\_2, ..., \mathbf{b}\_n \) are the biases of the neural network layers.
+
+The forward pass through the network can be represented as:
+\[ \hat{y} = f(\mathbf{x}; \theta) \]
+where \( f \) is the neural network function and \( \theta \) represents all the model parameters (weights and biases).
+
+#### Step 4: Cost Function Calculation
+
+Mean Squared Error (MSE) is calculated as:
+\[ \text{MSE} = \frac{1}{N} \sum\_{i=1}^N (y_i - \hat{y}\_i)^2 \]
+where:
+
+- \( y_i \) is the actual rating or relevance score for the \( i \)-th item.
+- \( \hat{y}\_i \) is the predicted rating or relevance score for the \( i \)-th item.
+- \( N \) is the total number of items.
+
+#### Step 5: Backpropagation and Optimization
+
+The gradients of the MSE with respect to the model parameters are computed using backpropagation. The parameters are then updated using an optimization algorithm like Stochastic Gradient Descent (SGD) or Adam.
+
+### Example in Python
+
+Here's a simplified example using PyTorch:
+
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# Sample data: movie features (embeddings) and user ratings
+movie_features = torch.tensor([[0.1, 0.2], [0.4, 0.5], [0.3, 0.8]], dtype=torch.float32)
+user_ratings = torch.tensor([5.0, 3.0, 4.0], dtype=torch.float32)
+
+# Simple neural network model
+class SimpleNN(nn.Module):
+    def __init__(self):
+        super(SimpleNN, self).__init__()
+        self.fc1 = nn.Linear(2, 5)
+        self.fc2 = nn.Linear(5, 1)
+
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+
+model = SimpleNN()
+
+# Loss function and optimizer
+criterion = nn.MSELoss()
+optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+# Training loop
+for epoch in range(100):  # 100 epochs
+    model.train()
+
+    optimizer.zero_grad()
+    outputs = model(movie_features).squeeze()
+
+    loss = criterion(outputs, user_ratings)
+    loss.backward()
+    optimizer.step()
+
+    if (epoch + 1) % 10 == 0:
+        print(f'Epoch [{epoch + 1}/100], Loss: {loss.item():.4f}')
+
+# Example prediction
+model.eval()
+new_movie_feature = torch.tensor([0.2, 0.3], dtype=torch.float32)
+predicted_rating = model(new_movie_feature.unsqueeze(0))
+print(f'Predicted Rating: {predicted_rating.item():.4f}')
+```
+
+### Explanation of Code
+
+1. **Data Preparation**: Define movie features and user ratings.
+2. **Model Architecture**: A simple neural network with one hidden layer.
+3. **Forward Pass**: The model processes input movie features to produce predictions.
+4. **Cost Function Calculation**: MSE is used to calculate the difference between predicted and actual ratings.
+5. **Backpropagation and Optimization**: The model parameters are updated to minimize the MSE.
