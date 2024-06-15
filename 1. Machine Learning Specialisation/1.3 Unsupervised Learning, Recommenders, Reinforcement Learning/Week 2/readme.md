@@ -514,3 +514,32 @@ def recommend_movies(user_profile, df):
 recommended_movies = recommend_movies(user_profile, df)
 print(recommended_movies)
 ```
+
+### Cost Function in Deep Learning for Content-Based Filtering
+
+In deep learning for content-based filtering, the cost function (also known as the loss function) is used to measure how well the model's predictions match the actual data. The goal during training is to minimize this cost function, thereby improving the model's accuracy.
+
+For content-based filtering, the cost function can vary depending on the specific approach and data type. However, a common approach is to use a regression-based loss function like Mean Squared Error (MSE) when predicting continuous values or Binary Cross-Entropy when dealing with binary classification tasks. Here, we'll focus on MSE, which is widely used in content-based filtering scenarios.
+
+### Steps and Formula for Cost Function in Deep Learning for Content-Based Filtering
+
+1. **Data Preparation**:
+
+   - **Item Features**: Represent items using their features. For example, movies could be represented by their plot summaries, genres, cast, etc.
+   - **User Profile**: Construct a user profile based on the features of items the user has interacted with.
+
+2. **Model Architecture**:
+
+   - Design a neural network that can take item features as input and output a prediction (e.g., rating or relevance score).
+
+3. **Forward Pass**:
+
+   - Input data (item features and user profile) passes through the network to generate predictions.
+
+4. **Cost Function Calculation**:
+
+   - Compare the model's predictions with the actual values using the cost function.
+
+5. **Backpropagation and Optimization**:
+   - Compute gradients of the cost function with respect to the model parameters.
+   - Update the model parameters to minimize the cost function.
