@@ -766,3 +766,97 @@ model = Model([input_user, input_item], output)
 #Specify the cost function
 cost_fn = tf.keras.losses.MeanSquaredError()
 ```
+
+## Principal Component Analysis(PCA)
+
+Principal Component Analysis (PCA) is a statistical technique used for dimensionality reduction while preserving as much variability (information) as possible in a dataset. It transforms the data into a new coordinate system, such that the greatest variances by any projection of the data come to lie on the first coordinate (called the first principal component), the second greatest variances on the second coordinate, and so on.
+
+Here's a step-by-step explanation of how PCA works:
+
+#### 1. Standardize the Data
+
+PCA is affected by the scale of the variables, so it's important to standardize the data. This involves subtracting the mean of each variable and dividing by the standard deviation, resulting in a dataset with a mean of 0 and a standard deviation of 1.
+
+#### 2. Compute the Covariance Matrix
+
+The covariance matrix is calculated to understand how the variables of the input data relate to each other. The covariance matrix is a square matrix that contains the covariance coefficients between the variables.
+
+$[ \text{Cov}(X) = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})(X_i - \bar{X})^T]$
+
+Where:
+
+- $(X)$ is the matrix of input data.
+- $(\bar{X})$ is the mean of the data.
+
+#### 3. Compute the Eigenvalues and Eigenvectors
+
+Eigenvalues and eigenvectors of the covariance matrix are computed to understand the direction (eigenvectors) and magnitude (eigenvalues) of the data variance.
+
+- **Eigenvectors**: These represent the directions of the axes where the data variance is maximized.
+- **Eigenvalues**: These represent the magnitude of the variance in the direction of the eigenvectors.
+
+#### 4. Sort Eigenvalues and Eigenvectors
+
+The eigenvalues and their corresponding eigenvectors are sorted in descending order. This step ensures that the most important components (with the highest variance) come first.
+
+#### 5. Select Principal Components
+
+Select the top $(k)$ eigenvalues and their corresponding eigenvectors. These eigenvectors form the principal components. The choice of $(k)$ (number of principal components) depends on the amount of variance one wants to retain in the data.
+
+#### 6. Transform the Data
+
+The original dataset is transformed using the selected principal components. This is done by multiplying the original standardized data matrix by the matrix of the selected eigenvectors.
+
+$[ Z = X \cdot W]$
+
+Where:
+
+- $(Z)$ is the transformed data matrix.
+- $(X)$ is the original standardized data matrix.
+- $(W)$ is the matrix of selected eigenvectors.
+
+### Example
+
+Now we gothrough a simple example with a small dataset to illustrate PCA.
+
+#### Step 1: Standardize the Data
+
+Assume we have the following dataset:
+
+$[
+\begin{array}{cc}
+X_1 & X_2 \\
+2.5 & 2.4 \\
+0.5 & 0.7 \\
+2.2 & 2.9 \\
+1.9 & 2.2 \\
+3.1 & 3.0 \\
+2.3 & 2.7 \\
+2.0 & 1.6 \\
+1.0 & 1.1 \\
+1.5 & 1.6 \\
+1.1 & 0.9 \\
+\end{array}
+]$
+
+Standardize each feature to have zero mean and unit variance.
+
+#### Step 2: Compute the Covariance Matrix
+
+Calculate the covariance matrix of the standardized data.
+
+#### Step 3: Compute Eigenvalues and Eigenvectors
+
+Calculate the eigenvalues and eigenvectors of the covariance matrix.
+
+#### Step 4: Sort Eigenvalues and Eigenvectors
+
+Sort the eigenvalues in descending order and sort their corresponding eigenvectors accordingly.
+
+#### Step 5: Select Principal Components
+
+Select the top $(k)$ eigenvalues and their eigenvectors.
+
+#### Step 6: Transform the Data
+
+Transform the original data into the new space defined by the principal components.
