@@ -731,3 +731,38 @@ print(f"Recommended items for User2: {ranked_items}")
 1. **Data Preparation**: A user-item interaction matrix is created.
 2. **Retrieve Step**: Item-item similarity is calculated using cosine similarity, and items similar to 'Item1' are retrieved for 'User2'.
 3. **Return Step**: The retrieved items are ranked based on similarity scores, and the top items are selected for recommendation.
+
+### TensorFlow Implementation of Content-Based Filtering
+
+```Python
+user_NN = tf.keras.models.Sequential([
+   tf.keras.layers.Dense(256, activation = 'relu'),
+   tf.keras.layers.Dense(128, activation = 'relu'),
+   tf.keras.layers.Dense(32)
+])
+
+item_NN = tf.keras.models.Sequential([
+   tf.keras.layers.Dense(256, activation = 'relu'),
+   tf.keras.layers.Dense(128, activation = 'relu'),
+   tf.keras.layers.Dense(32)
+])
+
+#creating the user input and point to the base network
+input_user = tf.keras.layers.Input(shape=(num_user_features))
+vu = user_NN(input_user)
+vu = tf.linalg.12_normalize(vu, axis = 1)
+
+#creating the item input and point to the base network
+input_item = tf.keras.layers.Input(shape=(num_user_features))
+vm = item_NN(input_user)
+vm = tf.linalg.12_normalize(vm, axis = 1)
+
+#measure the similarity of the two vector outputs
+output = tf.keras.layers.Dot(axes=1)([vu,vm])
+
+#specify the inputs and output of the model
+model = Model([input_user, input_item], output)
+
+#Specify the cost function
+cost_fn = tf.keras.losses.MeanSquaredError()
+```
