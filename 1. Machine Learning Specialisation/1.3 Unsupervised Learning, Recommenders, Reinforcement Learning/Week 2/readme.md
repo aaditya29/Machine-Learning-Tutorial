@@ -860,3 +860,116 @@ Select the top $(k)$ eigenvalues and their eigenvectors.
 #### Step 6: Transform the Data
 
 Transform the original data into the new space defined by the principal components.
+
+### Reducing Number of Features in PCA
+
+Reducing the number of features in Principal Component Analysis (PCA) involves selecting the most significant principal components, which are the directions (eigenvectors) that capture the most variance in the data. Here's a detailed step-by-step guide on how to do this:
+
+### Step-by-Step Guide to Reducing Features with PCA
+
+1. **Standardize the Data**
+
+   - Standardize the dataset so that each feature has a mean of 0 and a standard deviation of 1. This is crucial because PCA is sensitive to the variances of the original variables.
+
+   $[
+   X_{\text{standardized}} = \frac{X - \mu}{\sigma}
+   ]$
+
+   Where $(X)$ is the original data, $(\mu)$ is the mean, and $(\sigma)$ is the standard deviation of each feature.
+
+2. **Compute the Covariance Matrix**
+
+   - Calculate the covariance matrix to understand the relationships between different features.
+
+   $[
+   \text{Cov}(X) = \frac{1}{n-1} (X_{\text{standardized}})^T X_{\text{standardized}}
+   ]$
+
+   Where $(n)$ is the number of samples.
+
+3. **Compute the Eigenvalues and Eigenvectors**
+
+   - Compute the eigenvalues and eigenvectors of the covariance matrix. The eigenvectors (principal components) determine the directions of the new feature space, and the eigenvalues determine their magnitude (importance).
+
+4. **Sort Eigenvalues and Eigenvectors**
+
+   - Sort the eigenvalues in descending order and rearrange the eigenvectors correspondingly. This step helps in identifying the principal components that capture the most variance.
+
+5. **Choose the Number of Principal Components (k)**
+
+   - Select the number of principal components to keep. This can be done by looking at the explained variance ratio, which tells you how much variance each principal component explains.
+
+   $[
+   \text{Explained Variance Ratio} = \frac{\lambda_i}{\sum \lambda}
+   ]$
+
+   Where $(\lambda_i)$ is the $(i)-th$ eigenvalue.
+
+   - Often, a cumulative explained variance threshold is chosen (e.g., 95%). You sum the explained variance ratios until you reach this threshold.
+
+   $[
+   \sum_{i=1}^{k} \frac{\lambda_i}{\sum \lambda} \geq 0.95
+   ]$
+
+6. **Project the Data onto the Selected Principal Components**
+
+   - Form a feature vector $(W)$ by selecting the top $(k)$ eigenvectors (principal components).
+
+   $[
+   W = \left[ \text{eigenvector}_1, \text{eigenvector}_2, \ldots, \text{eigenvector}_k \right]
+   ]$
+
+   - Transform the original standardized data $(X_{\text{standardized}})$ to the new subspace $(Z)$.
+
+   $[
+   Z = X_{\text{standardized}} \cdot W
+   ]$
+
+#### Example
+
+Assume we have a dataset $(X)$ with 5 features. Here's a simplified example to demonstrate the reduction process:
+
+1. **Standardize the Data:**
+
+   ```python
+   from sklearn.preprocessing import StandardScaler
+   scaler = StandardScaler()
+   X_standardized = scaler.fit_transform(X)
+   ```
+
+2. **Compute the Covariance Matrix:**
+
+   ```python
+   import numpy as np
+   covariance_matrix = np.cov(X_standardized, rowvar=False)
+   ```
+
+3. **Compute the Eigenvalues and Eigenvectors:**
+
+   ```python
+   eigenvalues, eigenvectors = np.linalg.eigh(covariance_matrix)
+   ```
+
+4. **Sort Eigenvalues and Eigenvectors:**
+
+   ```python
+   sorted_index = np.argsort(eigenvalues)[::-1]
+   sorted_eigenvalues = eigenvalues[sorted_index]
+   sorted_eigenvectors = eigenvectors[:, sorted_index]
+   ```
+
+5. **Choose the Number of Principal Components (k):**
+
+   ```python
+   explained_variances = sorted_eigenvalues / np.sum(sorted_eigenvalues)
+   cumulative_explained_variance = np.cumsum(explained_variances)
+   k = np.argmax(cumulative_explained_variance >= 0.95) + 1
+   ```
+
+6. **Project the Data onto the Selected Principal Components:**
+   ```python
+   W = sorted_eigenvectors[:, :k]
+   Z = np.dot(X_standardized, W)
+   ```
+
+After these steps, $(Z)$ is the new dataset with reduced dimensions, retaining most of the original data's variance.
