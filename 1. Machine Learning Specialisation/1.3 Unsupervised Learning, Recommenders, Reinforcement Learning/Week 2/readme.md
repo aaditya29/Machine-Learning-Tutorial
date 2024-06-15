@@ -445,3 +445,72 @@ Deep learning enhances content-based filtering by leveraging its ability to auto
 - **Text Data**: Using models like BERT for text features in articles, books, or movies.
 - **Image Data**: Using CNNs for visual features in product recommendations.
 - **Audio Data**: Using RNNs or CNNs for music or podcast recommendations.
+
+### Example: Text-Based Content Filtering with Deep Learning
+
+Here's an example using a pre-trained BERT model for movie plot summaries:
+
+#### Step 1: Data Preparation
+
+Prepare a dataset of movie plot summaries:
+
+```python
+import pandas as pd
+
+data = {
+    'title': ['Inception', 'Interstellar', 'The Dark Knight', 'Pride and Prejudice'],
+    'plot': [
+        "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+        "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+        "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+        "Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy. But Mr. Darcy reluctantly finds himself falling in love with a woman beneath his class."
+    ]
+}
+
+df = pd.DataFrame(data)
+```
+
+#### Step 2: Model Selection and Feature Extraction
+
+Use a pre-trained BERT model to encode the plot summaries:
+
+```python
+from transformers import BertTokenizer, BertModel
+import torch
+
+# Load pre-trained BERT model and tokenizer
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertModel.from_pretrained('bert-base-uncased')
+
+# Encode plot summaries
+def encode_plot(plot):
+    inputs = tokenizer(plot, return_tensors='pt', max_length=512, truncation=True, padding='max_length')
+    outputs = model(**inputs)
+    return outputs.last_hidden_state.mean(dim=1).detach().numpy()
+
+df['plot_embedding'] = df['plot'].apply(encode_plot)
+```
+
+#### Step 3: User Profile Construction
+
+Assume the user has liked "Inception" and "Interstellar":
+
+```python
+user_liked_movies = ['Inception', 'Interstellar']
+user_profile = df[df['title'].isin(user_liked_movies)]['plot_embedding'].mean()
+```
+
+#### Step 4: Recommendation Generation
+
+Compute cosine similarity between the user profile and all movie embeddings:
+
+```python
+from sklearn.metrics.pairwise import cosine_similarity
+
+def recommend_movies(user_profile, df):
+    df['similarity'] = df['plot_embedding'].apply(lambda x: cosine_similarity(user_profile.reshape(1, -1), x.reshape(1, -1))[0][0])
+    return df.sort_values(by='similarity', ascending=False).head(3)['title']
+
+recommended_movies = recommend_movies(user_profile, df)
+print(recommended_movies)
+```
