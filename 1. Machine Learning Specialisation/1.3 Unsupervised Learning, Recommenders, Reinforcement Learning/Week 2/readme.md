@@ -382,3 +382,42 @@ Suppose you have a movie recommendation system:
 - **Limited to Known Features**: Can only recommend items that are similar to what the user has already liked.
 - **Overspecialization**: May not introduce users to diverse content, leading to a narrow set of recommendations.
 - **Cold Start for Users**: Difficult to recommend items to new users with no interaction history.
+
+#### Implementation Example in Python
+
+Here’s a simplified example using Python and the scikit-learn library:
+
+```python
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import linear_kernel
+
+# Sample data
+data = {
+    'title': ['Inception', 'Interstellar', 'The Dark Knight', 'Pride and Prejudice'],
+    'genre': ['Action Sci-Fi', 'Action Sci-Fi', 'Action', 'Romance Drama'],
+}
+
+df = pd.DataFrame(data)
+
+# Vectorize the genre column
+tfidf = TfidfVectorizer(stop_words='english')
+tfidf_matrix = tfidf.fit_transform(df['genre'])
+
+# Compute the cosine similarity matrix
+cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
+
+# Function to get recommendations
+def get_recommendations(title, cosine_sim=cosine_sim):
+    idx = df.index[df['title'] == title].tolist()[0]
+    sim_scores = list(enumerate(cosine_sim[idx]))
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    sim_scores = sim_scores[1:4]
+    movie_indices = [i[0] for i in sim_scores]
+    return df['title'].iloc[movie_indices]
+
+# Example usage
+print(get_recommendations('Inception'))
+```
+
+This code snippet creates a content-based recommendation system using movie genres. It vectorizes the genre information, calculates the cosine similarity between movies, and recommends movies based on their similarity to a given title.
