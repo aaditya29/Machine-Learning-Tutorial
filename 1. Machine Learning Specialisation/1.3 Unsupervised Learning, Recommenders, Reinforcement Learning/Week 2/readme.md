@@ -329,3 +329,56 @@ for iter in range(iterations):
    #of the variables to minimise the loss
    optimizer.apply_gradients(zip(grads, [X,W,b]))
 ```
+
+## Content Based Filtering
+
+Content-based filtering is a type of recommender system technique in machine learning that relies on the features of items and users to make recommendations. It uses the characteristics of items to recommend other items similar to what a user likes, based on their previous interactions or explicit preferences. Here’s a detailed look at how content-based filtering works:
+
+### Key Concepts
+
+1. **Feature Extraction**: Content-based filtering involves extracting features from items and users. Features can be various attributes or properties. For example:
+
+   - For movies: Genre, director, cast, keywords, etc.
+   - For books: Author, genre, keywords, publication date, etc.
+
+2. **User Profile**: A user profile is created based on the features of items the user has interacted with. This can be a weighted average of the features of items the user has rated highly or consumed frequently.
+
+3. **Similarity Measure**: The system uses a similarity measure to compare the user profile with the features of items. Common similarity measures include cosine similarity, Euclidean distance, or Pearson correlation.
+
+### Steps in Content-Based Filtering
+
+1. **Data Collection**: Gather data about items and users. This data can be explicit (ratings, likes, etc.) or implicit (browsing history, clicks, etc.).
+
+2. **Feature Extraction**: Extract relevant features from items. For example, in a movie recommendation system, features might include genre, director, and cast.
+
+3. **Profile Building**: Build a user profile based on the features of items the user has interacted with. This profile represents the user’s preferences.
+
+4. **Recommendation Generation**: Calculate the similarity between the user profile and all items in the database. Recommend items with the highest similarity scores to the user.
+
+### Example
+
+Suppose you have a movie recommendation system:
+
+1. **Data Collection**: You have data on movies, including attributes like genre, director, and cast. You also have user data, such as which movies a user has watched and their ratings.
+
+2. **Feature Extraction**: Each movie is represented by a feature vector. For instance:
+
+   - Movie 1: [Action, Sci-Fi, Christopher Nolan, Leonardo DiCaprio]
+   - Movie 2: [Romance, Drama, Richard Linklater, Ethan Hawke]
+
+3. **Profile Building**: If a user likes “Inception” (an action, sci-fi movie by Christopher Nolan with Leonardo DiCaprio), the user profile might emphasize action and sci-fi genres and prefer movies by Nolan or starring DiCaprio.
+
+4. **Recommendation Generation**: Compute similarity scores between the user profile and the feature vectors of other movies. Recommend movies with high similarity scores, such as “Interstellar” (another action, sci-fi movie by Nolan) or “The Dark Knight” (an action movie by Nolan).
+
+### Advantages and Disadvantages
+
+**Advantages**:
+
+- **Personalization**: Highly personalized recommendations based on individual user preferences.
+- **No Cold Start for Items**: Can recommend new items as long as their features are known.
+
+**Disadvantages**:
+
+- **Limited to Known Features**: Can only recommend items that are similar to what the user has already liked.
+- **Overspecialization**: May not introduce users to diverse content, leading to a narrow set of recommendations.
+- **Cold Start for Users**: Difficult to recommend items to new users with no interaction history.
