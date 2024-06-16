@@ -976,3 +976,19 @@ Assume we have a dataset $(X)$ with 5 features. Here's a simplified example to d
    ```
 
 After these steps, $(Z)$ is the new dataset with reduced dimensions, retaining most of the original data's variance.
+
+### PCA In Code
+
+> ### Pre-Defined Steps
+
+**Optional pre-processing: Perform feature scaling**
+
+1. "fit" the data to obtain 2(or 3) new axes(principal components) which includes mean normalisation.
+
+2. Optionally examine how much variance is explained by each principal components.
+   `explained_variance_ratio`
+
+3. Transform(project) the data onto the new axes.
+   `transform`
+
+> ### Example in Code
