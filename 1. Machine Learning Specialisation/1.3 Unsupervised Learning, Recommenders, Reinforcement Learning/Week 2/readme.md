@@ -1000,4 +1000,8 @@ X = np.array([1,1], [2,1], [3,2], [-1,-1], [-2,-1], [-3,-2])
 pca_1 = PCA(n_components = 1)
 pca_1.fit(X)
 pca_1.explained_variance_ratio_ #0.992
+
+#Projecting the array
+X_trans_1 = pca_1.transform(X)
+X_reduced_1 = pca.inverse_transform(X_trans_1)
 ```
