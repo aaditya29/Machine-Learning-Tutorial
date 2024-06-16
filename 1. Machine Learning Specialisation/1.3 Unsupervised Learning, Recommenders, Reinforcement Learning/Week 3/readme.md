@@ -188,8 +188,8 @@ Let's revisit the Mars rover example to illustrate the concept of Return:
 
 2. **Discounted Return Calculation**:
 
-   Suppose the rover is at state $( s*t )$ and the sequence of rewards is $( R*{t+1} = 10 )$, $( R*{t+2} = -5 )$, $( R*{t+3} = 5 )$.<br>
-   With a discount factor $( \gamma = 0.9 )$, the Return $( G_t )$ would be:
+   Suppose the rover is at state $(s*t)$ and the sequence of rewards is $(R*{t+1} = 10)$, $( R*{t+2} = -5 )$, $( R*{t+3} = 5 )$.<br>
+   With a discount factor $( \gamma = 0.9 )$, the Return $(G_t)$ would be:
 
    $[
    G_t = 10 + 0.9 \times (-5) + 0.9^2 \times 5
