@@ -128,3 +128,75 @@ Where:
 10. **Reward**: +5 for returning with samples.
 
 The rover updates its Q-values based on these interactions, learning the best paths and strategies over many episodes.
+
+### Return in Reinforcement Learning
+
+In reinforcement learning (RL), the concept of **Return** is central to understanding how agents evaluate and optimize their behavior over time. The Return is essentially the total accumulated reward that an agent aims to maximize, often considering future rewards with a certain discount to reflect their delayed nature. Let's break down the concept:
+
+### Definition of Return
+
+The Return, typically denoted as $( G_t )$, is the total reward the agent receives from time step $( t )$ onwards. There are two main forms of Return:
+
+1. **Finite Horizon Return**: When considering a finite number of future steps $(horizon ( T ))$, the Return is the sum of rewards up to that horizon.
+2. **Infinite Horizon Return**: When considering an infinite number of future steps, the Return includes rewards extending indefinitely into the future.
+
+### Mathematical Formulation
+
+The Return at time step $( t )$, $( G*t )$, is defined as:<br>
+
+$[ G_t = R*{t+1} + R*{t+2} + R*{t+3} + \dots ]$
+
+#### Discounted Return
+
+To handle the practical issue that future rewards are often less certain or less valuable than immediate rewards, a discount factor $( \gamma ) (where ( 0 \leq \gamma \leq 1 ))$ is introduced.
+The discounted Return is given by:
+
+$[ G*t = R*{t+1} + \gamma R*{t+2} + \gamma^2 R*{t+3} + \dots ]$
+
+In a more compact form:
+$[ G*t = \sum*{k=0}^{\infty} \gamma^k R\_{t+k+1} ]$
+
+Here:
+
+- $( R\_{t+k+1} )$ is the reward received $( k+1 )$ time steps after time $( t )$.
+- $( \gamma )$ is the discount factor, which reduces the weight of future rewards.
+
+### Importance of Return in RL
+
+1. **Evaluating Policies**: The Return is used to evaluate how good a particular policy (a strategy for choosing actions) is. A policy that leads to higher Returns is considered better.
+2. **Training Objectives**: Many RL algorithms aim to maximize the expected Return. For example, Q-learning updates the action-value function based on expected future Returns.
+
+### Value Functions and Return
+
+1. **State-Value Function ($( V(s) )$)**: The expected Return when starting from state $( s )$ and following policy $( \pi )$.
+
+   $[ V^\pi(s) = \mathbb{E}\_\pi [G_t \mid S_t = s] ]$
+
+2. **Action-Value Function ($( Q(s, a) )$)**: The expected Return when starting from state $( s )$, taking action $( a )$, and then following policy $( \pi )$.
+
+   $[ Q^\pi(s, a) = \mathbb{E}\_\pi [G_t \mid S_t = s, A_t = a] ]$
+
+### Example: Mars Rover
+
+Let's revisit the Mars rover example to illustrate the concept of Return:
+
+1. **Immediate Rewards**:
+
+   - +10 for collecting a sample.
+   - -5 for hitting an obstacle.
+   - +5 for returning to the base station with samples.
+
+2. **Discounted Return Calculation**:
+
+   Suppose the rover is at state $( s*t )$ and the sequence of rewards is $( R*{t+1} = 10 )$, $( R*{t+2} = -5 )$, $( R*{t+3} = 5 )$.<br>
+   With a discount factor $( \gamma = 0.9 )$, the Return $( G_t )$ would be:
+
+   $[
+   G_t = 10 + 0.9 \times (-5) + 0.9^2 \times 5
+   = 10 - 4.5 + 4.05
+   = 9.55
+   ]$
+
+#### Summary
+
+The Return in reinforcement learning is a measure of the total accumulated reward from a given time step onward. Discounted Return helps to prioritize immediate rewards over distant ones, reflecting the uncertainty or lesser value of future rewards. Understanding and maximizing the Return is crucial for training effective RL agents, as it directly relates to the long-term success of their policies.
