@@ -992,3 +992,12 @@ After these steps, $(Z)$ is the new dataset with reduced dimensions, retaining m
    `transform`
 
 > ### Example in Code
+
+```Python
+X = np.array([1,1], [2,1], [3,2], [-1,-1], [-2,-1], [-3,-2])
+
+#fitting one pricipal component
+pca_1 = PCA(n_components = 1)
+pca_1.fit(X)
+pca_1.explained_variance_ratio_ #0.992
+```
