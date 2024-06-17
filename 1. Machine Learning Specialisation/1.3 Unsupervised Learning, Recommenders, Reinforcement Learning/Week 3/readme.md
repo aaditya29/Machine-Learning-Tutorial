@@ -202,3 +202,60 @@ Let's revisit the Mars rover example to illustrate the concept of Return:
 The Return in reinforcement learning is a measure of the total accumulated reward from a given time step onward. Discounted Return helps to prioritize immediate rewards over distant ones, reflecting the uncertainty or lesser value of future rewards. Understanding and maximizing the Return is crucial for training effective RL agents, as it directly relates to the long-term success of their policies.
 
 ## State-Action Value Function
+
+The state value function is a fundamental concept in reinforcement learning (RL) that quantifies the expected future rewards an agent can obtain from a given state. Here's an overview of the concept:
+
+### 1. **State Value Function (V)**
+
+The state value function, often denoted as $( V(s) )$, represents the expected return (cumulative future rewards) when starting from state $( s )$ and following a particular policy $( \pi )$.
+
+#### Definition:
+
+$[ V^\pi(s) = \mathbb{E}_\pi \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} \mid S_t = s \right] ]$
+
+- $( \mathbb{E}_\pi )$ denotes the expected value given that the agent follows policy $( \pi )$.
+- $( \gamma )$ (gamma) is the discount factor, $( 0 \leq \gamma \leq 1 )$, which determines the importance of future rewards.
+- $( R\_{t+1} )$ is the reward received at time step $( t+1 )$.
+- $( S_t )$ is the state at time $( t )$.
+
+### 2. **Key Components**
+
+- **State $((s)$)**: A specific situation or configuration in the environment.
+- **Policy $((\pi))$**: A strategy or rule that defines the behavior of the agent, mapping states to actions.
+- **Return**: The total accumulated reward an agent receives, usually discounted over time.
+- **Discount Factor ($(\gamma)$)**: A factor used to reduce the weight of future rewards compared to immediate rewards. A lower $( \gamma )$ makes the agent more myopic, focusing on immediate rewards.
+
+### 3. **Importance of the State Value Function**
+
+- **Decision Making**: Helps the agent evaluate the desirability of different states. A higher value indicates a more favorable state.
+- **Policy Evaluation**: Used to assess how good a given policy is in terms of the expected returns it can yield from different states.
+- **Policy Improvement**: Guides the agent in improving its policy by comparing values of different states and choosing actions that lead to higher value states.
+
+### 4. **Calculating the State Value Function**
+
+The state value function can be estimated using various methods:
+
+- **Dynamic Programming (DP)**: Requires a model of the environment (i.e., transition probabilities and rewards). Examples include:
+  - **Value Iteration**: Iteratively updates state values based on the Bellman equation.
+  - **Policy Iteration**: Alternates between policy evaluation (calculating $( V^\pi )$) and policy improvement (updating the policy based on $( V^\pi )$).
+- **Monte Carlo Methods**: Uses sampled episodes from the environment to estimate \( V(s) \) by averaging the returns obtained from visiting state $( s )$.
+- **Temporal Difference (TD) Learning**: Combines ideas from DP and Monte Carlo methods. TD learning updates value estimates based on observed rewards and estimated values of subsequent states (e.g., TD(0), SARSA, Q-learning).
+
+### 5. **Bellman Equation for $( V(s) )$**
+
+The Bellman equation provides a recursive definition for the state value function:
+
+$[ V^\pi(s) = \sum*{a} \pi(a \mid s) \sum*{s', r} P(s', r \mid s, a) \left[ r + \gamma V^\pi(s') \right] ]$
+
+- $( \pi(a \mid s) )$ is the probability of taking action $( a )$ in state $( s )$ under policy $( \pi )$.
+- $( P(s', r \mid s, a) )$ is the probability of transitioning to state $( s' )$ and receiving reward $( r )$ given state $( s )$ and action $( a )$.
+
+### 6. **Optimal State Value Function $(( V^* ))$**
+
+The optimal state value function represents the maximum expected return obtainable from state $( s )$ by following the best possible policy $( \pi^* )$:
+
+$[ V^*(s) = \max\_\pi V^\pi(s) ]$
+
+The Bellman optimality equation for $( V^*)$ is:
+
+$[ V^*(s) = \max*a \sum*{s', r} P(s', r \mid s, a) \left[ r + \gamma V^*(s') \right] ]$
