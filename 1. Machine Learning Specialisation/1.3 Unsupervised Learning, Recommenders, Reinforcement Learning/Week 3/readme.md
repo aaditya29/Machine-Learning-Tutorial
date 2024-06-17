@@ -200,3 +200,5 @@ Let's revisit the Mars rover example to illustrate the concept of Return:
 #### Summary
 
 The Return in reinforcement learning is a measure of the total accumulated reward from a given time step onward. Discounted Return helps to prioritize immediate rewards over distant ones, reflecting the uncertainty or lesser value of future rewards. Understanding and maximizing the Return is crucial for training effective RL agents, as it directly relates to the long-term success of their policies.
+
+## State-Action Value Function
