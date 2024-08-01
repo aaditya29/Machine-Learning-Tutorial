@@ -153,3 +153,107 @@ The computation graph would look like this:
 A computation graph is a visual representation of a series of operations in a computation. It consists of nodes (operations or variables) and edges (data flow), making it easy to understand, debug, and optimize complex computations.
 
 ## Python And Vectorisation
+
+### What is Vectorization in Machine Learning?
+
+Vectorization is the process of converting operations that are performed on individual elements of a dataset (like scalars) to operations performed on entire vectors or arrays. This means instead of looping through individual elements one by one, you perform the operation on the entire array in one go. This technique is especially beneficial in the context of machine learning because it can significantly speed up computations and make code more concise and easier to read.
+
+### Benefits of Vectorization
+
+1. **Performance**: Vectorized operations leverage highly optimized, low-level implementations in libraries like NumPy, which are usually written in C or Fortran. These implementations can make use of SIMD (Single Instruction, Multiple Data) instructions in modern CPUs.
+2. **Code Simplicity**: Vectorized code is often more concise and easier to understand since it removes the need for explicit loops.
+3. **Reduced Memory Overhead**: Vectorization can sometimes reduce the memory overhead by minimizing the creation of temporary arrays and intermediate variables.
+
+### Example of Vectorization in Python
+
+Let's consider a simple example of adding two arrays element-wise. We'll compare a non-vectorized implementation using loops with a vectorized implementation using NumPy.
+
+#### Non-Vectorized Implementation
+
+```python
+import time
+
+# Example data
+a = [1, 2, 3, 4, 5]
+b = [6, 7, 8, 9, 10]
+
+# Initialize result array
+result = [0] * len(a)
+
+# Non-vectorized addition
+start_time = time.time()
+for i in range(len(a)):
+    result[i] = a[i] + b[i]
+end_time = time.time()
+
+print("Non-vectorized result:", result)
+print("Time taken (non-vectorized):", end_time - start_time)
+```
+
+#### Vectorized Implementation
+
+```python
+import numpy as np
+
+# Example data
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([6, 7, 8, 9, 10])
+
+# Vectorized addition
+start_time = time.time()
+result = a + b
+end_time = time.time()
+
+print("Vectorized result:", result)
+print("Time taken (vectorized):", end_time - start_time)
+```
+
+### Comparison
+
+The vectorized version is not only more concise but also runs faster because it leverages NumPy's internal optimizations. In larger datasets, the performance difference becomes even more significant.
+
+### Example in Machine Learning
+
+In machine learning, vectorization is crucial for efficient computation, especially when dealing with large datasets and high-dimensional data. Let's see an example of a simple linear regression model, where we compute the predicted values and the mean squared error (MSE).
+
+#### Non-Vectorized Linear Regression Prediction
+
+```python
+import numpy as np
+
+# Example data
+X = np.array([[1, 2], [3, 4], [5, 6]])
+y = np.array([7, 9, 11])
+theta = np.array([0.5, 1.5])
+
+# Non-vectorized prediction
+predictions = []
+for i in range(len(X)):
+    prediction = 0
+    for j in range(len(theta)):
+        prediction += X[i][j] * theta[j]
+    predictions.append(prediction)
+predictions = np.array(predictions)
+
+# Compute MSE
+mse = np.mean((predictions - y) ** 2)
+print("Non-vectorized MSE:", mse)
+```
+
+#### Vectorized Linear Regression Prediction
+
+```python
+import numpy as np
+
+# Example data
+X = np.array([[1, 2], [3, 4], [5, 6]])
+y = np.array([7, 9, 11])
+theta = np.array([0.5, 1.5])
+
+# Vectorized prediction
+predictions = X.dot(theta)
+
+# Compute MSE
+mse = np.mean((predictions - y) ** 2)
+print("Vectorized MSE:", mse)
+```
