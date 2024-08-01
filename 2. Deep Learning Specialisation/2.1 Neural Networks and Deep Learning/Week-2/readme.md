@@ -80,3 +80,76 @@ print(f"Accuracy: {accuracy}")
 print(f"Confusion Matrix:\n{conf_matrix}")
 print(f"Classification Report:\n{class_report}")
 ```
+
+## Computation Graph
+
+A computation graph is a way to visualize and understand the sequence of operations performed in a mathematical computation or an algorithm. Think of it like a flowchart that shows how different pieces of data are processed step-by-step.
+
+### Basic Concepts
+
+1. **Nodes**: Each node in the graph represents an operation or a variable. For example, in a simple arithmetic expression like $(a + b)$, there would be nodes for $(a)$, $(b)$, and the addition operation.
+2. **Edges**: Edges (or arrows) connect the nodes and show the flow of data. They indicate which outputs from one operation are inputs to the next operation.
+
+### Simple Example
+
+Imagine you want to compute the expression $(c = (a + b) * d)$.
+
+1. **Input Nodes**: You have input nodes for $(a)$, $(b)$, and $(d)$.
+2. **Operation Nodes**: There’s an addition node to compute $(a + b)$ and a multiplication node to compute $((a + b) * d)$.
+3. **Output Node**: The final result $(c)$.
+
+The computation graph for this expression would look like this:
+
+```
+   a       b      d
+    \     /        |
+     \   /         |
+      +           /
+       \         /
+        \       /
+          *
+           \
+            \
+             c
+```
+
+### Why Use Computation Graphs?
+
+1. **Clarity**: They make it easy to see the sequence of operations and how data flows through the system.
+2. **Debugging**: You can identify where things might be going wrong by following the flow of data.
+3. **Optimization**: They help in optimizing calculations by reusing intermediate results and minimizing redundant computations.
+
+### Real-World Application
+
+1. **Machine Learning**: Computation graphs are heavily used in machine learning frameworks like TensorFlow and PyTorch. These frameworks define complex neural networks as computation graphs.
+2. **Automatic Differentiation**: They are essential for automatic differentiation, a technique used to compute gradients for optimization problems. By following the graph, the system can automatically compute derivatives.
+
+### Step-by-Step Example with More Operations
+
+Let's consider a more complex expression: $(e = (a + b) * (c - d))$.
+
+1. **Input Nodes**: $(a)$, $(b)$, $(c)$, $(d)$
+2. **Intermediate Operations**:
+   - Addition: $(a + b)$
+   - Subtraction: $(c - d)$
+3. **Final Operation**: Multiplication of the results from addition and subtraction
+
+The computation graph would look like this:
+
+```
+   a       b       c      d
+    \     /         \    /
+     +             -
+      \           /
+       \         /
+        *
+         \
+          \
+           e
+```
+
+### Summary
+
+A computation graph is a visual representation of a series of operations in a computation. It consists of nodes (operations or variables) and edges (data flow), making it easy to understand, debug, and optimize complex computations.
+
+## Python And Vectorisation
