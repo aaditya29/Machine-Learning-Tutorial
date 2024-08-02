@@ -353,3 +353,108 @@ print("Cost after training:", compute_cost(X, y, theta))
 3. **Parallelism**: Operations on entire arrays or matrices can be parallelized easily.
 
 By vectorizing logistic regression, we ensure that the implementation is both efficient and scalable, making it suitable for large datasets and high-dimensional feature spaces.
+
+## Broadcasting in Python
+
+Broadcasting is a powerful feature in NumPy that allows you to perform operations on arrays of different shapes in a way that would be difficult or impossible with standard element-wise operations. It simplifies the code and improves performance by avoiding explicit looping in Python.
+
+### How Broadcasting Works
+
+Broadcasting in NumPy follows these rules to make arrays compatible for element-wise operations:
+
+1. **Align Shapes**: The shapes of the arrays are aligned by adding 1s to the dimensions of the smaller array until both shapes have the same length.
+2. **Compatible Dimensions**: Two dimensions are compatible when they are either equal or one of them is 1.
+3. **Expand Dimensions**: The smaller array is virtually expanded to match the shape of the larger array by duplicating its data along the expanded dimensions.
+
+### Broadcasting Rules
+
+1. **When operating on two arrays, NumPy compares their shapes element-wise. It starts with the trailing dimensions and works its way forward. Two dimensions are compatible when:**
+
+   - They are equal.
+   - One of them is 1.
+
+2. **If the arrays have different numbers of dimensions, the shape of the smaller array is padded with ones on its leading (left) side.**
+
+### Examples
+
+#### Example 1: Adding a Scalar to an Array
+
+Adding a scalar to an array is a simple example of broadcasting. The scalar is broadcast to the shape of the array.
+
+```python
+import numpy as np
+
+array = np.array([1, 2, 3])
+scalar = 5
+
+# Scalar is broadcast to match the shape of the array
+result = array + scalar
+print(result)  # Output: [6 7 8]
+```
+
+#### Example 2: Adding Two Arrays of Different Shapes
+
+```python
+a = np.array([1, 2, 3])
+b = np.array([[1], [2], [3]])
+
+# Array `a` is broadcast to match the shape of `b`
+result = a + b
+print(result)
+# Output:
+# [[2 3 4]
+#  [3 4 5]
+#  [4 5 6]]
+```
+
+Here, `a` has shape (3,), and `b` has shape (3, 1). `a` is broadcast to shape (3, 3) by duplicating its elements across the second dimension.
+
+#### Example 3: Multiplying Arrays with Different Shapes
+
+```python
+a = np.array([[1, 2, 3], [4, 5, 6]])
+b = np.array([10, 20, 30])
+
+# Array `b` is broadcast to match the shape of `a`
+result = a * b
+print(result)
+# Output:
+# [[ 10  40  90]
+#  [ 40 100 180]]
+```
+
+Here, `a` has shape (2, 3), and `b` has shape (3,). `b` is broadcast to shape (2, 3) by duplicating its elements across the first dimension.
+
+#### Step-by-Step Broadcasting Example
+
+Consider the following example:
+
+```python
+a = np.array([[1], [2], [3]])
+b = np.array([10, 20, 30])
+
+# Shapes before broadcasting: (3, 1) and (3,)
+# Align shapes by adding dimensions: (3, 1) and (1, 3)
+# Expand dimensions to match: (3, 3) and (3, 3)
+result = a + b
+print(result)
+```
+
+1. **Original shapes**: `a` has shape (3, 1) and `b` has shape (3,).
+2. **Align shapes**: The shape of `b` is aligned to (1, 3) by adding a new axis.
+3. **Expand dimensions**: `a` is expanded to (3, 3) by repeating its single column across the new dimension, and `b` is expanded to (3, 3) by repeating its single row down the new dimension.
+
+The result is a (3, 3) array.
+
+#### Advantages of Broadcasting
+
+- **Efficiency**: Avoids explicit loops in Python, leveraging fast C and Fortran implementations in NumPy.
+- **Memory Use**: Doesn't actually replicate data, saving memory.
+- **Conciseness**: Leads to more readable and concise code.
+
+#### Limitations
+
+- **Complexity**: Can sometimes lead to tricky bugs if you misunderstand how the dimensions align and expand.
+- **Automatic Expansion**: Sometimes, the automatic expansion might not be what you intended, leading to errors or unexpected results.
+
+Broadcasting makes many numerical computations more intuitive and performant, and understanding its rules can greatly enhance your ability to write efficient NumPy code.
