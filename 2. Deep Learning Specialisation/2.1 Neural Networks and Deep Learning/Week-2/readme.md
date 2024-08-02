@@ -311,3 +311,45 @@ $[ \nabla_\theta J(\theta) = \frac{1}{m} X^T (H - y) ]$
 Using gradient descent to update $( \theta )$:
 $[ \theta = \theta - \alpha \nabla_\theta J(\theta) ]$
 where $( \alpha )$ is the learning rate.
+
+#### Implementation Example in Python (using NumPy)
+
+```python
+import numpy as np
+
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+def compute_cost(X, y, theta):
+    m = len(y)
+    H = sigmoid(np.dot(X, theta))
+    cost = - (1 / m) * np.sum(y * np.log(H) + (1 - y) * np.log(1 - H))
+    return cost
+
+def gradient_descent(X, y, theta, alpha, num_iters):
+    m = len(y)
+    for _ in range(num_iters):
+        H = sigmoid(np.dot(X, theta))
+        gradient = (1 / m) * np.dot(X.T, (H - y))
+        theta -= alpha * gradient
+    return theta
+
+# Example usage
+X = np.array([[1, 2], [1, 3], [1, 4], [1, 5]])  # Add a column of 1s for the intercept term
+y = np.array([0, 0, 1, 1])
+theta = np.zeros(X.shape[1])
+alpha = 0.01
+num_iters = 1000
+
+theta = gradient_descent(X, y, theta, alpha, num_iters)
+print("Learned parameters:", theta)
+print("Cost after training:", compute_cost(X, y, theta))
+```
+
+#### Benefits of Vectorization
+
+1. **Speed**: Vectorized code runs much faster because it utilizes optimized numerical libraries and hardware acceleration.
+2. **Simplicity**: Code is often shorter and easier to read.
+3. **Parallelism**: Operations on entire arrays or matrices can be parallelized easily.
+
+By vectorizing logistic regression, we ensure that the implementation is both efficient and scalable, making it suitable for large datasets and high-dimensional feature spaces.
