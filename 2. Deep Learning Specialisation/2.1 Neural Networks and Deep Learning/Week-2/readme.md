@@ -257,3 +257,57 @@ predictions = X.dot(theta)
 mse = np.mean((predictions - y) ** 2)
 print("Vectorized MSE:", mse)
 ```
+
+### Vectorised Logistic Regression
+
+Vectorizing logistic regression involves expressing operations in a way that can be efficiently executed using matrix and vector operations. This approach leverages the power of modern hardware, like GPUs and optimized libraries, to speed up computations significantly compared to iterative approaches.
+
+#### Logistic Regression Recap
+
+Logistic regression is used for binary classification. Given a dataset with $( m )$ examples, each having $( n )$ features, and a corresponding binary label (0 or 1), the goal is to find a decision boundary that separates the two classes.
+
+The hypothesis for logistic regression is:
+$[ h_\theta(x) = \sigma(\theta^T x) ]$
+where:
+
+- $( \theta )$ is the parameter vector.
+- $( x )$ is the input feature vector.
+- $( \sigma(z) )$ is the sigmoid function, defined as $( \sigma(z) = \frac{1}{1 + e^{-z}} )$.
+
+The cost function (log-loss) is:
+$[ J(\theta) = -\frac{1}{m} \sum_{i=1}^m \left[ y^{(i)} \log(h_\theta(x^{(i)})) + (1 - y^{(i)}) \log(1 - h_\theta(x^{(i)})) \right] ]$
+
+#### Vectorized Implementation
+
+#### Hypothesis Calculation
+
+Instead of computing the hypothesis for each example individually, we can use matrix operations.
+
+Given:
+
+- $( X )$ is an $( m \times n )$ matrix of input features.
+- $( \theta )$ is an $( n \times 1 )$ parameter vector.
+
+The hypothesis for all examples can be computed as:
+$[ H = \sigma(X \theta) ]$
+where $( H )$ is an $( m \times 1 )$ vector of predictions.
+
+#### Cost Function
+
+The cost function can be vectorized as:
+$[ J(\theta) = -\frac{1}{m} \left[ y^T \log(H) + (1 - y)^T \log(1 - H) \right] ]$
+where:
+
+- $( y )$ is an $( m \times 1 )$ vector of true labels.
+- $( \log(H) )$ and $( \log(1 - H) )$ are element-wise operations.
+
+#### Gradient Calculation
+
+The gradient of the cost function with respect to $( \theta )$ is:
+$[ \nabla_\theta J(\theta) = \frac{1}{m} X^T (H - y) ]$
+
+#### Gradient Descent Update
+
+Using gradient descent to update $( \theta )$:
+$[ \theta = \theta - \alpha \nabla_\theta J(\theta) ]$
+where $( \alpha )$ is the learning rate.
