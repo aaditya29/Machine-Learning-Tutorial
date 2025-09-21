@@ -51,9 +51,11 @@ The repository is organized as follows:
    - **Course 2**: [Advanced Learning Algorithms](https://github.com/aaditya29/Machine-Learning-Tutorial/tree/main/1.%20Machine%20Learning%20Specialisation/1.2%20Advanced%20Learning%20Algorithms)
    - **Course 3**: [ Unsupervised Learning, Recommenders, Reinforcement Learning](https://github.com/aaditya29/Machine-Learning-Tutorial/tree/main/1.%20Machine%20Learning%20Specialisation/1.3%20Unsupervised%20Learning%2C%20Recommenders%2C%20Reinforcement%20Learning)
 
-2. **Specialisation Two:** [Deep Learning Specialization By DeepLearning.AI](https://github.com/aaditya29/Machine-Learning-Tutorial/tree/main/2.%20Deep%20Learning%20Specialisation)
+2. **Specialisation Two:** [PyTorch Tutorial](https://github.com/aaditya29/Machine-Learning-Tutorial/tree/main/2.%20PyTorch)
 
-3. **Specialisation Three:** [Machine Learning Engineering for Production (MLOps) Specialization](https://github.com/aaditya29/Machine-Learning-Tutorial/tree/main/3.%20MLOps%20Specialisation)
+3. **Andrej Karpathy's Tutorial:** [Zero-To-Hero-Karpathy](https://github.com/aaditya29/Machine-Learning-Tutorial/tree/main/3.%20Zero-To-Hero-Karpathy)
+
+4. [Important ML Implementations](https://github.com/aaditya29/Machine-Learning-Tutorial/tree/main/4.%20Important-ML-Implementations)
 
 ### Notes Format
 
