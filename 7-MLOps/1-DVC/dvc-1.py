@@ -9,6 +9,10 @@ data = {'Name': ['Alice', 'Bob', 'Charlie'],
 
 df = pd.DataFrame(data)  # saving dataframe to csv file
 
+# adding new row to dataframe
+new_row_loc = {'Name': 'Harry', 'Age': 21, 'City': 'London'}
+df.loc[len(df.index)] = new_row_loc  # setting up data directory
+
 data_dir = 'data'  # ensure the data directory exists
 os.makedirs(data_dir, exist_ok=True)  # saving dataframe to csv file
 
