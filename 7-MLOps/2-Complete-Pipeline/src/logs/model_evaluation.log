@@ -1,0 +1,7 @@
+2025-12-12 19:51:43,105 - model_evaluation - DEBUG - Model loaded from ./models/model.pkl
+2025-12-12 19:51:43,110 - model_evaluation - DEBUG - Data loaded from /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/processed/test_tfidf.csv with shape (1101, 51)
+2025-12-12 19:51:43,111 - model_evaluation - ERROR - Failed to complete the model evaluation process: evaluate_model() missing 1 required positional argument: 'y_test'
+2025-12-12 19:52:35,485 - model_evaluation - DEBUG - Model loaded from ./models/model.pkl
+2025-12-12 19:52:35,490 - model_evaluation - DEBUG - Data loaded from /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/processed/test_tfidf.csv with shape (1101, 51)
+2025-12-12 19:52:35,502 - model_evaluation - DEBUG - Model evaluation metrics calculated
+2025-12-12 19:52:35,502 - model_evaluation - DEBUG - Metrics saved to reports/metrics.json
