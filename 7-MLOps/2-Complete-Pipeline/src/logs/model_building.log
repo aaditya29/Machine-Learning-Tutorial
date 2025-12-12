@@ -1,0 +1,5 @@
+2025-12-12 17:28:44,025 - model_building - DEBUG - Data loaded from /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/processed/train_tfidf.csv with shape (4152, 51)
+2025-12-12 17:28:44,026 - model_building - DEBUG - Initializing RandomForest model with parameters: {'n_estimators': 25, 'random_state': 2}
+2025-12-12 17:28:44,026 - model_building - DEBUG - Model training started with 4152 samples
+2025-12-12 17:28:44,093 - model_building - DEBUG - Model training completed
+2025-12-12 17:28:44,095 - model_building - DEBUG - Model saved to models/model.pkl
