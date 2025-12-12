@@ -1,0 +1,19 @@
+2025-12-12 16:44:02,663 - feature_engineering - ERROR - Unexpected error occurred while loading the data: [Errno 2] No such file or directory: './data/interim/train_processed.csv'
+2025-12-12 16:44:02,663 - feature_engineering - ERROR - Failed to complete the feature engineering process: [Errno 2] No such file or directory: './data/interim/train_processed.csv'
+2025-12-12 16:45:57,770 - feature_engineering - ERROR - Unexpected error occurred while loading the data: [Errno 2] No such file or directory: './Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/train_processed.csv'
+2025-12-12 16:45:57,770 - feature_engineering - ERROR - Failed to complete the feature engineering process: [Errno 2] No such file or directory: './Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/train_processed.csv'
+2025-12-12 16:46:36,412 - feature_engineering - ERROR - Unexpected error occurred while loading the data: [Errno 2] No such file or directory: './Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/train_processed.csv'
+2025-12-12 16:46:36,412 - feature_engineering - ERROR - Failed to complete the feature engineering process: [Errno 2] No such file or directory: './Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/train_processed.csv'
+2025-12-12 16:46:56,903 - feature_engineering - DEBUG - Data loaded and NaNs filled from /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/train_processed.csv
+2025-12-12 16:46:56,904 - feature_engineering - DEBUG - Data loaded and NaNs filled from /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/test_processed.csv
+2025-12-12 16:46:56,906 - feature_engineering - ERROR - Error during Bag of Words transformation: 'Series' object has no attribute 'values3'
+2025-12-12 16:46:56,906 - feature_engineering - ERROR - Failed to complete the feature engineering process: 'Series' object has no attribute 'values3'
+2025-12-12 16:48:14,988 - feature_engineering - DEBUG - Data loaded and NaNs filled from /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/train_processed.csv
+2025-12-12 16:48:14,989 - feature_engineering - DEBUG - Data loaded and NaNs filled from /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/test_processed.csv
+2025-12-12 16:48:14,989 - feature_engineering - ERROR - Error during tfidf transformation: 'Series' object has no attribute 'values3'
+2025-12-12 16:48:14,990 - feature_engineering - ERROR - Failed to complete the feature engineering process: 'Series' object has no attribute 'values3'
+2025-12-12 16:50:15,466 - feature_engineering - DEBUG - Data loaded and NaNs filled from /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/train_processed.csv
+2025-12-12 16:50:15,468 - feature_engineering - DEBUG - Data loaded and NaNs filled from /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/interim/test_processed.csv
+2025-12-12 16:50:15,497 - feature_engineering - DEBUG - tfidf applied and data transformed
+2025-12-12 16:50:15,596 - feature_engineering - DEBUG - Data saved to /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/processed/train_tfidf.csv
+2025-12-12 16:50:15,613 - feature_engineering - DEBUG - Data saved to /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/processed/test_tfidf.csv
