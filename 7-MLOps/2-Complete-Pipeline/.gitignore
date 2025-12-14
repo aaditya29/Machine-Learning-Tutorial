@@ -1,0 +1,10 @@
+/data/raw/*
+/data/processed/*
+/models/*
+!/models/.gitkeep
+/outputs/*
+/reports/*
+/interim/*
+/experiments/*
+/processed/*
+/raw/*
