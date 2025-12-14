@@ -1,0 +1,6 @@
+2025-12-14 10:06:24,363 - data_ingestion - DEBUG - Data loaded from https://raw.githubusercontent.com/aaditya29/Machine-Learning-Tutorial/refs/heads/main/7-MLOps/2-Complete-Pipeline/experiments/spam.csv
+2025-12-14 10:06:24,367 - data_ingestion - DEBUG - Data preprocessing completed
+2025-12-14 10:06:24,388 - data_ingestion - DEBUG - Train and test data saved to /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/raw
+2025-12-14 10:07:56,398 - data_ingestion - DEBUG - Data loaded from https://raw.githubusercontent.com/aaditya29/Machine-Learning-Tutorial/refs/heads/main/7-MLOps/2-Complete-Pipeline/experiments/spam.csv
+2025-12-14 10:07:56,401 - data_ingestion - DEBUG - Data preprocessing completed
+2025-12-14 10:07:56,412 - data_ingestion - DEBUG - Train and test data saved to /Users/adityamishra/Documents/Machine-Learning-Tutorial/7-MLOps/2-Complete-Pipeline/raw
