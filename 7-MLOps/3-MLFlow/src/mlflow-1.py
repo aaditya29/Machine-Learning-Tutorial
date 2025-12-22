@@ -15,3 +15,19 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.10, random_state=42)
 max_depth = 10  # Set maximum depth of the tree
 n_estimators = 5  # Set number of trees in the forest
+
+with mlflow.start_run():
+    rf = RandomForestClassifier(
+        # Initialize the Random Forest Classifier
+        max_depth=max_depth, n_estimators=n_estimators, random_state=42)
+    rf.fit(X_train, y_train)  # Train the model
+
+    y_pred = rf.predict(X_test)  # Make predictions on the test set
+    accuracy = accuracy_score(y_test, y_pred)  # Calculate accuracy
+
+    mlflow.log_metric('accuracy', accuracy)  # Log accuracy metric
+    mlflow.log_param('max_depth', max_depth)  # Log max_depth parameter
+    # Log n_estimators parameter
+    mlflow.log_param('n_estimators', n_estimators)
+
+    print(accuracy)
