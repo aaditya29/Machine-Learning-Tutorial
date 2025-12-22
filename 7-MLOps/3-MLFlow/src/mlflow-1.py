@@ -16,6 +16,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 max_depth = 10  # Set maximum depth of the tree
 n_estimators = 5  # Set number of trees in the forest
 
+mlflow.set_experiment('MLOPS-1')
+
 with mlflow.start_run():
     rf = RandomForestClassifier(
         # Initialize the Random Forest Classifier
@@ -29,5 +31,23 @@ with mlflow.start_run():
     mlflow.log_param('max_depth', max_depth)  # Log max_depth parameter
     # Log n_estimators parameter
     mlflow.log_param('n_estimators', n_estimators)
+
+    # Creating a confusion matrix plot
+    cm = confusion_matrix(y_test, y_pred)
+    plt.figure(figsize=(6, 6))  # Set figure size
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+                xticklabels=wine.target_names, yticklabels=wine.target_names)  # Plot heatmap
+    plt.ylabel('Actual')
+    plt.xlabel('Predicted')
+    plt.title('Confusion Matrix')
+    plt.savefig("Confusion-matrix.png")
+    mlflow.log_artifact("Confusion-matrix.png")
+    mlflow.log_artifact(__file__)
+
+    # tags
+    mlflow.set_tags({"Author": 'Aaditya', "Project": "Wine Classification"})
+
+    # Log the model
+    mlflow.sklearn.log_model(rf, "Random-Forest-Model")
 
     print(accuracy)
